@@ -9,12 +9,15 @@ package Editor_Gui;
  *
  * @author Flamnick
  */
-public class Edit_Button_Dialogue extends javax.swing.JFrame {
+public class Edit_Button_Dialogue extends javax.swing.JFrame 
+{
+    UserInfoBus messageDialogAnswer = new UserInfoBus();
 
     /**
      * Creates new form NewJFrame
      */
-    public Edit_Button_Dialogue() {
+    public Edit_Button_Dialogue() 
+    {
         initComponents();
     }
 
@@ -43,6 +46,11 @@ public class Edit_Button_Dialogue extends javax.swing.JFrame {
         Value_Label.setText("~Set Button Price~");
 
         Finish.setText("Finish");
+        Finish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FinishMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,6 +98,19 @@ public class Edit_Button_Dialogue extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+/**
+ * WHen the button is clicked it puts something in a filler object.
+ * @param evt 
+ */
+    private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
+       messageDialogAnswer.setName(Name_Field.getText());
+       //Need to parse this string we're recieving into a double.
+       messageDialogAnswer.setPrice(Value_Field.getText());
+       
+       
+       
+       
+    }//GEN-LAST:event_FinishMouseClicked
 
     /**
      * @param args the command line arguments

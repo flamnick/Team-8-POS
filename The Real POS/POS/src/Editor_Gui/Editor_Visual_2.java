@@ -334,10 +334,4 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     // End of variables declaration//GEN-END:variables
 
-    public String getButtonOneName(Button_1.)
-    {
-        return Button_1.getText();
-    }
-    
-    
 }
