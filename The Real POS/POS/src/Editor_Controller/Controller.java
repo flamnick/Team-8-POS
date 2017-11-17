@@ -12,7 +12,7 @@ import Emulator_Model.Template;
  *
  * @author j_haw
  */
-public class Controller 
+public class Controller implements Observer
 {
     
 public Controller()
@@ -21,8 +21,8 @@ Template userModel = new Template();
 Editor_Visual_2 userView = new Editor_Visual_2();
 
 userView.setVisible(true);
-
-
 }
+
+private static int
 
 }
