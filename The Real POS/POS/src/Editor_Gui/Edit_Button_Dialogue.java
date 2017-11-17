@@ -104,12 +104,7 @@ public class Edit_Button_Dialogue extends javax.swing.JFrame
  */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
        messageDialogAnswer.setName(Name_Field.getText());
-       //Need to parse this string we're recieving into a double.
-       messageDialogAnswer.setPrice(Value_Field.getText());
-       
-       
-       
-       
+       messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
     }//GEN-LAST:event_FinishMouseClicked
 
     /**
