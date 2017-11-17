@@ -23,6 +23,5 @@ Editor_Visual_2 userView = new Editor_Visual_2();
 userView.setVisible(true);
 }
 
-private static int
 
 }

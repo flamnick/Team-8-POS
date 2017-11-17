@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Editor_Gui;
+import java.beans.*;
 
 /**
  * THe class which contains our user info.
@@ -13,6 +14,7 @@ public class UserInfoBus
 {
    private String name;
    private Double price;
+   private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
     
    /**
     * Sets name in object
@@ -20,7 +22,9 @@ public class UserInfoBus
     */
    void setName(String userString)
    {
+       String oldName = name;
        name=userString;
+       mPcs.firePropertyChange("", oldName, userString);
    }
    
    /**
@@ -38,7 +42,9 @@ public class UserInfoBus
     */
    void setPrice(double userDouble)
    {
+       double oldPrice = price;
        price=userDouble;
+       mPcs.firePropertyChange("price", oldPrice, userDouble);
    }
    /**
     * Gets the double within the object.
@@ -48,4 +54,13 @@ public class UserInfoBus
    {
        return price;
    }    
+   
+   public void addPropertyChangeListener(PropertyChangeListener listener)
+           {
+               mPcs.addPropertyChangeListener(listener);
+           }
+   public void removePropertyChangeListener (PropertyChangeListener listener)
+   {
+       mPcs.removePropertyChangeListener(listener);
+   }
 }
