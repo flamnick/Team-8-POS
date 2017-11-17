@@ -9,16 +9,16 @@ package Editor_Gui;
  *
  * @author Flamnick
  */
-public class Edit_Button_Dialog extends javax.swing.JFrame 
-{
+public class Edit_Button_Dialog extends javax.swing.JFrame {
+
     UserInfoBus messageDialogAnswer = new UserInfoBus();
 
     /**
      * Creates new form NewJFrame
      */
-    public Edit_Button_Dialog() 
-    {
+    public Edit_Button_Dialog() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -99,12 +99,21 @@ public class Edit_Button_Dialog extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * WHen the button is clicked it puts something in a filler object.
- * @param evt 
- */
+     * WHen the button is clicked it puts something in a filler object.
+     *
+     * @param evt
+     */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
-       messageDialogAnswer.setName(Name_Field.getText());
-       messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
+
+
+            messageDialogAnswer.setName(Name_Field.getText());
+            messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
+            setVisible(false);
+            dispose();
+
+        
+
+
     }//GEN-LAST:event_FinishMouseClicked
 
     /**

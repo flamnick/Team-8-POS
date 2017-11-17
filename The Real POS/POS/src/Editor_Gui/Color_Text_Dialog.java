@@ -17,6 +17,7 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     public Color_Text_Dialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -58,6 +59,11 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         Color_List_label.setText("Mouse Over Color");
 
         Finish_Dialogue_Button.setText("Finish");
+        Finish_Dialogue_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Finish_Dialogue_ButtonMouseClicked(evt);
+            }
+        });
         Finish_Dialogue_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Finish_Dialogue_ButtonActionPerformed(evt);
@@ -115,6 +121,11 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     private void Finish_Dialogue_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Finish_Dialogue_ButtonActionPerformed
+
+    private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
+        setVisible(false);
+        dispose();
+    }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
 
     /**
      * @param args the command line arguments
