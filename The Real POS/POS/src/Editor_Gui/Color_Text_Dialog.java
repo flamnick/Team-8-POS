@@ -9,12 +9,12 @@ package Editor_Gui;
  *
  * @author Flamnick
  */
-public class Color_Text_Dialogue extends javax.swing.JDialog {
+public class Color_Text_Dialog extends javax.swing.JDialog {
 
     /**
      * Creates new form Color_Text_Dialogue
      */
-    public Color_Text_Dialogue(java.awt.Frame parent, boolean modal) {
+    public Color_Text_Dialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -133,20 +133,21 @@ public class Color_Text_Dialogue extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Color_Text_Dialogue dialog = new Color_Text_Dialogue(new javax.swing.JFrame(), true);
+                Color_Text_Dialog dialog = new Color_Text_Dialog(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

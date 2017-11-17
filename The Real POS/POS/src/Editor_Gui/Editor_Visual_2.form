@@ -137,6 +137,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Load"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LoadMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Menu_Title">
           <Properties>
@@ -161,6 +164,7 @@
             <Property name="text" type="java.lang.String" value="Create New Template"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="New_TemplateMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="New_TemplateActionPerformed"/>
           </Events>
         </Component>
@@ -308,24 +312,54 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_1MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_2">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_2MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_3">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_3MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_4">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_4MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_5">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_5MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_6">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_6MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_7">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_7MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_8">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_8MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_9">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_9MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_10">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_10MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_11">
           <Properties>
@@ -335,6 +369,9 @@
               </FontInfo>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_11MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_12">
           <Properties>
@@ -345,6 +382,9 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_12MouseClicked"/>
+          </Events>
         </Component>
         <Component class="java.awt.Label" name="Tax_Label">
           <Properties>
@@ -368,11 +408,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Save Current Template"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SaveMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_Settings_Button">
           <Properties>
             <Property name="text" type="java.lang.String" value="More Button Settings"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_Settings_ButtonMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

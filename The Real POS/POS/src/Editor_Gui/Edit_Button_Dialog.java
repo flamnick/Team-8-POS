@@ -9,12 +9,15 @@ package Editor_Gui;
  *
  * @author Flamnick
  */
-public class Customize_Dialogue extends javax.swing.JFrame {
+public class Edit_Button_Dialog extends javax.swing.JFrame 
+{
+    UserInfoBus messageDialogAnswer = new UserInfoBus();
 
     /**
      * Creates new form NewJFrame
      */
-    public Customize_Dialogue() {
+    public Edit_Button_Dialog() 
+    {
         initComponents();
     }
 
@@ -43,6 +46,11 @@ public class Customize_Dialogue extends javax.swing.JFrame {
         Value_Label.setText("~Set Button Price~");
 
         Finish.setText("Finish");
+        Finish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FinishMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,6 +98,19 @@ public class Customize_Dialogue extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+/**
+ * WHen the button is clicked it puts something in a filler object.
+ * @param evt 
+ */
+    private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
+       messageDialogAnswer.setName(Name_Field.getText());
+       //Need to parse this string we're recieving into a double.
+       messageDialogAnswer.setPrice(Value_Field.getText());
+       
+       
+       
+       
+    }//GEN-LAST:event_FinishMouseClicked
 
     /**
      * @param args the command line arguments
@@ -108,14 +129,38 @@ public class Customize_Dialogue extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Customize_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Edit_Button_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Customize_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Edit_Button_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Customize_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Edit_Button_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Customize_Dialogue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Edit_Button_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -128,7 +173,7 @@ public class Customize_Dialogue extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Customize_Dialogue().setVisible(true);
+                new Edit_Button_Dialog().setVisible(true);
             }
         });
     }
@@ -141,4 +186,5 @@ public class Customize_Dialogue extends javax.swing.JFrame {
     private javax.swing.JTextField Value_Field;
     private javax.swing.JLabel Value_Label;
     // End of variables declaration//GEN-END:variables
+
 }

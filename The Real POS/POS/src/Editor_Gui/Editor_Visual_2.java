@@ -78,6 +78,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Load.setText("Load");
+        Load.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoadMouseClicked(evt);
+            }
+        });
 
         Menu_Title.setText("Template Editor");
 
@@ -86,6 +91,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Scroll_Pane.add(Load_List);
 
         New_Template.setText("Create New Template");
+        New_Template.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                New_TemplateMouseClicked(evt);
+            }
+        });
         New_Template.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 New_TemplateActionPerformed(evt);
@@ -108,7 +118,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(Scroll_Pane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Load_Instructions, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                    .addComponent(Load_Instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(New_Template, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
@@ -132,11 +142,80 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
 
         Button_1.setBackground(new java.awt.Color(204, 204, 204));
         Button_1.setForeground(new java.awt.Color(204, 204, 204));
+        Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_1MouseClicked(evt);
+            }
+        });
+
+        Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_2MouseClicked(evt);
+            }
+        });
+
+        Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_3MouseClicked(evt);
+            }
+        });
+
+        Button_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_4MouseClicked(evt);
+            }
+        });
+
+        Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_5MouseClicked(evt);
+            }
+        });
+
+        Button_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_6MouseClicked(evt);
+            }
+        });
+
+        Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_7MouseClicked(evt);
+            }
+        });
+
+        Button_8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_8MouseClicked(evt);
+            }
+        });
+
+        Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_9MouseClicked(evt);
+            }
+        });
+
+        Button_10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_10MouseClicked(evt);
+            }
+        });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
+        Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_11MouseClicked(evt);
+            }
+        });
 
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_12MouseClicked(evt);
+            }
+        });
 
         Tax_Label.setText("Template Tax Rate:");
 
@@ -145,8 +224,18 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Taxrate_Textfield.setText("Enter Tax Rate");
 
         Save.setText("Save Current Template");
+        Save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveMouseClicked(evt);
+            }
+        });
 
         Button_Settings_Button.setText("More Button Settings");
+        Button_Settings_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_Settings_ButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -260,8 +349,72 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void New_TemplateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_TemplateActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_New_TemplateActionPerformed
+
+    private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_1MouseClicked
+
+    private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_2MouseClicked
+
+    private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_3MouseClicked
+
+    private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_4MouseClicked
+
+    private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_5MouseClicked
+
+    private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
+       Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_6MouseClicked
+
+    private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
+       Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_7MouseClicked
+
+    private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_8MouseClicked
+
+    private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_9MouseClicked
+
+    private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_10MouseClicked
+
+    private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_11MouseClicked
+
+    private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog();
+    }//GEN-LAST:event_Button_12MouseClicked
+
+    private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
+       Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true);
+    }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
+
+    private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
+        
+    }//GEN-LAST:event_SaveMouseClicked
+
+    private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
+        
+    }//GEN-LAST:event_New_TemplateMouseClicked
+
+    private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
+        
+    }//GEN-LAST:event_LoadMouseClicked
 
     /**
      * @param args the command line arguments
