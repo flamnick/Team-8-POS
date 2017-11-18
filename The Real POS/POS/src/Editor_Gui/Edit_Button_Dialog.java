@@ -18,6 +18,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     public Edit_Button_Dialog() {
         initComponents();
+        No_Image_Button.setSelected(true);
         setVisible(true);
     }
 
@@ -30,12 +31,21 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Title = new javax.swing.JLabel();
         Name_Field = new javax.swing.JTextField();
         Value_Field = new javax.swing.JTextField();
         Name_Label = new javax.swing.JLabel();
         Value_Label = new javax.swing.JLabel();
         Finish = new javax.swing.JButton();
+        Image_Label = new javax.swing.JLabel();
+        No_Image_Button = new javax.swing.JRadioButton();
+        Image_1_Button = new javax.swing.JRadioButton();
+        Image_2_Button = new javax.swing.JRadioButton();
+        Image_3_Button = new javax.swing.JRadioButton();
+        Image_4_Button = new javax.swing.JRadioButton();
+        Image_5_Button = new javax.swing.JRadioButton();
+        Image_Display = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +61,38 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
                 FinishMouseClicked(evt);
             }
         });
+
+        Image_Label.setText("~Set Button  Image~");
+
+        buttonGroup1.add(No_Image_Button);
+        No_Image_Button.setText("No Image");
+
+        buttonGroup1.add(Image_1_Button);
+        Image_1_Button.setText("Image 1");
+        Image_1_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Image_1_ButtonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(Image_2_Button);
+        Image_2_Button.setText("Image 2");
+        Image_2_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Image_2_ButtonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(Image_3_Button);
+        Image_3_Button.setText("Image 3");
+
+        buttonGroup1.add(Image_4_Button);
+        Image_4_Button.setText("Image 4");
+
+        Image_5_Button.setText("Image 5");
+
+        Image_Display.setBackground(new java.awt.Color(255, 255, 255));
+        Image_Display.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,7 +117,29 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
                 .addComponent(Title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addGap(131, 131, 131)
+                .addComponent(Image_Label)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Image_2_Button)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Image_5_Button))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Image_1_Button)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Image_4_Button))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(No_Image_Button)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Image_3_Button)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(157, 157, 157)
                 .addComponent(Finish)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -91,6 +155,23 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
                 .addComponent(Value_Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Value_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Image_Label)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(No_Image_Button)
+                            .addComponent(Image_3_Button))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Image_1_Button)
+                            .addComponent(Image_4_Button))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Image_2_Button)
+                            .addComponent(Image_5_Button)))
+                    .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Finish)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -115,6 +196,14 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_FinishMouseClicked
+
+    private void Image_1_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_1_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Image_1_ButtonActionPerformed
+
+    private void Image_2_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_2_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Image_2_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,11 +273,20 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Finish;
+    private javax.swing.JRadioButton Image_1_Button;
+    private javax.swing.JRadioButton Image_2_Button;
+    private javax.swing.JRadioButton Image_3_Button;
+    private javax.swing.JRadioButton Image_4_Button;
+    private javax.swing.JRadioButton Image_5_Button;
+    private javax.swing.JLabel Image_Display;
+    private javax.swing.JLabel Image_Label;
     private javax.swing.JTextField Name_Field;
     private javax.swing.JLabel Name_Label;
+    private javax.swing.JRadioButton No_Image_Button;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField Value_Field;
     private javax.swing.JLabel Value_Label;
+    private javax.swing.ButtonGroup buttonGroup1;
     // End of variables declaration//GEN-END:variables
 
 }
