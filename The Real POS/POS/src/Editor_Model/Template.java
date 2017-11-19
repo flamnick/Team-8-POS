@@ -38,8 +38,13 @@ public class Template extends AbstractModel
      * @param inputName
      * @param inputPrince
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrince) {
+    public void editButton(int buttonNumber, String inputName, double inputPrince) 
+    {
+        String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
+        firePropertyChange(DefaultController.ELEMENT_TEXT_PROPERTY)
+        
+        double oldPrice = buttonArray[buttonNumber].getPrice();
         buttonArray[buttonNumber].setPrice(inputPrince);
     }
 

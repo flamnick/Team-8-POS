@@ -12,7 +12,7 @@ import Emulator_Model.Template;
  *
  * @author Ian Prince
  */
-public class Controller extends AbstractController
+public class DefaultController extends AbstractController
 {
 public static final String BUTTON_NAME_PROPERTY = "Name";
 public static final String BUTTON_PRICE_PROPERTY = "Price";
