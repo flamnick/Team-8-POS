@@ -139,6 +139,7 @@
         <Property name="text" type="java.lang.String" value="Finish"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Finish_Dialogue_ButtonMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Finish_Dialogue_ButtonActionPerformed"/>
       </Events>
     </Component>
