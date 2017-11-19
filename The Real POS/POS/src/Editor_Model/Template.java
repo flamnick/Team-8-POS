@@ -5,6 +5,9 @@
  */
 package Editor_Model;
 
+
+
+
 /**
  * Holds our data model at the higher level. The buttons are stored as an array.
  *
@@ -17,6 +20,8 @@ public class Template {
      */
     private Button[] buttonArray;
     private double taxRate;
+    private int colorChoice;
+    private int fontChoice;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those

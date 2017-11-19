@@ -20,10 +20,16 @@ public class Button {
      * This variable holds the title for the given button.
      */
     private String name;
-
+    /**
+     * This variable holds the int for selecting the button's picture
+     */
+    private int picture_select;
+    
     /**
      * Standard Constructor
      */
+    
+            
     public Button() {
         this.setName("placeHolder");
         this.setPrice(0);

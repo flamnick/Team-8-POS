@@ -123,6 +123,7 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     }//GEN-LAST:event_Finish_Dialogue_ButtonActionPerformed
 
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
+        
         setVisible(false);
         dispose();
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
