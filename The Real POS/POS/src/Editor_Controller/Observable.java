@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Editor_Controller;
+import java.util.Observer;
 
 /**
  *
@@ -11,6 +12,8 @@ package Editor_Controller;
  */
 public interface Observable 
 {
-    public void register(Observer o);
-    public void 
+
+    public void addObserver(Observer o);
+    public void deleteObserver(Observer o);
+    public void notifyObservers();
 }

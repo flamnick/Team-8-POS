@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Editor_Model;
+import Editor_Gui.*;
+import Editor_Controller.*;
 
 
 
@@ -13,7 +15,8 @@ package Editor_Model;
  *
  * @author Team 8
  */
-public class Template {
+public class Template extends AbstractModel 
+{
 
     /**
      * This is simply an array which holds our button data.
@@ -40,11 +43,42 @@ public class Template {
      *
      * @param buttonNumber The button it's working on
      * @param inputName
-     * @param inputPrince
+     * @param inputPrice
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrince) {
+    public void editButton(int buttonNumber, String inputName, double inputPrice) 
+    {
+        String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
-        buttonArray[buttonNumber].setPrice(inputPrince);
+        firePropertyChange(DefaultController.BUTTON_NAME_PROPERTY, oldName, inputName);
+        
+        
+        double oldPrice = buttonArray[buttonNumber].getPrice();
+        buttonArray[buttonNumber].setPrice(inputPrice);
+        firePropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, oldPrice, inputPrice);
+    }
+    
+    public void setName(int buttonNumber, String inputName)
+    {
+        String oldName = buttonArray[buttonNumber].getName();
+        buttonArray[buttonNumber].setName(inputName);
+        firePropertyChange(DefaultController.BUTTON_NAME_PROPERTY, oldName, inputName);
+    }
+    
+    public String getName(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getName();
+    }
+    
+    public void setPrice(int buttonNumber, double inputPrice)
+    {
+        double oldPrice = buttonArray[buttonNumber].getPrice();
+        buttonArray[buttonNumber].setPrice(inputPrice);
+        firePropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, oldPrice, inputPrice);
+    }
+    
+    public double getPrice(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getPrice();
     }
 
     /**
