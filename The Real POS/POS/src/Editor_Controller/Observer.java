@@ -7,7 +7,7 @@ package Editor_Controller;
 
 /**
  *
- * @author Computer
+ * @author Team 8
  */
 public interface Observer 
 {

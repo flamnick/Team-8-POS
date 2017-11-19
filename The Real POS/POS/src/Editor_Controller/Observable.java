@@ -12,5 +12,6 @@ package Editor_Controller;
 public interface Observable 
 {
     public void register(Observer o);
-    public void 
+    public void unregister(Observer o);
+    public void notifyOberver();
 }
