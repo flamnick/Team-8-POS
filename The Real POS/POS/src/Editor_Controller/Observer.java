@@ -8,7 +8,7 @@ import java.util.Observable;
 
 /**
  *
- * @author Computer
+ * @author Team 8
  */
 public interface Observer 
 {

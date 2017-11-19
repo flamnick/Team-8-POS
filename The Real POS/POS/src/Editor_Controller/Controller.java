@@ -10,18 +10,21 @@ import Emulator_Model.Template;
 
 /**
  *
- * @author j_haw
+ * @author Ian Prince
  */
-public class Controller implements Observer
+public class Controller extends AbstractController
 {
-    
-public Controller()
-{
-Template userModel = new Template();
-Editor_Visual_2 userView = new Editor_Visual_2();
+public static final String BUTTON_NAME_PROPERTY = "Name";
+public static final String BUTTON_PRICE_PROPERTY = "Price";
 
-userView.setVisible(true);
+public void changeElementName(String newText)
+{
+    setModelProperty(BUTTON_NAME_PROPERTY, newText);
 }
 
+public void changeElementPrice(double newPrice)
+{
+    setModelProperty(BUTTON_PRICE_PROPERTY, newPrice);
+}
 
 }

@@ -10,7 +10,8 @@ package Editor_Model;
  *
  * @author Team 8
  */
-public class Template {
+public class Template extends AbstractModel 
+{
 
     /**
      * This is simply an array which holds our button data.
