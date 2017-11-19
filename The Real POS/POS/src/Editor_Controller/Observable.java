@@ -12,13 +12,8 @@ import java.util.Observer;
  */
 public interface Observable 
 {
-<<<<<<< HEAD
+
     public void addObserver(Observer o);
     public void deleteObserver(Observer o);
     public void notifyObservers();
-=======
-    public void register(Observer o);
-    public void unregister(Observer o);
-    public void notifyOberver();
->>>>>>> 8eb3b312f8f73de8918683deeb4b0392fbf700ca
 }
