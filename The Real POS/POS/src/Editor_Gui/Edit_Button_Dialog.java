@@ -226,7 +226,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     }//GEN-LAST:event_No_Image_ButtonMouseClicked
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
-       Image_Display.setIcon(new ImageIcon(F));
+       Image_Display.setIcon(new ImageIcon());
        this.repaint();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
