@@ -12,17 +12,16 @@ import javax.swing.ImageIcon;
  */
 
 
-public class Edit_Button_Dialog extends javax.swing.JFrame {
-
-    private UserInfoBus[] viewTemplate;
-    viewTemplate = new userInfoBus[21];
+public class Edit_Button_Dialog extends javax.swing.JFrame
+{
+    private UserInfoBus viewTemplate;
 
     
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form NewJFrame, takes number of button being edited.
      */
-    public Edit_Button_Dialog() {
+    public Edit_Button_Dialog(int buttonNumber) {
         initComponents();
         No_Image_Button.setSelected(true);
         setVisible(true);
@@ -204,8 +203,9 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-            messageDialogAnswer.setName(Name_Field.getText());
-            messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
+            viewTemplate.setName(Name_Field.getText());
+            viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
+            
             setVisible(false);
             dispose();
             
