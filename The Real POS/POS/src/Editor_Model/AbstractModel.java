@@ -28,8 +28,8 @@ public abstract class AbstractModel
     {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
-    public void fireIndexedPropertyChange(String propertyName, int buttonNumber, Object oldValue, Object newValue)
+    public void firePropertyChange(String propertyName, Object oldValue, Object newValue)
     {
-        propertyChangeSupport.fireIndexedPropertyChange(propertyName, buttonNumber, oldValue, newValue);
+        propertyChangeSupport.firePropertyChange(propertyName, oldValue, newValue);
     }
 }
