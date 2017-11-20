@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Editor_Model;
+import Editor_Gui.*;
+import Editor_Controller.*;
 
 /**
  * Holds our data model at the higher level. The buttons are stored as an array.
@@ -36,16 +38,18 @@ public class Template extends AbstractModel
      *
      * @param buttonNumber The button it's working on
      * @param inputName
-     * @param inputPrince
+     * @param inputPrice
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrince) 
+    public void editButton(int buttonNumber, String inputName, double inputPrice) 
     {
         String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
-        firePropertyChange(DefaultController.ELEMENT_TEXT_PROPERTY)
+        firePropertyChange(DefaultController.BUTTON_NAME_PROPERTY, oldName, inputName);
+        
         
         double oldPrice = buttonArray[buttonNumber].getPrice();
-        buttonArray[buttonNumber].setPrice(inputPrince);
+        buttonArray[buttonNumber].setPrice(inputPrice);
+        firePropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, oldPrice, inputPrice);
     }
 
     /**
