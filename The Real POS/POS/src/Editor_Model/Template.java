@@ -51,6 +51,30 @@ public class Template extends AbstractModel
         buttonArray[buttonNumber].setPrice(inputPrice);
         firePropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, oldPrice, inputPrice);
     }
+    
+    public void setName(int buttonNumber, String inputName)
+    {
+        String oldName = buttonArray[buttonNumber].getName();
+        buttonArray[buttonNumber].setName(inputName);
+        firePropertyChange(DefaultController.BUTTON_NAME_PROPERTY, oldName, inputName);
+    }
+    
+    public String getName(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getName();
+    }
+    
+    public void setPrice(int buttonNumber, double inputPrice)
+    {
+        double oldPrice = buttonArray[buttonNumber].getPrice();
+        buttonArray[buttonNumber].setPrice(inputPrice);
+        firePropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, oldPrice, inputPrice);
+    }
+    
+    public double getPrice(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getPrice();
+    }
 
     /**
      * Method for setting tax rate.
