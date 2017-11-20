@@ -5,7 +5,10 @@
  */
 package Editor_Gui;
 
+import java.io.File;
 import javax.swing.ImageIcon;
+
+
 /**
  *
  * @author Flamnick
@@ -13,9 +16,15 @@ import javax.swing.ImageIcon;
 
 
 public class Edit_Button_Dialog extends javax.swing.JFrame {
-
-    private UserInfoBus[] viewTemplate;
-    viewTemplate = new userInfoBus[21];
+    
+   
+    private ImageIcon coffee_icon = new ImageIcon(getClass().getResource("src/Food_Sprites/Coffee.png"));
+    //private ImageIcon beer_icon = new ImageIcon(beer);
+    //private ImageIcon bread_icon = new ImageIcon(bread);
+    //private ImageIcon cookie_icon = new ImageIcon(cookie);
+    //private ImageIcon strawberry_icon = new ImageIcon(strawberry);
+    //private UserInfoBus[] viewTemplate;
+    //viewTemplate = new userInfoBus[21];
 
     
 
@@ -27,7 +36,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         No_Image_Button.setSelected(true);
         setVisible(true);
     }
-
+    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,6 +115,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         buttonGroup1.add(Image_4_Button);
         Image_4_Button.setText("Fruit");
 
+        buttonGroup1.add(Image_5_Button);
         Image_5_Button.setText("Cookie");
 
         Image_Display.setBackground(new java.awt.Color(255, 255, 255));
@@ -204,7 +215,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-            messageDialogAnswer.setName(Name_Field.getText());
+            .setName(Name_Field.getText());
             messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
             setVisible(false);
             dispose();
@@ -220,13 +231,15 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     }//GEN-LAST:event_Image_2_ButtonActionPerformed
 
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
-        Image_Display.setIcon(null);
-        this.repaint();
+        
+            Image_Display.setIcon(null);
+            Image_Display.revalidate();
+        
     }//GEN-LAST:event_No_Image_ButtonMouseClicked
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
-       Image_Display.setIcon(new ImageIcon());
-       this.repaint();
+       Image_Display.setIcon(coffee_icon);
+       Image_Display.revalidate();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
     /**
@@ -289,6 +302,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Edit_Button_Dialog().setVisible(true);
             }
