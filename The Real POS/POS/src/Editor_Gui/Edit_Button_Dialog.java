@@ -18,7 +18,7 @@ import javax.swing.ImageIcon;
 public class Edit_Button_Dialog extends javax.swing.JFrame {
     
    
-    private ImageIcon coffee_icon = new ImageIcon(getClass().getResource("src/Food_Sprites/Coffee.png"));
+    private ImageIcon coffee_icon = new ImageIcon();
     //private ImageIcon beer_icon = new ImageIcon(beer);
     //private ImageIcon bread_icon = new ImageIcon(bread);
     //private ImageIcon cookie_icon = new ImageIcon(cookie);
@@ -215,19 +215,22 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-            .setName(Name_Field.getText());
-            messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
+            //messageDialogAnswer.setName(Name_Field.getText());
+            //messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
             setVisible(false);
             dispose();
             
     }//GEN-LAST:event_FinishMouseClicked
 
     private void Image_1_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_1_ButtonActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+         Image_Display.setIcon(coffee_icon);
+         Image_Display.revalidate();
     }//GEN-LAST:event_Image_1_ButtonActionPerformed
 
     private void Image_2_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_2_ButtonActionPerformed
         // TODO add your handling code here:
+         
     }//GEN-LAST:event_Image_2_ButtonActionPerformed
 
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
