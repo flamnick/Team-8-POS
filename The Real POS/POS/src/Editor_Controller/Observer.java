@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Editor_Controller;
+import java.util.Observable;
 
 /**
  *
@@ -12,5 +13,5 @@ package Editor_Controller;
 public interface Observer 
 {
     //I need to figure out what to put in here for a parameter.
-    public void update();
+    public void update(Observable o, Object arg);
 }
