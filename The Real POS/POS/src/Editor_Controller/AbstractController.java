@@ -8,6 +8,8 @@ import Editor_Model.AbstractModel;
 import java.beans.*;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import Editor_Gui.*;
+import Editor_Model.*;
 
 /**
  *
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 public abstract class AbstractController implements PropertyChangeListener
 {
     private ArrayList<abstractviewpanel> registeredViews;
-    private ArrayList<abstractmodel> registeredModels;
+    private ArrayList<AbstractModel> registeredModels;
     
     public AbstractController()
     {
@@ -46,7 +48,7 @@ public abstract class AbstractController implements PropertyChangeListener
         }
     }
     
-    protected void setModelProperty(String propertyName, Object newValue)
+    protected void setModelProperty(String propertyName, int buttonName, Object newValue)
     {
         for (AbstractModel model: registeredModels)
         {

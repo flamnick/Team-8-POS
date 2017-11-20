@@ -15,7 +15,7 @@ import Editor_Controller.*;
  *
  * @author Team 8
  */
-public class Template extends AbstractModel 
+public class Template extends java.util.Observable
 {
 
     /**
@@ -48,14 +48,14 @@ public class Template extends AbstractModel
      */
     public void editButton(int buttonNumber, String inputName, double inputPrice) 
     {
-        String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
-        fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
+        setChanged();
+        notifyObservers();
         
         
-        double oldPrice = buttonArray[buttonNumber].getPrice();
         buttonArray[buttonNumber].setPrice(inputPrice);
-        fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
+        setChanged();
+        notifyObservers();
     }
     
     /**
@@ -66,9 +66,10 @@ public class Template extends AbstractModel
      */
     public void setName(int buttonNumber, String inputName)
     {
-        String oldName = buttonArray[buttonNumber].getName();
+        
         buttonArray[buttonNumber].setName(inputName);
-        fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
+        setChanged();
+        notifyObservers();
     }
     
     /**
@@ -89,9 +90,9 @@ public class Template extends AbstractModel
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
-        double oldPrice = buttonArray[buttonNumber].getPrice();
         buttonArray[buttonNumber].setPrice(inputPrice);
-        fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
+        setChanged();
+        notifyObservers();
     }
     
     /**
@@ -109,8 +110,11 @@ public class Template extends AbstractModel
      *
      * @param taxRateInput
      */
-    public void setTaxRate(double taxRateInput) {
+    public void setTaxRate(double taxRateInput) 
+    {
         taxRate = taxRateInput;
+        setChanged();
+        notifyObservers();
     }
 
     /**
@@ -118,7 +122,8 @@ public class Template extends AbstractModel
      *
      * @return
      */
-    public double getTaxRate() {
+    public double getTaxRate() 
+    {
         return taxRate;
     }
 
