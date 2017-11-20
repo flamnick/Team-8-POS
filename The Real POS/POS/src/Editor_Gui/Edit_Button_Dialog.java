@@ -5,10 +5,13 @@
  */
 package Editor_Gui;
 
+import javax.swing.ImageIcon;
 /**
  *
  * @author Flamnick
  */
+
+
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     private UserInfoBus[] viewTemplate;
@@ -69,9 +72,19 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         buttonGroup1.add(No_Image_Button);
         No_Image_Button.setText("No Image");
+        No_Image_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                No_Image_ButtonMouseClicked(evt);
+            }
+        });
 
         buttonGroup1.add(Image_1_Button);
-        Image_1_Button.setText("Image 1");
+        Image_1_Button.setText("Coffee");
+        Image_1_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Image_1_ButtonMouseClicked(evt);
+            }
+        });
         Image_1_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Image_1_ButtonActionPerformed(evt);
@@ -79,7 +92,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(Image_2_Button);
-        Image_2_Button.setText("Image 2");
+        Image_2_Button.setText("Beer");
         Image_2_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Image_2_ButtonActionPerformed(evt);
@@ -87,12 +100,12 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(Image_3_Button);
-        Image_3_Button.setText("Image 3");
+        Image_3_Button.setText("Bread");
 
         buttonGroup1.add(Image_4_Button);
-        Image_4_Button.setText("Image 4");
+        Image_4_Button.setText("Fruit");
 
-        Image_5_Button.setText("Image 5");
+        Image_5_Button.setText("Cookie");
 
         Image_Display.setBackground(new java.awt.Color(255, 255, 255));
         Image_Display.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -126,21 +139,21 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(No_Image_Button)
+                    .addComponent(Image_1_Button)
+                    .addComponent(Image_2_Button))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Image_2_Button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Image_5_Button))
+                        .addComponent(Image_5_Button)
+                        .addGap(54, 205, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Image_1_Button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Image_4_Button))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(No_Image_Button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Image_3_Button)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Image_4_Button)
+                            .addComponent(Image_3_Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(157, 157, 157)
                 .addComponent(Finish)
@@ -151,18 +164,18 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Name_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Name_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Value_Label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Value_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Image_Label)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(Name_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Name_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Value_Label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Value_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Image_Label)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(No_Image_Button)
                             .addComponent(Image_3_Button))
@@ -170,14 +183,16 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Image_1_Button)
                             .addComponent(Image_4_Button))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Image_2_Button)
-                            .addComponent(Image_5_Button)))
-                    .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Image_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Image_2_Button)
+                    .addComponent(Image_5_Button))
                 .addGap(18, 18, 18)
                 .addComponent(Finish)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -203,6 +218,16 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private void Image_2_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_2_ButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Image_2_ButtonActionPerformed
+
+    private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
+        Image_Display.setIcon(null);
+        this.repaint();
+    }//GEN-LAST:event_No_Image_ButtonMouseClicked
+
+    private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
+       Image_Display.setIcon(new ImageIcon(F));
+       this.repaint();
+    }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
     /**
      * @param args the command line arguments
