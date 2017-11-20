@@ -11,7 +11,10 @@ package Editor_Gui;
  */
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
-    UserInfoBus messageDialogAnswer = new UserInfoBus();
+    private UserInfoBus[] viewTemplate;
+    viewTemplate = new userInfoBus[21];
+
+    
 
     /**
      * Creates new form NewJFrame
@@ -186,15 +189,11 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-
             messageDialogAnswer.setName(Name_Field.getText());
             messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
             setVisible(false);
             dispose();
-
-        
-
-
+            
     }//GEN-LAST:event_FinishMouseClicked
 
     private void Image_1_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_1_ButtonActionPerformed
