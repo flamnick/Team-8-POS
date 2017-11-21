@@ -61,7 +61,9 @@ public class Template extends AbstractModel
 
         buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
         
-        buttonArray[buttonNumber].setPicture(dataHolder.);
+        buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        
+        buttonArray[buttonNumber].set
     }
     /**
      * This changes the name field of a particular button and fires a
@@ -113,7 +115,6 @@ public class Template extends AbstractModel
     {
         return buttonArray[buttonNumber].getPicture();
     }
-
     /**
      * Method for setting tax rate.
      *

@@ -15,6 +15,7 @@ public class UserInfoBus
    private String name;
    private Double price;
    private int picture;
+   private int font;
    private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
     
    /**
@@ -60,7 +61,7 @@ public class UserInfoBus
     * Sets name in object
     * @param userString takes user string 
     */
-   void setPicture(int inputPicture)
+   public void setPicture(int inputPicture)
    {
        int oldPicture = picture;
        picture=inputPicture;
@@ -71,9 +72,23 @@ public class UserInfoBus
     * Gets name field in object.
     * @return name
     */
-   int getPicture ()
+   public int getPicture ()
    {
        return picture;
+   }
+   
+      public void setFont(int inputFont)
+   {
+       font=inputFont;
+   }
+   
+   /**
+    * Gets name field in object.
+    * @return name
+    */
+   public int getFont ()
+   {
+       return font;
    }
    
    public void addPropertyChangeListener(PropertyChangeListener listener)
