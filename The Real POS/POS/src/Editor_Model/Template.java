@@ -55,6 +55,11 @@ public class Template extends AbstractModel
         buttonArray[buttonNumber].setPicture(inputPicture);
     }
     
+    /**
+     * This updates our button with the contents of our data holder.
+     * @param buttonNumber
+     * @param dataHolder 
+     */
     public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
     {
         buttonArray[buttonNumber].setName(dataHolder.getName());
@@ -62,9 +67,8 @@ public class Template extends AbstractModel
         buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
         
         buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
-        
-        buttonArray[buttonNumber].set
     }
+    
     /**
      * This changes the name field of a particular button and fires a
      * property change informing the controller.

@@ -26,7 +26,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private ImageIcon strawberry_icon;
     private UserInfoBus viewTemplate;
     //viewTemplate = new userInfoBus[21];
-    Editor_Model.Template modelReference;
+    private Editor_Model.Template modelReference;
+    private int buttonUnderEdit;
     
 
     
@@ -39,6 +40,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     public Edit_Button_Dialog(Editor_Model.Template model, int buttonNumber) {
         initComponents();
         modelReference = model;
+        buttonUnderEdit = buttonNumber;
+        
         
         No_Image_Button.setSelected(true);
         setVisible(true);
@@ -282,7 +285,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         viewTemplate.setName(Name_Field.getText());
         viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
         viewTemplate.setPicture(pictureChoice);
-        modelReference.editButton(TEXT_CURSOR, inputName, PROPERTIES, PROPERTIES);
+        modelReference.updateButton(buttonUnderEdit, viewTemplate);
+        
         setVisible(false);
         dispose();
 
