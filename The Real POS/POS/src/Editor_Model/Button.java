@@ -84,10 +84,12 @@ public class Button {
         return name;
     }
 
-    public void setPicture(int picture_input) {
+    public void setPicture(int picture_input) 
+    {
       picture_select = picture_input;
     }
-    public int getPicture() {
+    public int getPicture() 
+    {
         return picture_select;
     }
     
