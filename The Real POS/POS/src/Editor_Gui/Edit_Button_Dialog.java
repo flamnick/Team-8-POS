@@ -18,6 +18,7 @@ import Editor_Model.Template;
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     
+    
     private ImageIcon coffee_icon;
     private ImageIcon beer_icon;
     private ImageIcon bread_icon;
