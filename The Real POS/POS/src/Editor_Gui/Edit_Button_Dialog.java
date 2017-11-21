@@ -17,6 +17,7 @@ import Editor_Model.Template;
  */
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
+    private int pictureChoice;
     
     private ImageIcon coffee_icon;
     private ImageIcon beer_icon;
@@ -280,7 +281,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         viewTemplate.setName(Name_Field.getText());
         viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
-        
+        viewTemplate.setPicture(pictureChoice);
         modelReference.editButton(TEXT_CURSOR, inputName, PROPERTIES, PROPERTIES);
         setVisible(false);
         dispose();
@@ -290,6 +291,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
 
         Image_Display.setIcon(null);
+        pictureChoice =0;
         update();
         revalidate();
 
@@ -297,32 +299,37 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
         Image_Display.setIcon(coffee_icon);
+        pictureChoice =1;
         update();
         revalidate();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
     private void Image_2_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_2_ButtonMouseClicked
         Image_Display.setIcon(beer_icon);
+        pictureChoice =2;
         update();
         revalidate();
     }//GEN-LAST:event_Image_2_ButtonMouseClicked
 
     private void Image_3_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_3_ButtonMouseClicked
         Image_Display.setIcon(bread_icon);
+        pictureChoice =3;
         update();
         revalidate();
     }//GEN-LAST:event_Image_3_ButtonMouseClicked
 
     private void Image_4_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_4_ButtonMouseClicked
         Image_Display.setIcon(strawberry_icon);
+        pictureChoice =4;
         update();
         revalidate();
     }//GEN-LAST:event_Image_4_ButtonMouseClicked
 
     private void Image_5_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_5_ButtonMouseClicked
         Image_Display.setIcon(cookie_icon);
+        pictureChoice =5;
         update();
-        //revalidate();
+        revalidate();
     }//GEN-LAST:event_Image_5_ButtonMouseClicked
 
     private void Name_FieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Name_FieldKeyReleased
