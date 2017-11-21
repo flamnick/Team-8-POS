@@ -61,5 +61,17 @@ public class Template {
     public double getTaxRate() {
         return taxRate;
     }
+    public void setColorChoice(int color_input) {
+      colorChoice = color_input;
+    }
+    public int getColorChoice() {
+        return colorChoice;
+    }
+    public void setFontChoice(int font_input) {
+       fontChoice = font_input;
+    }
+    public int getFontChoice() {
+        return fontChoice;
+    }
 
 }

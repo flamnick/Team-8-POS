@@ -45,7 +45,7 @@ public class Template extends AbstractModel
      * @param inputName
      * @param inputPrice
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrice) 
+    public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
     {
         String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
@@ -55,6 +55,9 @@ public class Template extends AbstractModel
         double oldPrice = buttonArray[buttonNumber].getPrice();
         buttonArray[buttonNumber].setPrice(inputPrice);
         //fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
+        
+        int oldPicture = buttonArray[buttonNumber].getPictureChoice();
+        buttonArray[buttonNumber].setPictureChoice(inputPicture);
     }
     
     /**
@@ -120,5 +123,22 @@ public class Template extends AbstractModel
     public double getTaxRate() {
         return taxRate;
     }
+    public void setColorChoice(int color_input) {
+      colorChoice = color_input;
+    }
+    public int getColorChoice() {
+        return colorChoice;
+    }
+    public void setFontChoice(int font_input) {
+       fontChoice = font_input;
+    }
+    public int getFontChoice() {
+        return fontChoice;
+    }
+    public void setPictureChoice(int inputPicture)
+    {
+        
+    }
+
 
 }
