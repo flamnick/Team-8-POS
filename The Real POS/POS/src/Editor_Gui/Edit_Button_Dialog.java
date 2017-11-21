@@ -68,6 +68,11 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         }
     }
 
+    
+    public void update()
+    {
+        Finish.setEnabled(Name_Field.getText().length()>0 && Value_Field.getText().length()>0);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,11 +102,24 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         Title.setText("Edit Button");
 
+        Name_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Name_FieldKeyReleased(evt);
+            }
+        });
+
+        Value_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Value_FieldKeyReleased(evt);
+            }
+        });
+
         Name_Label.setText("~Set Button Name~");
 
         Value_Label.setText("~Set Button Price~");
 
         Finish.setText("Finish");
+        Finish.setEnabled(false);
         Finish.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FinishMouseClicked(evt);
@@ -125,22 +143,12 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
                 Image_1_ButtonMouseClicked(evt);
             }
         });
-        Image_1_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Image_1_ButtonActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(Image_2_Button);
         Image_2_Button.setText("Beer");
         Image_2_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Image_2_ButtonMouseClicked(evt);
-            }
-        });
-        Image_2_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Image_2_ButtonActionPerformed(evt);
             }
         });
 
@@ -272,48 +280,52 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FinishMouseClicked
 
-    private void Image_1_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_1_ButtonActionPerformed
-        // TODO add your handling code here
-        Image_Display.setIcon(coffee_icon);
-        Image_Display.revalidate();
-    }//GEN-LAST:event_Image_1_ButtonActionPerformed
-
-    private void Image_2_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_2_ButtonActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_Image_2_ButtonActionPerformed
-
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
 
         Image_Display.setIcon(null);
-        Image_Display.revalidate();
+        update();
+        revalidate();
 
     }//GEN-LAST:event_No_Image_ButtonMouseClicked
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
         Image_Display.setIcon(coffee_icon);
-        Image_Display.revalidate();
+        update();
+        revalidate();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
     private void Image_2_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_2_ButtonMouseClicked
         Image_Display.setIcon(beer_icon);
-        Image_Display.revalidate();
+        update();
+        revalidate();
     }//GEN-LAST:event_Image_2_ButtonMouseClicked
 
     private void Image_3_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_3_ButtonMouseClicked
         Image_Display.setIcon(bread_icon);
-        Image_Display.revalidate();
+        update();
+        revalidate();
     }//GEN-LAST:event_Image_3_ButtonMouseClicked
 
     private void Image_4_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_4_ButtonMouseClicked
         Image_Display.setIcon(strawberry_icon);
-        Image_Display.revalidate();
+        update();
+        revalidate();
     }//GEN-LAST:event_Image_4_ButtonMouseClicked
 
     private void Image_5_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_5_ButtonMouseClicked
         Image_Display.setIcon(cookie_icon);
-        Image_Display.revalidate();
+        update();
+        //revalidate();
     }//GEN-LAST:event_Image_5_ButtonMouseClicked
+
+    private void Name_FieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Name_FieldKeyReleased
+
+        update();
+    }//GEN-LAST:event_Name_FieldKeyReleased
+
+    private void Value_FieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Value_FieldKeyReleased
+        update();
+    }//GEN-LAST:event_Value_FieldKeyReleased
 
     /**
      * @param args the command line arguments

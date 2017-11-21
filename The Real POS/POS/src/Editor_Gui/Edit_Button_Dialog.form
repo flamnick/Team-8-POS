@@ -137,8 +137,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Name_Field">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Name_FieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Value_Field">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Value_FieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Name_Label">
       <Properties>
@@ -153,6 +159,7 @@
     <Component class="javax.swing.JButton" name="Finish">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finish"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FinishMouseClicked"/>
@@ -183,7 +190,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_1_ButtonMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Image_1_ButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="Image_2_Button">
@@ -195,7 +201,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_2_ButtonMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Image_2_ButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="Image_3_Button">
