@@ -39,9 +39,10 @@ public class Template {
      * @param inputName
      * @param inputPrince
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrince) {
+    public void editButton(int buttonNumber, String inputName, double inputPrince, int inputPicture) {
         buttonArray[buttonNumber].setName(inputName);
         buttonArray[buttonNumber].setPrice(inputPrince);
+        buttonArray[buttonNumber].setPicture(inputPicture);
     }
 
     /**

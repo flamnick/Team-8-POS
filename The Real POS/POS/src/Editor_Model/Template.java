@@ -56,8 +56,8 @@ public class Template extends AbstractModel
         buttonArray[buttonNumber].setPrice(inputPrice);
         //fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
         
-        int oldPicture = buttonArray[buttonNumber].getPictureChoice();
-        buttonArray[buttonNumber].setPictureChoice(inputPicture);
+        int oldPicture = buttonArray[buttonNumber].getPicture();
+        buttonArray[buttonNumber].setPicture(inputPicture);
     }
     
     /**
@@ -105,6 +105,17 @@ public class Template extends AbstractModel
     {
         return buttonArray[buttonNumber].getPrice();
     }
+    
+    public void setPictureChoice(int buttonNumber, int inputPicture)
+    {
+        int oldPicture = buttonArray[buttonNumber].getPicture();
+        buttonArray[buttonNumber].setPicture(inputPicture);
+        //fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
+    }
+    public int getPictureChoice(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getPicture();
+    }
 
     /**
      * Method for setting tax rate.
@@ -135,10 +146,6 @@ public class Template extends AbstractModel
     public int getFontChoice() {
         return fontChoice;
     }
-    public void setPictureChoice(int inputPicture)
-    {
-        
-    }
-
+    
 
 }
