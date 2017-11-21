@@ -44,6 +44,7 @@ public class Template extends AbstractModel
      * @param buttonNumber The button it's working on
      * @param inputName
      * @param inputPrice
+     * @param inputPicture
      */
     public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
     {
@@ -54,6 +55,14 @@ public class Template extends AbstractModel
         buttonArray[buttonNumber].setPicture(inputPicture);
     }
     
+    public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
+    {
+        buttonArray[buttonNumber].setName(dataHolder.getName());
+
+        buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
+        
+        buttonArray[buttonNumber].setPicture(dataHolder.);
+    }
     /**
      * This changes the name field of a particular button and fires a
      * property change informing the controller.
@@ -62,9 +71,7 @@ public class Template extends AbstractModel
      */
     public void setName(int buttonNumber, String inputName)
     {
-        String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
-        //fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
     }
     
     /**
@@ -85,9 +92,7 @@ public class Template extends AbstractModel
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
-        double oldPrice = buttonArray[buttonNumber].getPrice();
         buttonArray[buttonNumber].setPrice(inputPrice);
-        //fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
     }
     
     /**
@@ -102,9 +107,7 @@ public class Template extends AbstractModel
     
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
-        int oldPicture = buttonArray[buttonNumber].getPicture();
         buttonArray[buttonNumber].setPicture(inputPicture);
-        //fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
     }
     public int getPictureChoice(int buttonNumber)
     {

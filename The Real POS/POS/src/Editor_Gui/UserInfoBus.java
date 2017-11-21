@@ -20,7 +20,7 @@ public class UserInfoBus
     * Sets name in object
     * @param userString takes user string 
     */
-   void setName(String userString)
+   public void setName(String userString)
    {
        String oldName = name;
        name=userString;
@@ -31,7 +31,7 @@ public class UserInfoBus
     * Gets name field in object.
     * @return name
     */
-   String getName ()
+   public String getName ()
    {
        return name;
    }
@@ -40,7 +40,7 @@ public class UserInfoBus
     * sets price in object.
     * @param userDouble takes user price.
     */
-   void setPrice(double userDouble)
+   public void setPrice(double userDouble)
    {
        double oldPrice = price;
        price=userDouble;
@@ -50,7 +50,7 @@ public class UserInfoBus
     * Gets the double within the object.
     * @return userDouble
     */
-   double getPrice()
+   public double getPrice()
    {
        return price;
    }    
