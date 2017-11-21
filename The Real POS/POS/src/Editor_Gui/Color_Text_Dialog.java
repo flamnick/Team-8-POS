@@ -11,6 +11,10 @@ package Editor_Gui;
  */
 public class Color_Text_Dialog extends javax.swing.JDialog {
 
+    
+    
+    private int color_choice;
+    private int font_choice;
     /**
      * Creates new form Color_Text_Dialogue
      */
@@ -41,16 +45,26 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         Color_List.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Default", "Magenta", "Cyan", "Green" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        Color_List.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Color_ListValueChanged(evt);
+            }
         });
         jScrollPane1.setViewportView(Color_List);
 
         Font_List.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Default", "Arial", "Comic Sans", "Papyrus" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        Font_List.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                Font_ListValueChanged(evt);
+            }
         });
         jScrollPane2.setViewportView(Font_List);
 
@@ -127,6 +141,74 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         setVisible(false);
         dispose();
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
+
+    private void Color_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Color_ListValueChanged
+        switch(Color_List.getSelectedValue())
+        {
+            case "Default": 
+            {
+                color_choice = 0;
+                break;
+            }
+            case "Magenta": 
+            {
+                color_choice = 1;
+                break;
+            }
+            case "Cyan": 
+            {
+                color_choice = 2;
+                break;
+            }
+            case "Green": 
+            {
+                color_choice = 3;
+                break;
+            }
+            default:
+            {
+                color_choice = 0;
+                break;
+            }
+            
+        }
+        
+        System.out.println(color_choice);
+    }//GEN-LAST:event_Color_ListValueChanged
+
+    private void Font_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Font_ListValueChanged
+        switch(Font_List.getSelectedValue())
+        {
+            case "Default": 
+            {
+                font_choice = 0;
+                break;
+            }
+            case "Arial": 
+            {
+                font_choice = 1;
+                break;
+            }
+            case "Comic Sans": 
+            {
+                font_choice = 2;
+                break;
+            }
+            case "Papyrus": 
+            {
+                font_choice = 3;
+                break;
+            }
+            default:
+            {
+                font_choice = 0;
+                break;
+            }
+            
+        }
+        
+        System.out.println(font_choice);
+    }//GEN-LAST:event_Font_ListValueChanged
 
     /**
      * @param args the command line arguments

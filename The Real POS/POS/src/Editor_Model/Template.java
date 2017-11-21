@@ -17,7 +17,6 @@ import Editor_Controller.*;
  */
 public class Template extends AbstractModel 
 {
-
     /**
      * This is simply an array which holds our button data.
      */
