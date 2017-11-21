@@ -30,7 +30,7 @@ public class Button {
     public Button() {
         this.setName("placeHolder");
         this.setPrice(0);
-        this.setPictureChoice(0);
+        this.setPicture(0);
     }
 
     /**
@@ -42,7 +42,7 @@ public class Button {
     public Button(double priceInput, String nameInput, int pictureInput) {
         this.setName(nameInput);
         this.setPrice(priceInput);
-        this.setPictureChoice(pictureInput);
+        this.setPicture(pictureInput);
         
         
         
@@ -83,10 +83,10 @@ public class Button {
     public String getName() {
         return name;
     }
-    public void setPictureChoice(int picture_input) {
+    public void setPicture(int picture_input) {
       picture_select = picture_input;
     }
-    public int getColorChoice() {
+    public int getPicture() {
         return picture_select;
     }
 
