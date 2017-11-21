@@ -47,16 +47,10 @@ public class Template extends AbstractModel
      */
     public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
     {
-        String oldName = buttonArray[buttonNumber].getName();
         buttonArray[buttonNumber].setName(inputName);
-        //fireIndexedPropertyChange(DefaultController.BUTTON_NAME_PROPERTY, buttonNumber, oldName, inputName);
-        
-        
-        double oldPrice = buttonArray[buttonNumber].getPrice();
+
         buttonArray[buttonNumber].setPrice(inputPrice);
-        //fireIndexedPropertyChange(DefaultController.BUTTON_PRICE_PROPERTY, buttonNumber, oldPrice, inputPrice);
         
-        int oldPicture = buttonArray[buttonNumber].getPicture();
         buttonArray[buttonNumber].setPicture(inputPicture);
     }
     
