@@ -24,7 +24,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private ImageIcon bread_icon;
     private ImageIcon cookie_icon;
     private ImageIcon strawberry_icon;
-    private static UserInfoBus viewTemplate;
+    private UserInfoBus viewTemplate = new UserInfoBus();
     //viewTemplate = new userInfoBus[21];
     private Editor_Model.Template modelReference;
     private int buttonUnderEdit;
@@ -283,9 +283,12 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
         viewTemplate.setName(Name_Field.getText());
-        viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
+        //viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
         viewTemplate.setPicture(pictureChoice);
         modelReference.updateButton(buttonUnderEdit, viewTemplate);
+        
+        
+        System.out.println(viewTemplate.getName());
         
         setVisible(false);
         dispose();
