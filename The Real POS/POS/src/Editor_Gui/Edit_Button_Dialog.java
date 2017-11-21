@@ -9,6 +9,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import Editor_Model.Template;
 
 /**
  *
@@ -30,9 +31,11 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     
 
     /**
-     * Creates new form NewJFrame
+     * Initializes our button dialogue box. Takes a reference to our model as well as the button it is editing.
+     * @param model A reference to our data model.
+     * @param buttonNumber A reference to which button it is changing.
      */
-    public Edit_Button_Dialog() {
+    public Edit_Button_Dialog(Editor_Model.Template model, int buttonNumber) {
         initComponents();
         No_Image_Button.setSelected(true);
         setVisible(true);
