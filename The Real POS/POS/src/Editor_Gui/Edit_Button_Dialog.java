@@ -6,25 +6,26 @@
 package Editor_Gui;
 
 import java.io.File;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
+import javax.swing.JPanel;
 
 /**
  *
  * @author Flamnick
  */
-
-
 public class Edit_Button_Dialog extends javax.swing.JFrame {
+
     
-   
-    private ImageIcon coffee_icon = new ImageIcon();
-    //private ImageIcon beer_icon = new ImageIcon(beer);
-    //private ImageIcon bread_icon = new ImageIcon(bread);
-    //private ImageIcon cookie_icon = new ImageIcon(cookie);
-    //private ImageIcon strawberry_icon = new ImageIcon(strawberry);
-    //private UserInfoBus[] viewTemplate;
+    private ImageIcon coffee_icon;
+    private ImageIcon beer_icon;
+    private ImageIcon bread_icon;
+    private ImageIcon cookie_icon;
+    private ImageIcon strawberry_icon;
+    private UserInfoBus[] viewTemplate;
     //viewTemplate = new userInfoBus[21];
+    
+    
 
     
 
@@ -35,9 +36,38 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         initComponents();
         No_Image_Button.setSelected(true);
         setVisible(true);
+        try {
+            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
     }
-    
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -103,6 +133,11 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         buttonGroup1.add(Image_2_Button);
         Image_2_Button.setText("Beer");
+        Image_2_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Image_2_ButtonMouseClicked(evt);
+            }
+        });
         Image_2_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Image_2_ButtonActionPerformed(evt);
@@ -111,12 +146,27 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
         buttonGroup1.add(Image_3_Button);
         Image_3_Button.setText("Bread");
+        Image_3_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Image_3_ButtonMouseClicked(evt);
+            }
+        });
 
         buttonGroup1.add(Image_4_Button);
         Image_4_Button.setText("Fruit");
+        Image_4_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Image_4_ButtonMouseClicked(evt);
+            }
+        });
 
         buttonGroup1.add(Image_5_Button);
         Image_5_Button.setText("Cookie");
+        Image_5_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Image_5_ButtonMouseClicked(evt);
+            }
+        });
 
         Image_Display.setBackground(new java.awt.Color(255, 255, 255));
         Image_Display.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -215,35 +265,55 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-            //messageDialogAnswer.setName(Name_Field.getText());
-            //messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
-            setVisible(false);
-            dispose();
-            
+        //messageDialogAnswer.setName(Name_Field.getText());
+        //messageDialogAnswer.setPrice(Double.parseDouble(Value_Field.getText()));
+        setVisible(false);
+        dispose();
+
     }//GEN-LAST:event_FinishMouseClicked
 
     private void Image_1_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_1_ButtonActionPerformed
         // TODO add your handling code here
-         Image_Display.setIcon(coffee_icon);
-         Image_Display.revalidate();
+        Image_Display.setIcon(coffee_icon);
+        Image_Display.revalidate();
     }//GEN-LAST:event_Image_1_ButtonActionPerformed
 
     private void Image_2_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Image_2_ButtonActionPerformed
         // TODO add your handling code here:
-         
+
     }//GEN-LAST:event_Image_2_ButtonActionPerformed
 
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
-        
-            Image_Display.setIcon(null);
-            Image_Display.revalidate();
-        
+
+        Image_Display.setIcon(null);
+        Image_Display.revalidate();
+
     }//GEN-LAST:event_No_Image_ButtonMouseClicked
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
-       Image_Display.setIcon(coffee_icon);
-       Image_Display.revalidate();
+        Image_Display.setIcon(coffee_icon);
+        Image_Display.revalidate();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
+
+    private void Image_2_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_2_ButtonMouseClicked
+        Image_Display.setIcon(beer_icon);
+        Image_Display.revalidate();
+    }//GEN-LAST:event_Image_2_ButtonMouseClicked
+
+    private void Image_3_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_3_ButtonMouseClicked
+        Image_Display.setIcon(bread_icon);
+        Image_Display.revalidate();
+    }//GEN-LAST:event_Image_3_ButtonMouseClicked
+
+    private void Image_4_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_4_ButtonMouseClicked
+        Image_Display.setIcon(strawberry_icon);
+        Image_Display.revalidate();
+    }//GEN-LAST:event_Image_4_ButtonMouseClicked
+
+    private void Image_5_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_5_ButtonMouseClicked
+        Image_Display.setIcon(cookie_icon);
+        Image_Display.revalidate();
+    }//GEN-LAST:event_Image_5_ButtonMouseClicked
 
     /**
      * @param args the command line arguments

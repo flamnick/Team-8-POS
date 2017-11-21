@@ -194,6 +194,7 @@
         <Property name="text" type="java.lang.String" value="Beer"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_2_ButtonMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Image_2_ButtonActionPerformed"/>
       </Events>
     </Component>
@@ -204,6 +205,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Bread"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_3_ButtonMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="Image_4_Button">
       <Properties>
@@ -212,6 +216,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Fruit"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_4_ButtonMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="Image_5_Button">
       <Properties>
@@ -220,6 +227,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cookie"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Image_5_ButtonMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Image_Display">
       <Properties>
