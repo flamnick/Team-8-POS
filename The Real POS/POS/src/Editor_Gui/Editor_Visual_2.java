@@ -438,7 +438,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_New_TemplateMouseClicked
 
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
-        
+       try{
+        POSmodel  = xml.read(Load_List.getSelectedItem());
+        } catch (Exception e)
+       {
+           
+       }
     }//GEN-LAST:event_LoadMouseClicked
 
     private void Load_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Load_ListActionPerformed
