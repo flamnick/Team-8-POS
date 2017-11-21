@@ -12,6 +12,7 @@ package Editor_Gui;
  */
 public class Editor_Visual_2 extends javax.swing.JFrame {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
+    XMLManager xml = new XMLManager();
 
     /**
      * Creates new form Emulator_Visual
@@ -62,7 +63,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Save = new javax.swing.JButton();
         Button_Settings_Button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        templateName = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -249,7 +250,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
 
         jLabel1.setText("Template Name:");
 
-        jTextField1.setText("Enter Template Name");
+        templateName.setText("Enter Template Name");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -299,7 +300,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                             .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -340,7 +341,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Button_Settings_Button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -423,6 +424,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
+       try{
+           xml.write(POSmodel,templateName.getText());
+       } catch (Exception e)
+       {
+           
+       }
         
     }//GEN-LAST:event_SaveMouseClicked
 
@@ -505,10 +512,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
 
 }
