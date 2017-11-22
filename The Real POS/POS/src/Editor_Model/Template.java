@@ -6,6 +6,7 @@
 package Editor_Model;
 import Editor_Gui.*;
 import Editor_Controller.*;
+import java.util.Observable;
 
 
 
@@ -15,7 +16,7 @@ import Editor_Controller.*;
  *
  * @author Team 8
  */
-public class Template extends AbstractModel 
+public class Template extends Observable 
 {
     /**
      * This is simply an array which holds our button data.
@@ -76,8 +77,8 @@ public class Template extends AbstractModel
      */
     public void updateTemplateAppearance(int colorChoice, int fontChoice)
     {
-        this.colorChoice=colorChoice;
-        this.fontChoice=fontChoice;
+        this.setColorChoice(colorChoice);
+        this.setFontChoice(fontChoice);
     }
     /**
      * This changes the name field of a particular button and fires a
@@ -148,12 +149,16 @@ public class Template extends AbstractModel
     }
     public void setColorChoice(int color_input) {
       colorChoice = color_input;
+      setChanged();
+      this.notifyObservers();
     }
     public int getColorChoice() {
         return colorChoice;
     }
     public void setFontChoice(int font_input) {
        fontChoice = font_input;
+       setChanged();
+       this.notifyObservers();
     }
     public int getFontChoice() {
         return fontChoice;
