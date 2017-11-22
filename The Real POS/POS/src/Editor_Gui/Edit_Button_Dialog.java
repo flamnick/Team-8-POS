@@ -282,17 +282,14 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
-<<<<<<< HEAD
-        viewTemplate.setName(Name_Field.getText());
-        viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
-        viewTemplate.setPicture(pictureChoice);
-        modelReference.updateButton(buttonUnderEdit, viewTemplate);
-=======
+
+        
+
         dialougeInfoBus.setName(Name_Field.getText());
-        //viewTemplate.setPrice(Double.parseDouble(Value_Field.getText()));
+        //dialougeInfoBus.setPrice(Double.parseDouble(Value_Field.getText()));
         dialougeInfoBus.setPicture(pictureChoice);
         modelReference.updateButton(buttonUnderEdit, dialougeInfoBus);
->>>>>>> da414dab14a5a8bbd5761fd998c5b9b4c8c5490c
+
         
         
         System.out.println(dialougeInfoBus.getName());
