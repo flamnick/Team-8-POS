@@ -15,11 +15,9 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Editor_Model.Template test = new Editor_Model.Template();
-        test.setName(1, "Pizza");
-        System.out.println(test.getName(1));
-        test = new Editor_Model.Template();
-        System.out.println(test.getName(1));
+        Editor_Model.Template model = new Editor_Model.Template();
+        Editor_Gui.Editor_Visual_2 view = new Editor_Gui.Editor_Visual_2();
+        
     }
     
 }

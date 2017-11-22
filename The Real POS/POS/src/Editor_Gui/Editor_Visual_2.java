@@ -152,6 +152,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                 Button_1MouseClicked(evt);
             }
         });
+        Button_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_1ActionPerformed(evt);
+            }
+        });
 
         Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -447,6 +452,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private void Load_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Load_ListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Load_ListActionPerformed
+
+    private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_1ActionPerformed
 
     /**
      * @param args the command line arguments
