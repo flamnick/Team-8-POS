@@ -5,8 +5,10 @@
  */
 package Editor_Gui;
 
+import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.UIManager;
 
 
 /**
@@ -220,7 +222,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        Tax_Label.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Tax_Label.setForeground(new java.awt.Color(1, 1, 1));
         Tax_Label.setText("Template Tax Rate:");
 
         Scroll_Pane_2.setViewportView(Register_List);
@@ -332,9 +334,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Tax_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Taxrate_Textfield)
+                    .addComponent(templateName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Button_Settings_Button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -425,7 +427,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
        Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true, POSmodel);
-       repaint();
+       revalidate();
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
@@ -460,6 +462,172 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_1ActionPerformed
 
+    private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_1.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_1MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_1.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_2.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_2MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_2.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_3.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_3MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_3.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_4.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_4MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_4.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_5.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_5MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_5.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_6.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_6MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_6.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_7.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_7MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_7.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_8.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_8MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_8.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_9.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_9MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_9.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_10.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_10MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_10.setBackground(UIManager.getColor("control"));
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_11.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_11MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_11.setBackground(UIManager.getColor("control"));
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_12.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_12MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_12.setBackground(UIManager.getColor("control"));
+    }                                     
+
+    
     /**
      * @param args the command line arguments
      */

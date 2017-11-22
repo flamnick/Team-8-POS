@@ -17,17 +17,16 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<<<<<<< HEAD
+
     String fonts[]
         = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 
         for (String font : fonts) {
             System.out.println(font);
         }
-=======
+
         Editor_Model.Template model = new Editor_Model.Template();
         Editor_Gui.Editor_Visual_2 view = new Editor_Gui.Editor_Visual_2();
         
->>>>>>> 0bc8831b8feefc270bee77f3e3c3665031b1a686
     }
 }
