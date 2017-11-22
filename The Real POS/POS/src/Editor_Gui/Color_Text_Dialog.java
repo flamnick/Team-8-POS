@@ -5,6 +5,10 @@
  */
 package Editor_Gui;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.UIManager;
+
 /**
  *
  * @author Flamnick
@@ -13,8 +17,8 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
 
     
     
-    private int color_choice;
-    private int font_choice;
+    private Color color_choice;
+    private Font font_choice;
     private Editor_Model.Template modelReference;
     /**
      * Creates new form Color_Text_Dialogue
@@ -82,11 +86,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
                 Finish_Dialogue_ButtonMouseClicked(evt);
             }
         });
-        Finish_Dialogue_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Finish_Dialogue_ButtonActionPerformed(evt);
-            }
-        });
 
         Font_List_Label.setText("Button Font");
 
@@ -136,10 +135,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Finish_Dialogue_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Finish_Dialogue_ButtonActionPerformed
-
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
         modelReference.updateTemplateAppearance(color_choice, font_choice);
         setVisible(false);
@@ -151,27 +146,27 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         {
             case "Default": 
             {
-                color_choice = 0;
+                color_choice = UIManager.getColor("control");
                 break;
             }
             case "Magenta": 
             {
-                color_choice = 1;
+                color_choice = Color.MAGENTA;
                 break;
             }
             case "Cyan": 
             {
-                color_choice = 2;
+                color_choice = Color.CYAN;
                 break;
             }
             case "Green": 
             {
-                color_choice = 3;
+                color_choice = Color.GREEN;
                 break;
             }
             default:
             {
-                color_choice = 0;
+                color_choice = UIManager.getColor("control");
                 break;
             }
             
@@ -185,27 +180,27 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         {
             case "Default": 
             {
-                font_choice = 0;
+                font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
             case "Arial": 
             {
-                font_choice = 1;
+                font_choice = new Font("Arial", Font.BOLD, 14);
                 break;
             }
             case "Comic Sans": 
             {
-                font_choice = 2;
+                font_choice = new Font("Comic Sans MS", Font.BOLD, 14);
                 break;
             }
             case "Papyrus": 
             {
-                font_choice = 3;
+                font_choice = new Font("Papyrus", Font.BOLD, 14);
                 break;
             }
             default:
             {
-                font_choice = 0;
+                font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
             
