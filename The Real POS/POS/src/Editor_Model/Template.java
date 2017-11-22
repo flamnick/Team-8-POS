@@ -5,10 +5,10 @@
  */
 package Editor_Model;
 import Editor_Gui.*;
-import Editor_Controller.*;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.Serializable;
 
 import java.util.Observable;
 
@@ -21,12 +21,13 @@ import java.util.Observable;
  *
  * @author Team 8
  */
-public class Template extends Observable 
+public class Template extends Observable implements Serializable
 {
     /**
      * This is simply an array which holds our button data.
      */
     private Button[] buttonArray;
+    private Button testButton;
     private double taxRate;
     private Color colorChoice;
     private Font fontChoice;
@@ -92,7 +93,8 @@ public class Template extends Observable
     }
     /**
      * This changes the name field of a particular button and fires a
-     * property change informing the controller.
+     * property change informing the controller. There for the purpose of possibly
+     * adding a change name only property.
      * @param buttonNumber the button whose name we are replacing.
      * @param inputName the name we are replacing the button name field with.
      */
@@ -104,7 +106,8 @@ public class Template extends Observable
     }
     
     /**
-     * This gets the name from a particular button.
+     * This gets the name from a particular button. Useful if we eventually intend to edit
+     * the thing individually.
      * @param buttonNumber the button whose name we are getting.
      * @return 
      */
@@ -178,5 +181,4 @@ public class Template extends Observable
         return fontChoice;
     }
     
-
 }
