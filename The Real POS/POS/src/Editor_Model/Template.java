@@ -70,6 +70,16 @@ public class Template extends AbstractModel
     }
     
     /**
+     * This updates our data model with the users chosen font and color.
+     * @param colorChoice
+     * @param fontChoice 
+     */
+    public void updateTemplateAppearance(int colorChoice, int fontChoice)
+    {
+        this.colorChoice=colorChoice;
+        this.fontChoice=fontChoice;
+    }
+    /**
      * This changes the name field of a particular button and fires a
      * property change informing the controller.
      * @param buttonNumber the button whose name we are replacing.

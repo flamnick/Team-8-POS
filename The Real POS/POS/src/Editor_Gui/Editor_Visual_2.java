@@ -420,7 +420,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_12MouseClicked
 
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
-       Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true);
+       Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true, POSmodel);
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
