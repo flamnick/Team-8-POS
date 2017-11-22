@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Editor_Gui;
+import java.awt.Color;
 import java.beans.*;
 
 /**
@@ -14,6 +15,7 @@ public class UserInfoBus
 {
    private String name;
    private double price;
+   private Color color;
    private int picture;
    private int font;
    private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
@@ -53,6 +55,18 @@ public class UserInfoBus
    public double getPrice()
    {
        return price;
+   }  
+   public void setColor(Color userColor)
+   {
+       color=userColor;
+   }
+   /**
+    * Gets the double within the object.
+    * @return userDouble
+    */
+   public Color getColor()
+   {
+       return color;
    }  
    
    /**

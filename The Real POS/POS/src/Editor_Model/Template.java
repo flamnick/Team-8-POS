@@ -6,6 +6,8 @@
 package Editor_Model;
 import Editor_Gui.*;
 import Editor_Controller.*;
+import java.awt.Color;
+import java.awt.Font;
 
 
 
@@ -22,8 +24,8 @@ public class Template extends AbstractModel
      */
     private Button[] buttonArray;
     private double taxRate;
-    private int colorChoice;
-    private int fontChoice;
+    private Color colorChoice;
+    private Font fontChoice;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
@@ -74,7 +76,7 @@ public class Template extends AbstractModel
      * @param colorChoice
      * @param fontChoice 
      */
-    public void updateTemplateAppearance(int colorChoice, int fontChoice)
+    public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
         this.colorChoice=colorChoice;
         this.fontChoice=fontChoice;
@@ -146,16 +148,16 @@ public class Template extends AbstractModel
     public double getTaxRate() {
         return taxRate;
     }
-    public void setColorChoice(int color_input) {
+    public void setColorChoice(Color color_input) {
       colorChoice = color_input;
     }
-    public int getColorChoice() {
+    public Color getColorChoice() {
         return colorChoice;
     }
-    public void setFontChoice(int font_input) {
+    public void setFontChoice(Font font_input) {
        fontChoice = font_input;
     }
-    public int getFontChoice() {
+    public Font getFontChoice() {
         return fontChoice;
     }
     

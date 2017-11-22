@@ -5,6 +5,8 @@
  */
 package Testers;
 
+import java.awt.GraphicsEnvironment;
+
 /**
  *
  * @author Flamnick
@@ -15,11 +17,11 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Editor_Model.Template test = new Editor_Model.Template();
-        test.setName(1, "Pizza");
-        System.out.println(test.getName(1));
-        test = new Editor_Model.Template();
-        System.out.println(test.getName(1));
+    String fonts[]
+        = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+
+        for (String font : fonts) {
+            System.out.println(font);
+        }
     }
-    
 }
