@@ -5,12 +5,14 @@
  */
 package Editor_Model;
 
+import java.util.Observable;
+
 /**
  * This class is the button class for the editor.
  *
  * @author Team 8
  */
-public class Button {
+public class Button extends Observable {
 
     /**
      * This variable holds the price associated for the given button.
@@ -71,8 +73,11 @@ public class Button {
      *
      * @param inputName String which the name is changing to.
      */
-    public void setName(String inputName) {
+    public void setName(String inputName) 
+    {
         name = inputName;
+        setChanged();
+        this.notifyObservers();
     }
 
     /**

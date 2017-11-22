@@ -539,17 +539,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     {
         System.out.println(POSmodel.getName(1));
     }*/
-    
+    private Editor_Model.Template POSupdate;
     @Override
     public void update(Observable o, Object o1) 
-    {
-<<<<<<< HEAD
-        Button_1.setText(POSmodel.getName(1));
-        repaint();
-=======
-        
-        
-        Button_1.setText(POSmodel.getName(1) + "\n$ " + POSmodel.getPrice(1));
+    {        
+        POSupdate= (Editor_Model.Template) o;
+        Button_1.setText(POSupdate.getName(1) + "\n$ " + POSupdate.getPrice(1));
         Button_2.setText(POSmodel.getName(2) + "\n$ " + POSmodel.getPrice(2));
         Button_3.setText(POSmodel.getName(3) + "\n$ " + POSmodel.getPrice(3));
         Button_4.setText(POSmodel.getName(4) + "\n$ " + POSmodel.getPrice(4));
@@ -564,7 +559,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> 465c00c4804369680df2f90f59720151a1656ad9
     }
 
 }

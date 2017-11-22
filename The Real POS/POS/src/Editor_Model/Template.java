@@ -69,10 +69,15 @@ public class Template extends Observable
     public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
     {
         buttonArray[buttonNumber].setName(dataHolder.getName());
-
+        setChanged();
+        this.notifyObservers();
         buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
+        setChanged();
+        this.notifyObservers();
         
         buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        setChanged();
+        this.notifyObservers();
     }
     
     /**
