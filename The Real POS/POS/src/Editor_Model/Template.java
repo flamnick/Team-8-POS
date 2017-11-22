@@ -62,17 +62,22 @@ public class Template extends Observable
     }
     
     /**
-     * This updates our button with the contents of our data holder.
+     * This updates our entire button with the contents of our data holder.
      * @param buttonNumber
      * @param dataHolder 
      */
     public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
     {
         buttonArray[buttonNumber].setName(dataHolder.getName());
-
+        setChanged();
+        this.notifyObservers();
         buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
+        setChanged();
+        this.notifyObservers();
         
         buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        setChanged();
+        this.notifyObservers();
     }
     
     /**
@@ -93,7 +98,9 @@ public class Template extends Observable
      */
     public void setName(int buttonNumber, String inputName)
     {
-        buttonArray[buttonNumber].setName(inputName);
+      buttonArray[buttonNumber].setName(inputName);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**
@@ -114,7 +121,9 @@ public class Template extends Observable
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
-        buttonArray[buttonNumber].setPrice(inputPrice);
+      buttonArray[buttonNumber].setPrice(inputPrice);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**

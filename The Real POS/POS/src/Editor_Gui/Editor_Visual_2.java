@@ -21,7 +21,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
+        
         initComponents();
+        POSmodel.addObserver(this);
     }
 
     /**
@@ -553,12 +555,21 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
 
+ /*   public void printDataModel()
+    {
+        System.out.println(POSmodel.getName(1));
+    }*/
+    private Editor_Model.Template POSupdate;
+    /**
+     * This is the update method for the view; it updates all our buttons on click.
+     * @param o Our observable object.
+     * @param o1 cool.
+     */
     @Override
     public void update(Observable o, Object o1) 
-    {
-        
-        
-        Button_1.setText(POSmodel.getName(1) + "\n$ " + POSmodel.getPrice(1));
+    {        
+        POSupdate= (Editor_Model.Template) o;
+        Button_1.setText(POSupdate.getName(1) + "\n$ " + POSupdate.getPrice(1));
         Button_2.setText(POSmodel.getName(2) + "\n$ " + POSmodel.getPrice(2));
         Button_3.setText(POSmodel.getName(3) + "\n$ " + POSmodel.getPrice(3));
         Button_4.setText(POSmodel.getName(4) + "\n$ " + POSmodel.getPrice(4));
