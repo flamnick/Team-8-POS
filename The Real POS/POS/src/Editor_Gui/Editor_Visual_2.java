@@ -5,12 +5,15 @@
  */
 package Editor_Gui;
 
+import java.util.Observable;
+import java.util.Observer;
+
 
 /**
  * This is our GUI class. Each class can also receives a reference to our model.
  * @author Team 8
  */
-public class Editor_Visual_2 extends javax.swing.JFrame {
+public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
     XMLManager xml = new XMLManager();
 
@@ -150,6 +153,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_1MouseClicked(evt);
+            }
+        });
+        Button_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_1ActionPerformed(evt);
             }
         });
 
@@ -448,6 +456,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Load_ListActionPerformed
 
+    private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -520,5 +532,27 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object o1) 
+    {
+        
+        
+        Button_1.setText(POSmodel.getName(1) + "\n$ " + POSmodel.getPrice(1));
+        Button_2.setText(POSmodel.getName(2) + "\n$ " + POSmodel.getPrice(2));
+        Button_3.setText(POSmodel.getName(3) + "\n$ " + POSmodel.getPrice(3));
+        Button_4.setText(POSmodel.getName(4) + "\n$ " + POSmodel.getPrice(4));
+        Button_5.setText(POSmodel.getName(5) + "\n$ " + POSmodel.getPrice(5));
+        Button_6.setText(POSmodel.getName(6) + "\n$ " + POSmodel.getPrice(6));
+        Button_7.setText(POSmodel.getName(7) + "\n$ " + POSmodel.getPrice(7));
+        Button_8.setText(POSmodel.getName(8) + "\n$ " + POSmodel.getPrice(8));
+        Button_9.setText(POSmodel.getName(9) + "\n$ " + POSmodel.getPrice(9));
+        Button_10.setText(POSmodel.getName(10) + "\n$ " + POSmodel.getPrice(10));
+        
+        repaint();
+        
+        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
