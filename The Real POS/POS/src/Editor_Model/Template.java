@@ -5,7 +5,7 @@
  */
 package Editor_Model;
 import Editor_Gui.*;
-import Editor_Controller.*;
+
 
 import java.awt.Color;
 import java.awt.Font;
