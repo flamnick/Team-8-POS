@@ -106,11 +106,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                 New_TemplateMouseClicked(evt);
             }
         });
-        New_Template.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                New_TemplateActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,19 +208,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
-        Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_11MouseClicked(evt);
-            }
-        });
 
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_12MouseClicked(evt);
-            }
-        });
 
         Tax_Label.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         Tax_Label.setText("Template Tax Rate:");
@@ -367,10 +352,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void New_TemplateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_TemplateActionPerformed
-        
-    }//GEN-LAST:event_New_TemplateActionPerformed
-
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 1);
     }//GEN-LAST:event_Button_1MouseClicked
@@ -411,14 +392,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 10);
     }//GEN-LAST:event_Button_10MouseClicked
 
-    private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
-        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 11);
-    }//GEN-LAST:event_Button_11MouseClicked
-
-    private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
-        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 12);
-    }//GEN-LAST:event_Button_12MouseClicked
-
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
        Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true);
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
@@ -434,12 +407,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveMouseClicked
 
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
-        
+        POSmodel = new Editor_Model.Template();
+        this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
 
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
        try{
-        POSmodel  = xml.read(Load_List.getSelectedItem());
+        POSmodel = xml.read(Load_List.getSelectedItem());
         } catch (Exception e)
        {
            
