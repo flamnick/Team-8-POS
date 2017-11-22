@@ -168,7 +168,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="New_TemplateMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="New_TemplateActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -376,9 +375,6 @@
               </FontInfo>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_11MouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_12">
           <Properties>
@@ -389,9 +385,6 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Button_12MouseClicked"/>
-          </Events>
         </Component>
         <Component class="java.awt.Label" name="Tax_Label">
           <Properties>
