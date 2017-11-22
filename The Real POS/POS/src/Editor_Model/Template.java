@@ -88,7 +88,9 @@ public class Template extends Observable
      */
     public void setName(int buttonNumber, String inputName)
     {
-        buttonArray[buttonNumber].setName(inputName);
+      buttonArray[buttonNumber].setName(inputName);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**
@@ -109,7 +111,9 @@ public class Template extends Observable
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
-        buttonArray[buttonNumber].setPrice(inputPrice);
+      buttonArray[buttonNumber].setPrice(inputPrice);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**

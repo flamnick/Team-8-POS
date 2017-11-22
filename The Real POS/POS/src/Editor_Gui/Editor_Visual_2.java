@@ -21,7 +21,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
+        
         initComponents();
+        POSmodel.addObserver(this);
     }
 
     /**
@@ -533,11 +535,16 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
 
+ /*   public void printDataModel()
+    {
+        System.out.println(POSmodel.getName(1));
+    }*/
+    
     @Override
     public void update(Observable o, Object o1) 
     {
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Button_1.setText(POSmodel.getName(1));
+        repaint();
     }
 
 }
