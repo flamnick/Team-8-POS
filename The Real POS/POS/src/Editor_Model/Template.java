@@ -62,7 +62,7 @@ public class Template extends Observable
     }
     
     /**
-     * This updates our button with the contents of our data holder.
+     * This updates our entire button with the contents of our data holder.
      * @param buttonNumber
      * @param dataHolder 
      */

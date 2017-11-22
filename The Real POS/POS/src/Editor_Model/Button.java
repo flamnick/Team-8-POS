@@ -33,7 +33,7 @@ public class Button extends Observable {
     
             
     public Button() {
-        this.setName("placeHolder");
+        this.setName(" ");
         this.setPrice(0);
         this.setPicture(0);
     }

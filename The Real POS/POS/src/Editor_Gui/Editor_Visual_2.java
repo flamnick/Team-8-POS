@@ -540,6 +540,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         System.out.println(POSmodel.getName(1));
     }*/
     private Editor_Model.Template POSupdate;
+    /**
+     * This is the update method for the view; it updates all our buttons on click.
+     * @param o Our observable object.
+     * @param o1 cool.
+     */
     @Override
     public void update(Observable o, Object o1) 
     {        
