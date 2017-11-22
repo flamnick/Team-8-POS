@@ -23,7 +23,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
+        
         initComponents();
+        POSmodel.addObserver(this);
     }
 
     /**
@@ -218,9 +220,21 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
+        Button_11.setText("CLEAR");
+        Button_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_11ActionPerformed(evt);
+            }
+        });
 
+        Button_12.setText("TOTAL");
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_12ActionPerformed(evt);
+            }
+        });
 
         Tax_Label.setForeground(new java.awt.Color(1, 1, 1));
         Tax_Label.setText("Template Tax Rate:");
@@ -462,6 +476,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_1ActionPerformed
 
+
     private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
         Button_1.setBackground(POSmodel.getColorChoice());
     }                                     
@@ -628,6 +643,16 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     }                                     
 
     
+
+    private void Button_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_11ActionPerformed
+
+    private void Button_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_12ActionPerformed
+
+
     /**
      * @param args the command line arguments
      */
@@ -701,12 +726,21 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
 
+ /*   public void printDataModel()
+    {
+        System.out.println(POSmodel.getName(1));
+    }*/
+    private Editor_Model.Template POSupdate;
+    /**
+     * This is the update method for the view; it updates all our buttons on click.
+     * @param o Our observable object.
+     * @param o1 cool.
+     */
     @Override
     public void update(Observable o, Object o1) 
-    {
-        
-        
-        Button_1.setText(POSmodel.getName(1) + "\n$ " + POSmodel.getPrice(1));
+    {        
+        POSupdate= (Editor_Model.Template) o;
+        Button_1.setText(POSupdate.getName(1) + "\n$ " + POSupdate.getPrice(1));
         Button_2.setText(POSmodel.getName(2) + "\n$ " + POSmodel.getPrice(2));
         Button_3.setText(POSmodel.getName(3) + "\n$ " + POSmodel.getPrice(3));
         Button_4.setText(POSmodel.getName(4) + "\n$ " + POSmodel.getPrice(4));

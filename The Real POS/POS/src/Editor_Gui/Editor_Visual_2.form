@@ -375,10 +375,15 @@
                 <Font bold="false" component="Button_11" property="font" relativeSize="true" size="0"/>
               </FontInfo>
             </Property>
+            <Property name="text" type="java.lang.String" value="CLEAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_11ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Button_12">
           <Properties>
+            <Property name="text" type="java.lang.String" value="TOTAL"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -386,6 +391,9 @@
               <Color id="Default Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_12ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="java.awt.Label" name="Tax_Label">
           <Properties>

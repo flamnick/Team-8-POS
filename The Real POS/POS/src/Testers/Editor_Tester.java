@@ -17,6 +17,7 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
 
     String fonts[]
         = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
@@ -28,5 +29,8 @@ public class Editor_Tester {
         Editor_Model.Template model = new Editor_Model.Template();
         Editor_Gui.Editor_Visual_2 view = new Editor_Gui.Editor_Visual_2();
         
+=======
+
+>>>>>>> 2f9f462f1b8377502a0edc36f53dffb7fc066eb5
     }
 }
