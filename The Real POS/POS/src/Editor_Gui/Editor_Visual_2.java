@@ -354,46 +354,70 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
 
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 1);
+        repaint();
     }//GEN-LAST:event_Button_1MouseClicked
 
     private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 2);
+         repaint();
     }//GEN-LAST:event_Button_2MouseClicked
 
     private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 3);
+         repaint();
     }//GEN-LAST:event_Button_3MouseClicked
 
     private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 4);
+         repaint();
     }//GEN-LAST:event_Button_4MouseClicked
 
     private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 5);
+         repaint();
     }//GEN-LAST:event_Button_5MouseClicked
 
     private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 6);
+        repaint();
     }//GEN-LAST:event_Button_6MouseClicked
 
     private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 7);
+        repaint();
     }//GEN-LAST:event_Button_7MouseClicked
 
     private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 8);
+         repaint();
     }//GEN-LAST:event_Button_8MouseClicked
 
     private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 9);
+         repaint();
     }//GEN-LAST:event_Button_9MouseClicked
 
     private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 10);
+         repaint();
     }//GEN-LAST:event_Button_10MouseClicked
 
+
+    private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 11);
+         repaint();
+    }//GEN-LAST:event_Button_11MouseClicked
+
+    private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
+        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 12);
+         repaint();
+    }//GEN-LAST:event_Button_12MouseClicked
+
+   
+    
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
        Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true, POSmodel);
+       repaint();
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
