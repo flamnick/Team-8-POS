@@ -15,7 +15,11 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Editor_Model.Template test = new Editor_Model.Template();
+        test.setName(1, "Pizza");
+        System.out.println(test.getName(1));
+        test = new Editor_Model.Template();
+        System.out.println(test.getName(1));
     }
     
 }
