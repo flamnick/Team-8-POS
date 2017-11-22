@@ -216,9 +216,21 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
+        Button_11.setText("CLEAR");
+        Button_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_11ActionPerformed(evt);
+            }
+        });
 
+        Button_12.setText("TOTAL");
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_12ActionPerformed(evt);
+            }
+        });
 
         Tax_Label.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         Tax_Label.setText("Template Tax Rate:");
@@ -459,6 +471,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_1ActionPerformed
+
+    private void Button_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_11ActionPerformed
+
+    private void Button_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_12ActionPerformed
 
     /**
      * @param args the command line arguments
