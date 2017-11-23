@@ -5,7 +5,6 @@
  */
 package Editor_Model;
 import Editor_Gui.*;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.io.Serializable;

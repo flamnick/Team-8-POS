@@ -31,7 +31,7 @@ public class XMLManager {
      * save our file under.
      * @throws Exception If the file ain't there, we have a problem.
      */
-    public static void write(Template saveObject, String fileName) throws Exception {
+    public void write(Template saveObject, String fileName) throws Exception {
         XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(fileName)));
         encoder.writeObject(saveObject);
         encoder.close();
@@ -47,7 +47,7 @@ public class XMLManager {
      * @return returns a complete Template object.
      * @throws Exception If that sucker doesn't open, we have problems.
      */
-    public static Template read(String fileName) throws Exception {
+    public Template read(String fileName) throws Exception {
         XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(fileName)));
         Template readTemplate = (Template) decoder.readObject();
         return readTemplate;

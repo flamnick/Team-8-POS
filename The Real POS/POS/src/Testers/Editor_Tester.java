@@ -5,8 +5,6 @@
  */
 package Testers;
 
-import java.awt.GraphicsEnvironment;
-
 /**
  *
  * @author Flamnick
@@ -16,21 +14,16 @@ public class Editor_Tester {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-<<<<<<< HEAD
-
-    String fonts[]
-        = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-
-        for (String font : fonts) {
-            System.out.println(font);
-        }
-
-        Editor_Model.Template model = new Editor_Model.Template();
-        Editor_Gui.Editor_Visual_2 view = new Editor_Gui.Editor_Visual_2();
+    public static void main(String[] args) throws Exception {
+        Editor_Model.Template test = new Editor_Model.Template();
+        Editor_Model.XMLManager tester = new Editor_Model.XMLManager();
+        test.setName(1,"Namae");
+        System.out.println(test.getName(1));
+        tester.write(test, "poopybutthole.xml");
         
-=======
-
->>>>>>> 2f9f462f1b8377502a0edc36f53dffb7fc066eb5
+        
+        
+        Editor_Model.Template pbh2 = tester.read("poopybutthole.xml");
+        System.out.println(pbh2.getName(1));
     }
 }
