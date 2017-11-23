@@ -27,7 +27,6 @@ public class Template extends Observable implements Serializable
      * This is simply an array which holds our button data.
      */
     private Button[] buttonArray;
-    private Button testButton;
     private double taxRate;
     private Color colorChoice;
     private Font fontChoice;
@@ -180,5 +179,12 @@ public class Template extends Observable implements Serializable
     public Font getFontChoice() {
         return fontChoice;
     }
-    
+    public Button[] getButton()
+    {
+        return buttonArray;
+    }
+    public void setButton(Button[] arrayToCopy)
+    {
+        buttonArray = arrayToCopy;
+    }
 }
