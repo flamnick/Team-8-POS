@@ -1,6 +1,9 @@
 package Emulator_Gui;
 
+import Editor_Gui.XMLManager;
 import java.awt.Color;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.UIManager;
 
 /*
@@ -14,12 +17,14 @@ import javax.swing.UIManager;
  *
  * @author Flamnick
  */
-public class Emulator_Visual extends javax.swing.JFrame {
-
+public class Emulator_Visual extends javax.swing.JFrame implements Observer{
+    Editor_Model.Template POSmodel = new Editor_Model.Template();
+    XMLManager xml = new XMLManager();
     /**
      * Creates new form Emulator_Visual
      */
     public Emulator_Visual() {
+        POSmodel.addObserver(this);
         initComponents();
     }
 
@@ -574,4 +579,10 @@ public class Emulator_Visual extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object o1) 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
