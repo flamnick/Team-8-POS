@@ -124,6 +124,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
         );
 
         Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_1MouseEntered(evt);
             }
@@ -513,6 +516,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
         
     }//GEN-LAST:event_Button_12MouseClicked
 
+    private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
+        DataHolder_List.setText(DataHolder_List.getText() + "dd");
+    }//GEN-LAST:event_Button_1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -579,10 +586,22 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
     private java.awt.MenuBar menuBar1;
     private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
-
+    private Emulator_Model.Template POSupdate;
+    
     @Override
     public void update(Observable o, Object o1) 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        POSupdate = (Emulator_Model.Template) o;
+                
+        Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
+        Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
+        Button_3.setText("<html>" + POSupdate.getName(3) + "<br>$" + POSupdate.getPrice(3) + "</html>");
+        Button_4.setText("<html>" + POSupdate.getName(4) + "<br>$" + POSupdate.getPrice(4) + "</html>");
+        Button_5.setText("<html>" + POSupdate.getName(5) + "<br>$" + POSupdate.getPrice(5) + "</html>");
+        Button_6.setText("<html>" + POSupdate.getName(6) + "<br>$" + POSupdate.getPrice(6) + "</html>");
+        Button_7.setText("<html>" + POSupdate.getName(7) + "<br>$" + POSupdate.getPrice(7) + "</html>");
+        Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
+        Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
+        Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
     }
 }

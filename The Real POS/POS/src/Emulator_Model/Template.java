@@ -5,30 +5,34 @@
  */
 package Emulator_Model;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.util.Observable;
+
 /**
  * Holds our data model at the higher level. The buttons are stored as an array.
  *
  * @author Team 8
  */
-public class Template {
-
+public class Template extends Observable {
     /**
      * This is simply an array which holds our button data.
      */
-    private Button[] buttonArray;
+    private Editor_Model.Button[] buttonArray;
     private double taxRate;
-    private int colorChoice;
-    private int fontChoice;
+    private Color colorChoice;
+    private Font fontChoice;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
      * objects.
      */
     public Template() {
-        buttonArray = new Button[21];
+        buttonArray = new Editor_Model.Button[21];
 
-        for (int i = 0; i < 20; i++) {
-            buttonArray[i] = new Button();
+        for (int i = 0; i < 20; i++) 
+        {
+            buttonArray[i] = new Editor_Model.Button();
         }
 
     }
@@ -37,14 +41,103 @@ public class Template {
      *
      * @param buttonNumber The button it's working on
      * @param inputName
-     * @param inputPrince
+     * @param inputPrice
+     * @param inputPicture
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrince, int inputPicture) {
+    public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
+    {
         buttonArray[buttonNumber].setName(inputName);
-        buttonArray[buttonNumber].setPrice(inputPrince);
+
+        buttonArray[buttonNumber].setPrice(inputPrice);
+        
         buttonArray[buttonNumber].setPicture(inputPicture);
     }
-
+    
+    /**
+     * This updates our entire button with the contents of our data holder.
+     * @param buttonNumber
+     * @param dataHolder 
+     */
+    public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
+    {
+        buttonArray[buttonNumber].setName(dataHolder.getName());
+        setChanged();
+        this.notifyObservers();
+        buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
+        setChanged();
+        this.notifyObservers();
+        
+        buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        setChanged();
+        this.notifyObservers();
+    }
+    
+    /**
+     * This updates our data model with the users chosen font and color.
+     * @param colorChoice
+     * @param fontChoice 
+     */
+    public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
+    {
+        this.setColorChoice(colorChoice);
+        this.setFontChoice(fontChoice);
+    }
+    /**
+     * This changes the name field of a particular button and fires a
+     * property change informing the controller. There for the purpose of possibly
+     * adding a change name only property.
+     * @param buttonNumber the button whose name we are replacing.
+     * @param inputName the name we are replacing the button name field with.
+     */
+    public void setName(int buttonNumber, String inputName)
+    {
+      buttonArray[buttonNumber].setName(inputName);
+      setChanged();
+      this.notifyObservers();
+    }
+    
+    /**
+     * This gets the name from a particular button. Useful if we eventually intend to edit
+     * the thing individually.
+     * @param buttonNumber the button whose name we are getting.
+     * @return 
+     */
+    public String getName(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getName();
+    }
+    
+    /**
+     * This sets the price within a particular button and informs
+     * the controller of our change.
+     * @param buttonNumber
+     * @param inputPrice 
+     */
+    public void setPrice(int buttonNumber, double inputPrice)
+    {
+      buttonArray[buttonNumber].setPrice(inputPrice);
+      setChanged();
+      this.notifyObservers();
+    }
+    
+    /**
+     * This gets the price field within a particular button.
+     * @param buttonNumber the button whose price we are getting.
+     * @return 
+     */
+    public double getPrice(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getPrice();
+    }
+    
+    public void setPictureChoice(int buttonNumber, int inputPicture)
+    {
+        buttonArray[buttonNumber].setPicture(inputPicture);
+    }
+    public int getPictureChoice(int buttonNumber)
+    {
+        return buttonArray[buttonNumber].getPicture();
+    }
     /**
      * Method for setting tax rate.
      *
@@ -62,17 +155,28 @@ public class Template {
     public double getTaxRate() {
         return taxRate;
     }
-    public void setColorChoice(int color_input) {
+    public void setColorChoice(Color color_input) {
       colorChoice = color_input;
+      setChanged();
+      this.notifyObservers();
     }
-    public int getColorChoice() {
+    public Color getColorChoice() {
         return colorChoice;
     }
-    public void setFontChoice(int font_input) {
+    public void setFontChoice(Font font_input) {
        fontChoice = font_input;
+       setChanged();
+       this.notifyObservers();
     }
-    public int getFontChoice() {
+    public Font getFontChoice() {
         return fontChoice;
     }
-
+    public Editor_Model.Button[] getButton()
+    {
+        return buttonArray;
+    }
+    public void setButton(Editor_Model.Button[] arrayToCopy)
+    {
+        buttonArray = arrayToCopy;
+    }
 }
