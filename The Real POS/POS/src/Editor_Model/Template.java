@@ -37,6 +37,7 @@ public class Template extends Observable implements Serializable
      */
     public Template() {
         buttonArray = new Button[21];
+        this.setColorChoice(Color.MAGENTA);
 
         for (int i = 0; i < 20; i++) 
         {

@@ -18,7 +18,7 @@ import javax.swing.UIManager;
  * @author Flamnick
  */
 public class Emulator_Visual extends javax.swing.JFrame implements Observer{
-    Editor_Model.Template POSmodel = new Editor_Model.Template();
+    Emulator_Model.Template POSmodel = new Emulator_Model.Template();
     XMLManager xml = new XMLManager();
     /**
      * Creates new form Emulator_Visual
@@ -348,7 +348,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseEntered
-        Button_1.setBackground(Color.MAGENTA);
+        Button_1.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_1MouseEntered
 /**
  * 
@@ -362,7 +362,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseEntered
-        Button_2.setBackground(Color.MAGENTA);
+        Button_2.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_2MouseEntered
 /**
  * 
@@ -376,7 +376,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseEntered
-        Button_3.setBackground(Color.MAGENTA);
+        Button_3.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_3MouseEntered
 /**
  * 
@@ -390,7 +390,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseEntered
-        Button_4.setBackground(Color.MAGENTA);
+        Button_4.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_4MouseEntered
 /**
  * 
@@ -404,7 +404,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseEntered
-        Button_5.setBackground(Color.MAGENTA);
+        Button_5.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_5MouseEntered
 /**
  * 
@@ -418,7 +418,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseEntered
-        Button_6.setBackground(Color.MAGENTA);
+        Button_6.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_6MouseEntered
 /**
  * 
@@ -432,7 +432,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseEntered
-        Button_7.setBackground(Color.MAGENTA);
+        Button_7.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_7MouseEntered
 /**
  * 
@@ -446,7 +446,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseEntered
-        Button_8.setBackground(Color.MAGENTA);
+        Button_8.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_8MouseEntered
 /**
  * 
@@ -460,7 +460,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseEntered
-        Button_9.setBackground(Color.MAGENTA);
+        Button_9.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_9MouseEntered
 /**
  * 
@@ -474,7 +474,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseEntered
-        Button_10.setBackground(Color.MAGENTA);
+        Button_10.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_10MouseEntered
 /**
  * 
@@ -488,7 +488,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseEntered
-        Button_11.setBackground(Color.MAGENTA);
+        Button_11.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_11MouseEntered
 /**
  * 
@@ -502,7 +502,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseEntered
-        Button_12.setBackground(Color.MAGENTA);
+        Button_12.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_12MouseEntered
 /**
  * 

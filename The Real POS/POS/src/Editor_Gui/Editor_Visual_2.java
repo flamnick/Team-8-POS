@@ -774,6 +774,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_10.setIcon(POSupdate.getPictureChoice(10));
         
         
+        Button_12.setBackground(POSmodel.getColorChoice());
+        
         repaint();
         
         
