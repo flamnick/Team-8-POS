@@ -740,16 +740,19 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     public void update(Observable o, Object o1) 
     {        
         POSupdate= (Editor_Model.Template) o;
-        Button_1.setText(POSupdate.getName(1) + "\n$ " + POSupdate.getPrice(1));
-        Button_2.setText(POSmodel.getName(2) + "\n$ " + POSmodel.getPrice(2));
-        Button_3.setText(POSmodel.getName(3) + "\n$ " + POSmodel.getPrice(3));
-        Button_4.setText(POSmodel.getName(4) + "\n$ " + POSmodel.getPrice(4));
-        Button_5.setText(POSmodel.getName(5) + "\n$ " + POSmodel.getPrice(5));
-        Button_6.setText(POSmodel.getName(6) + "\n$ " + POSmodel.getPrice(6));
-        Button_7.setText(POSmodel.getName(7) + "\n$ " + POSmodel.getPrice(7));
-        Button_8.setText(POSmodel.getName(8) + "\n$ " + POSmodel.getPrice(8));
-        Button_9.setText(POSmodel.getName(9) + "\n$ " + POSmodel.getPrice(9));
-        Button_10.setText(POSmodel.getName(10) + "\n$ " + POSmodel.getPrice(10));
+        Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
+        Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
+        Button_3.setText("<html>" + POSupdate.getName(3) + "<br>$" + POSupdate.getPrice(3) + "</html>");
+        Button_4.setText("<html>" + POSupdate.getName(4) + "<br>$" + POSupdate.getPrice(4) + "</html>");
+        Button_5.setText("<html>" + POSupdate.getName(5) + "<br>$" + POSupdate.getPrice(5) + "</html>");
+        Button_6.setText("<html>" + POSupdate.getName(6) + "<br>$" + POSupdate.getPrice(6) + "</html>");
+        Button_7.setText("<html>" + POSupdate.getName(7) + "<br>$" + POSupdate.getPrice(7) + "</html>");
+        Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
+        Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
+        Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
+        
+     
+        
         
         repaint();
         
