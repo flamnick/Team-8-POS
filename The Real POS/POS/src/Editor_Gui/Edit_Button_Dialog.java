@@ -283,7 +283,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
         dialougeInfoBus.setName(Name_Field.getText());
-        //dialougeInfoBus.setPrice(Double.parseDouble(Value_Field.getText()));
+        double number = Double.parseDouble(Value_Field.getText());
+        dialougeInfoBus.setPrice(number);
         dialougeInfoBus.setPicture(pictureChoice);
         modelReference.updateButton(buttonUnderEdit, dialougeInfoBus);
 
