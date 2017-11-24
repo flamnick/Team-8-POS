@@ -30,7 +30,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     public Editor_Visual_2() {
         
         initComponents();
-        Button_1.setOpaque(true);
         POSmodel.addObserver(this);
     }
 
@@ -798,6 +797,19 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_10.setIcon(POSupdate.getPictureChoice(10));
         Button_10.setHorizontalTextPosition(JButton.CENTER);
         Button_10.setVerticalTextPosition(JButton.CENTER);
+        
+        Button_1.setFont(POSupdate.getFontChoice());
+        Button_2.setFont(POSupdate.getFontChoice());
+        Button_3.setFont(POSupdate.getFontChoice());
+        Button_4.setFont(POSupdate.getFontChoice());
+        Button_5.setFont(POSupdate.getFontChoice());
+        Button_6.setFont(POSupdate.getFontChoice());
+        Button_7.setFont(POSupdate.getFontChoice());
+        Button_8.setFont(POSupdate.getFontChoice());
+        Button_9.setFont(POSupdate.getFontChoice());
+        Button_10.setFont(POSupdate.getFontChoice());
+        Button_11.setFont(POSupdate.getFontChoice());
+        Button_12.setFont(POSupdate.getFontChoice());
         
         
 

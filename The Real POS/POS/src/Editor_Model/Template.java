@@ -89,7 +89,12 @@ public class Template extends Observable implements Serializable
     public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
         this.colorSetting = colorChoice;
+        setChanged();
+        this.notifyObservers();
+        
         this.fontSetting = fontChoice;
+        setChanged();
+        this.notifyObservers();
     }
     /**
      * This changes the name field of a particular button and fires a
