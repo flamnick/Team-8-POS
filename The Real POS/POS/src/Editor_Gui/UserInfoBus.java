@@ -75,9 +75,9 @@ public class UserInfoBus
     */
    public void setPicture(int inputPicture)
    {
-       int oldPicture = picture;
+       
        picture=inputPicture;
-       mPcs.firePropertyChange("", oldPicture, picture);
+      
    }
    
    /**

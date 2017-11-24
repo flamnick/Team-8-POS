@@ -136,11 +136,14 @@ public class Template extends Observable implements Serializable
     public double getPrice(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPrice();
+        
     }
     
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
         buttonArray[buttonNumber].setPicture(inputPicture);
+        setChanged();
+        this.notifyObservers();
         
     }
     public ImageIcon getPictureChoice(int buttonNumber)
@@ -154,6 +157,8 @@ public class Template extends Observable implements Serializable
      */
     public void setTaxRate(double taxRateInput) {
         taxRate = taxRateInput;
+        setChanged();
+        this.notifyObservers();
     }
 
     /**

@@ -36,7 +36,7 @@ public class Button extends Observable {
     /**
      * This variable holds the int for selecting the button's picture
      */
-    private ImageIcon picture_select;
+    private ImageIcon picture_select = null;
     
     /**
      * Standard Constructor
@@ -140,26 +140,37 @@ public class Button extends Observable {
           case 0: 
           {
               picture_select=null;
+              break;
           }
           case 1: 
           {
               picture_select=coffee_icon;
+              break;
           }
           case 2: 
           {
               picture_select=beer_icon;
+              break;
           }
           case 3: 
           {
               picture_select=bread_icon;
+              break;
           }
           case 4: 
           {
               picture_select=cookie_icon;
+              break;
           }
           case 5: 
           {
               picture_select=strawberry_icon;
+              break;
+          }
+          default:
+          {
+              picture_select=null;
+              break;
           }
           
       }
