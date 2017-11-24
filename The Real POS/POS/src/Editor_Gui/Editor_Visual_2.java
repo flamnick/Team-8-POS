@@ -743,11 +743,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object o1) 
     {        
+
         
         
         POSupdate= (Editor_Model.Template) o;
         
-         
+
+
 
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
@@ -760,7 +762,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
-        Button_1.setBackground(POSupdate.getPictureChoice(1));
+        Button_1.setIcon(POSupdate.getPictureChoice(1));
         Button_2.setIcon(POSupdate.getPictureChoice(2));
         Button_3.setIcon(POSupdate.getPictureChoice(3));
         Button_4.setIcon(POSupdate.getPictureChoice(4));
