@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.io.Serializable;
 
 import java.util.Observable;
+import javax.swing.ImageIcon;
 
 
 
@@ -140,8 +141,9 @@ public class Template extends Observable implements Serializable
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
         buttonArray[buttonNumber].setPicture(inputPicture);
+        
     }
-    public int getPictureChoice(int buttonNumber)
+    public ImageIcon getPictureChoice(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPicture();
     }

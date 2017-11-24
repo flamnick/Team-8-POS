@@ -8,6 +8,7 @@ package Emulator_Model;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.Observable;
+import javax.swing.ImageIcon;
 
 /**
  * Holds our data model at the higher level. The buttons are stored as an array.
@@ -134,7 +135,7 @@ public class Template extends Observable {
     {
         buttonArray[buttonNumber].setPicture(inputPicture);
     }
-    public int getPictureChoice(int buttonNumber)
+    public ImageIcon getPictureChoice(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPicture();
     }

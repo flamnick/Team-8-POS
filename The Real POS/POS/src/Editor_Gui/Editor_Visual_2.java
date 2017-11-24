@@ -8,6 +8,8 @@ package Editor_Gui;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 
@@ -18,6 +20,8 @@ import javax.swing.UIManager;
 public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
     XMLManager xml = new XMLManager();
+    
+   
 
     /**
      * Creates new form Emulator_Visual
@@ -739,7 +743,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object o1) 
     {        
-        POSupdate = (Editor_Model.Template) o;
+
+        
+        
+        POSupdate= (Editor_Model.Template) o;
+        
+
+
 
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
@@ -752,9 +762,17 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
-     
+        Button_1.setIcon(POSupdate.getPictureChoice(1));
+        Button_2.setIcon(POSupdate.getPictureChoice(2));
+        Button_3.setIcon(POSupdate.getPictureChoice(3));
+        Button_4.setIcon(POSupdate.getPictureChoice(4));
+        Button_5.setIcon(POSupdate.getPictureChoice(5));
+        Button_6.setIcon(POSupdate.getPictureChoice(6));
+        Button_7.setIcon(POSupdate.getPictureChoice(7));
+        Button_8.setIcon(POSupdate.getPictureChoice(8));
+        Button_9.setIcon(POSupdate.getPictureChoice(9));
+        Button_10.setIcon(POSupdate.getPictureChoice(10));
         
-
         
         repaint();
         

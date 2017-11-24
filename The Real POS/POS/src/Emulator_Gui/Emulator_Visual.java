@@ -517,7 +517,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
     }//GEN-LAST:event_Button_12MouseClicked
 
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
-        DataHolder_List.setText(DataHolder_List.getText() + "dd");
+        
     }//GEN-LAST:event_Button_1MouseClicked
 
     /**
