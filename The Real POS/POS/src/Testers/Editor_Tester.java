@@ -18,11 +18,7 @@ public class Editor_Tester {
         Editor_Model.Template test = new Editor_Model.Template();
         Editor_Model.XMLManager tester = new Editor_Model.XMLManager();
         test.setName(1,"Namae");
-        System.out.println(test.getName(1));
         tester.write(test, "poopybutthole.xml");
-        
-        
-        
         Editor_Model.Template pbh2 = tester.read("poopybutthole.xml");
         System.out.println(pbh2.getName(1));
     }
