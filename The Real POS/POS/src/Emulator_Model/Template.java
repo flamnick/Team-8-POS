@@ -29,7 +29,7 @@ public class Template extends Observable {
      * objects.
      */
     public Template() {
-        colorChoice = Color.MAGENTA;
+        colorChoice = Color.CYAN;
         buttonArray = new Editor_Model.Button[21];
 
         for (int i = 0; i < 20; i++) 
