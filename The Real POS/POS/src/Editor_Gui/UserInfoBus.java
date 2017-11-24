@@ -5,6 +5,7 @@
  */
 package Editor_Gui;
 import java.awt.Color;
+import java.awt.Font;
 import java.beans.*;
 
 /**
@@ -17,7 +18,7 @@ public class UserInfoBus
    private double price;
    private Color color;
    private int picture;
-   private int font;
+   private Font font;
    private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
     
    /**
@@ -89,7 +90,7 @@ public class UserInfoBus
        return picture;
    }
    
-      public void setFont(int inputFont)
+      public void setFont(Font inputFont)
    {
        font=inputFont;
    }
@@ -98,7 +99,7 @@ public class UserInfoBus
     * Gets name field in object.
     * @return name
     */
-   public int getFont ()
+   public Font getFont ()
    {
        return font;
    }

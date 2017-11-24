@@ -104,31 +104,32 @@ public class Button extends Observable {
     {
       
        try {
-            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee.png")));
+            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
+            
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer.png")));
+            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread.png")));
+            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie.png")));
+            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry.png")));
+            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
@@ -159,12 +160,12 @@ public class Button extends Observable {
           }
           case 4: 
           {
-              picture_select=cookie_icon;
+              picture_select=strawberry_icon;
               break;
           }
           case 5: 
           {
-              picture_select=strawberry_icon;
+              picture_select=cookie_icon;
               break;
           }
           default:

@@ -20,6 +20,7 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     private Color color_choice;
     private Font font_choice;
     private Editor_Model.Template modelReference;
+    private UserInfoBus infobus;
     /**
      * Creates new form Color_Text_Dialogue
      * @param model Takes a reference to the data model.
@@ -136,7 +137,9 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
-        modelReference.updateTemplateAppearance(color_choice, font_choice);
+        modelReference.setColorChoice(color_choice);
+        modelReference.setFontChoice(font_choice);
+        
         System.out.println();
         setVisible(false);
         dispose();
