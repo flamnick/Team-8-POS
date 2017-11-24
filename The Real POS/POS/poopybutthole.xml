@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_141" class="java.beans.XMLDecoder">
+ <object class="Editor_Model.Template" id="Template0">
+  <void id="ButtonArray0" property="button">
+   <void index="1">
+    <void property="name">
+     <string>Namae</string>
+    </void>
+   </void>
+  </void>
+ </object>
+</java>

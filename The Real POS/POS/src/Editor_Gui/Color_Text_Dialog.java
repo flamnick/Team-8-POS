@@ -5,6 +5,10 @@
  */
 package Editor_Gui;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.UIManager;
+
 /**
  *
  * @author Flamnick
@@ -13,13 +17,17 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
 
     
     
-    private int color_choice;
-    private int font_choice;
+    private Color color_choice;
+    private Font font_choice;
+    private Editor_Model.Template modelReference;
     /**
      * Creates new form Color_Text_Dialogue
+     * @param model Takes a reference to the data model.
      */
-    public Color_Text_Dialog(java.awt.Frame parent, boolean modal) {
+    public Color_Text_Dialog(java.awt.Frame parent, boolean modal, Editor_Model.Template model) 
+    {
         super(parent, modal);
+        modelReference = model;
         initComponents();
         setVisible(true);
     }
@@ -78,11 +86,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
                 Finish_Dialogue_ButtonMouseClicked(evt);
             }
         });
-        Finish_Dialogue_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Finish_Dialogue_ButtonActionPerformed(evt);
-            }
-        });
 
         Font_List_Label.setText("Button Font");
 
@@ -132,12 +135,9 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Finish_Dialogue_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Finish_Dialogue_ButtonActionPerformed
-
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
-        
+        modelReference.updateTemplateAppearance(color_choice, font_choice);
+        System.out.println();
         setVisible(false);
         dispose();
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
@@ -147,27 +147,27 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         {
             case "Default": 
             {
-                color_choice = 0;
+                color_choice = UIManager.getColor("control");
                 break;
             }
             case "Magenta": 
             {
-                color_choice = 1;
+                color_choice = Color.MAGENTA;
                 break;
             }
             case "Cyan": 
             {
-                color_choice = 2;
+                color_choice = Color.CYAN;
                 break;
             }
             case "Green": 
             {
-                color_choice = 3;
+                color_choice = Color.GREEN;
                 break;
             }
             default:
             {
-                color_choice = 0;
+                color_choice = UIManager.getColor("control");
                 break;
             }
             
@@ -181,27 +181,27 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         {
             case "Default": 
             {
-                font_choice = 0;
+                font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
             case "Arial": 
             {
-                font_choice = 1;
+                font_choice = new Font("Arial", Font.BOLD, 14);
                 break;
             }
             case "Comic Sans": 
             {
-                font_choice = 2;
+                font_choice = new Font("Comic Sans MS", Font.BOLD, 14);
                 break;
             }
             case "Papyrus": 
             {
-                font_choice = 3;
+                font_choice = new Font("Papyrus", Font.BOLD, 14);
                 break;
             }
             default:
             {
-                font_choice = 0;
+                font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
             
@@ -213,45 +213,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Color_Text_Dialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Color_Text_Dialog dialog = new Color_Text_Dialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> Color_List;

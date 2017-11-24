@@ -5,7 +5,12 @@
  */
 package Editor_Model;
 import Editor_Gui.*;
-import Editor_Controller.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.io.Serializable;
+
+import java.util.Observable;
+
 
 
 
@@ -15,15 +20,15 @@ import Editor_Controller.*;
  *
  * @author Team 8
  */
-public class Template extends AbstractModel 
+public class Template extends Observable implements Serializable
 {
     /**
      * This is simply an array which holds our button data.
      */
     private Button[] buttonArray;
     private double taxRate;
-    private int colorChoice;
-    private int fontChoice;
+    private Color colorChoice;
+    private Font fontChoice;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
@@ -56,32 +61,51 @@ public class Template extends AbstractModel
     }
     
     /**
-     * This updates our button with the contents of our data holder.
+     * This updates our entire button with the contents of our data holder.
      * @param buttonNumber
      * @param dataHolder 
      */
     public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
     {
         buttonArray[buttonNumber].setName(dataHolder.getName());
-
+        setChanged();
+        this.notifyObservers();
         buttonArray[buttonNumber].setPrice(dataHolder.getPrice());
+        setChanged();
+        this.notifyObservers();
         
         buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        setChanged();
+        this.notifyObservers();
     }
     
     /**
+     * This updates our data model with the users chosen font and color.
+     * @param colorChoice
+     * @param fontChoice 
+     */
+    public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
+    {
+        this.setColorChoice(colorChoice);
+        this.setFontChoice(fontChoice);
+    }
+    /**
      * This changes the name field of a particular button and fires a
-     * property change informing the controller.
+     * property change informing the controller. There for the purpose of possibly
+     * adding a change name only property.
      * @param buttonNumber the button whose name we are replacing.
      * @param inputName the name we are replacing the button name field with.
      */
     public void setName(int buttonNumber, String inputName)
     {
-        buttonArray[buttonNumber].setName(inputName);
+      buttonArray[buttonNumber].setName(inputName);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**
-     * This gets the name from a particular button.
+     * This gets the name from a particular button. Useful if we eventually intend to edit
+     * the thing individually.
      * @param buttonNumber the button whose name we are getting.
      * @return 
      */
@@ -98,7 +122,9 @@ public class Template extends AbstractModel
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
-        buttonArray[buttonNumber].setPrice(inputPrice);
+      buttonArray[buttonNumber].setPrice(inputPrice);
+      setChanged();
+      this.notifyObservers();
     }
     
     /**
@@ -136,18 +162,28 @@ public class Template extends AbstractModel
     public double getTaxRate() {
         return taxRate;
     }
-    public void setColorChoice(int color_input) {
+    public void setColorChoice(Color color_input) {
       colorChoice = color_input;
+      setChanged();
+      this.notifyObservers();
     }
-    public int getColorChoice() {
+    public Color getColorChoice() {
         return colorChoice;
     }
-    public void setFontChoice(int font_input) {
+    public void setFontChoice(Font font_input) {
        fontChoice = font_input;
+       setChanged();
+       this.notifyObservers();
     }
-    public int getFontChoice() {
+    public Font getFontChoice() {
         return fontChoice;
     }
-    
-
+    public Button[] getButton()
+    {
+        return buttonArray;
+    }
+    public void setButton(Button[] arrayToCopy)
+    {
+        buttonArray = arrayToCopy;
+    }
 }

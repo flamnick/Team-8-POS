@@ -5,12 +5,17 @@
  */
 package Editor_Gui;
 
+import java.awt.Color;
+import java.util.Observable;
+import java.util.Observer;
+import javax.swing.UIManager;
+
 
 /**
  * This is our GUI class. Each class can also receives a reference to our model.
  * @author Team 8
  */
-public class Editor_Visual_2 extends javax.swing.JFrame {
+public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
     XMLManager xml = new XMLManager();
 
@@ -18,7 +23,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
+        
         initComponents();
+        POSmodel.addObserver(this);
     }
 
     /**
@@ -106,11 +113,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                 New_TemplateMouseClicked(evt);
             }
         });
-        New_Template.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                New_TemplateActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,6 +157,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_1MouseClicked(evt);
+            }
+        });
+        Button_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_1ActionPerformed(evt);
             }
         });
 
@@ -213,21 +220,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
-        Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_11MouseClicked(evt);
+        Button_11.setText("CLEAR");
+        Button_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_11ActionPerformed(evt);
             }
         });
 
+        Button_12.setText("TOTAL");
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_12MouseClicked(evt);
+        Button_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_12ActionPerformed(evt);
             }
         });
 
-        Tax_Label.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        Tax_Label.setForeground(new java.awt.Color(1, 1, 1));
         Tax_Label.setText("Template Tax Rate:");
 
         Scroll_Pane_2.setViewportView(Register_List);
@@ -339,9 +348,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Tax_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Taxrate_Textfield)
+                    .addComponent(templateName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Button_Settings_Button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -367,60 +376,72 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void New_TemplateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_TemplateActionPerformed
-        
-    }//GEN-LAST:event_New_TemplateActionPerformed
-
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 1);
+        repaint();
     }//GEN-LAST:event_Button_1MouseClicked
 
     private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 2);
+         repaint();
     }//GEN-LAST:event_Button_2MouseClicked
 
     private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 3);
+         repaint();
     }//GEN-LAST:event_Button_3MouseClicked
 
     private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 4);
+         repaint();
     }//GEN-LAST:event_Button_4MouseClicked
 
     private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 5);
+         repaint();
     }//GEN-LAST:event_Button_5MouseClicked
 
     private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 6);
+        repaint();
     }//GEN-LAST:event_Button_6MouseClicked
 
     private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
        Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 7);
+        repaint();
     }//GEN-LAST:event_Button_7MouseClicked
 
     private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 8);
+         repaint();
     }//GEN-LAST:event_Button_8MouseClicked
 
     private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 9);
+         repaint();
     }//GEN-LAST:event_Button_9MouseClicked
 
     private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 10);
+         repaint();
     }//GEN-LAST:event_Button_10MouseClicked
+
 
     private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 11);
+         repaint();
     }//GEN-LAST:event_Button_11MouseClicked
 
     private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 12);
+         repaint();
     }//GEN-LAST:event_Button_12MouseClicked
 
+   
+    
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
-       Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true);
+       Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this,true, POSmodel);
+       revalidate();
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
@@ -434,12 +455,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_SaveMouseClicked
 
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
-        
+        POSmodel = new Editor_Model.Template();
+        this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
 
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
        try{
-        POSmodel  = xml.read(Load_List.getSelectedItem());
+        POSmodel = xml.read(Load_List.getSelectedItem());
         } catch (Exception e)
        {
            
@@ -449,6 +471,187 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private void Load_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Load_ListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Load_ListActionPerformed
+
+    private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_1ActionPerformed
+
+
+    private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_1.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_1MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_1.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_2.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_2MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_2.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_3.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_3MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_3.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_4.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_4MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_4.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_5.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_5MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_5.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_6.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_6MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_6.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_7.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_7MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_7.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_8.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_8MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_8.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {                                      
+        Button_9.setBackground(POSmodel.getColorChoice());
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_9MouseExited(java.awt.event.MouseEvent evt) {                                     
+        Button_9.setBackground(UIManager.getColor("control"));
+    }                                    
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_10.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_10MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_10.setBackground(UIManager.getColor("control"));
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_11.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_11MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_11.setBackground(UIManager.getColor("control"));
+    }                                     
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {                                       
+        Button_12.setBackground(POSmodel.getColorChoice());
+    }                                      
+/**
+ * 
+ * @param evt 
+ */
+    private void Button_12MouseExited(java.awt.event.MouseEvent evt) {                                      
+        Button_12.setBackground(UIManager.getColor("control"));
+    }                                     
+
+    
+
+    private void Button_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_11ActionPerformed
+
+    private void Button_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_12ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -522,5 +725,41 @@ public class Editor_Visual_2 extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
+
+ /*   public void printDataModel()
+    {
+        System.out.println(POSmodel.getName(1));
+    }*/
+    private Editor_Model.Template POSupdate;
+    /**
+     * This is the update method for the view; it updates all our buttons on click.
+     * @param o Our observable object.
+     * @param o1 cool.
+     */
+    @Override
+    public void update(Observable o, Object o1) 
+    {        
+        POSupdate= (Editor_Model.Template) o;
+
+        Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
+        Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
+        Button_3.setText("<html>" + POSupdate.getName(3) + "<br>$" + POSupdate.getPrice(3) + "</html>");
+        Button_4.setText("<html>" + POSupdate.getName(4) + "<br>$" + POSupdate.getPrice(4) + "</html>");
+        Button_5.setText("<html>" + POSupdate.getName(5) + "<br>$" + POSupdate.getPrice(5) + "</html>");
+        Button_6.setText("<html>" + POSupdate.getName(6) + "<br>$" + POSupdate.getPrice(6) + "</html>");
+        Button_7.setText("<html>" + POSupdate.getName(7) + "<br>$" + POSupdate.getPrice(7) + "</html>");
+        Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
+        Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
+        Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
+        
+     
+        
+
+        
+        repaint();
+        
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
