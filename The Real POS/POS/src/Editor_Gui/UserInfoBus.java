@@ -13,7 +13,7 @@ import java.beans.*;
 public class UserInfoBus 
 {
    private String name;
-   private Double price;
+   private double price;
    private int picture;
    private int font;
    private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
@@ -44,9 +44,7 @@ public class UserInfoBus
     */
    public void setPrice(double userDouble)
    {
-       double oldPrice = price;
        price=userDouble;
-       mPcs.firePropertyChange("price", oldPrice, userDouble);
    }
    /**
     * Gets the double within the object.
