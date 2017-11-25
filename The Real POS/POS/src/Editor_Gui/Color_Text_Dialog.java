@@ -137,7 +137,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
 
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
         modelReference.updateTemplateAppearance(color_choice, font_choice);
-        System.out.println();
         setVisible(false);
         dispose();
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
@@ -163,6 +162,7 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
             case "Green": 
             {
                 color_choice = Color.GREEN;
+                System.out.println("Green was selected.");
                 break;
             }
             default:
