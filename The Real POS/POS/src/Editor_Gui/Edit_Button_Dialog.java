@@ -25,7 +25,6 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private ImageIcon cookie_icon;
     private ImageIcon strawberry_icon;
     private UserInfoBus dialougeInfoBus = new UserInfoBus();
-    //viewTemplate = new userInfoBus[21];
     private Editor_Model.Template modelReference;
     private int buttonUnderEdit;
     

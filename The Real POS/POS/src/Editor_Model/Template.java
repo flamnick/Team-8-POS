@@ -30,6 +30,7 @@ public class Template extends Observable implements Serializable
     private double taxRate;
     private Color colorSetting;
     private Font fontSetting;
+    
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
@@ -59,7 +60,7 @@ public class Template extends Observable implements Serializable
 
         buttonArray[buttonNumber].setPrice(inputPrice);
         
-        buttonArray[buttonNumber].setPicture(inputPicture);
+        buttonArray[buttonNumber].setPictureChoice(inputPicture);
     }
     
     /**
@@ -76,7 +77,7 @@ public class Template extends Observable implements Serializable
         setChanged();
         this.notifyObservers();
         
-        buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        buttonArray[buttonNumber].setPictureChoice(dataHolder.getPicture());
         setChanged();
         this.notifyObservers();
     }
@@ -150,21 +151,22 @@ public class Template extends Observable implements Serializable
      * @param buttonNumber
      * @param inputPicture 
      */
-    public void setPicture(int buttonNumber, int inputPicture)
+    public void setPictureChoice(int buttonNumber, int inputPicture)
     {
-        buttonArray[buttonNumber].setPicture(inputPicture);
+        buttonArray[buttonNumber].setPictureChoice(inputPicture);
         setChanged();
         this.notifyObservers();
         
     }
+  
     /**
      * Method for getting picture Choice.
      * @param buttonNumber Whichever button we are editing.
      * @return 
      */
-    public ImageIcon getPicture(int buttonNumber)
+    public ImageIcon getPictureChoice(int buttonNumber)
     {
-        return buttonArray[buttonNumber].getPicture();
+        return buttonArray[buttonNumber].getPictureChoice();
     }
     /**
      * Method for setting tax rate.

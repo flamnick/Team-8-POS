@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 import javax.imageio.ImageIO;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.UIManager;
@@ -21,7 +22,7 @@ import javax.swing.UIManager;
 public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
     XMLManager xml = new XMLManager();
-    
+    DefaultListModel<String> listModel = new DefaultListModel<>();
    
 
     /**
@@ -53,7 +54,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Menu_Title = new javax.swing.JLabel();
         Load_Instructions = new javax.swing.JLabel();
         Scroll_Pane = new java.awt.ScrollPane();
-        Load_List = new java.awt.List();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Load_List = new javax.swing.JList<>();
         New_Template = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Button_1 = new javax.swing.JButton();
@@ -105,12 +107,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
         Load_Instructions.setText("Select a template to emulate:");
 
-        Load_List.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Load_ListActionPerformed(evt);
-            }
-        });
-        Scroll_Pane.add(Load_List);
+        Load_List.setModel(listModel);
+        jScrollPane2.setViewportView(Load_List);
+
+        Scroll_Pane.add(jScrollPane2);
 
         New_Template.setText("Create New Template");
         New_Template.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -526,11 +526,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
        try{
-           xml.write(POSmodel,templateName.getText());
+           xml.write(POSmodel,templateName.getText() + ".xml");
        } catch (Exception e)
        {
            
        }
+       listModel.addElement(templateName.getText());
+       repaint();
         
     }//GEN-LAST:event_SaveMouseClicked
 
@@ -541,16 +543,15 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
        try{
-        POSmodel = xml.read(Load_List.getSelectedItem());
+        String file_name = "/" + Load_List.getSelectedValue();
+        
+        POSmodel = xml.read(Load_List.getSelectedValue());
         } catch (Exception e)
        {
            
        }
+       
     }//GEN-LAST:event_LoadMouseClicked
-
-    private void Load_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Load_ListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Load_ListActionPerformed
 
     private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
         // TODO add your handling code here:
@@ -713,7 +714,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton Button_Settings_Button;
     private javax.swing.JButton Load;
     private javax.swing.JLabel Load_Instructions;
-    private java.awt.List Load_List;
+    private javax.swing.JList<String> Load_List;
     private javax.swing.JLabel Menu_Title;
     private javax.swing.JButton New_Template;
     private javax.swing.JTextField Register_List;
@@ -728,6 +729,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
@@ -766,34 +768,34 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
-        Button_1.setIcon(POSupdate.getPicture(1));
+        Button_1.setIcon(POSupdate.getPictureChoice(1));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
-        Button_2.setIcon(POSupdate.getPicture(2));
+        Button_2.setIcon(POSupdate.getPictureChoice(2));
         Button_2.setHorizontalTextPosition(JButton.CENTER);
         Button_2.setVerticalTextPosition(JButton.CENTER);
-        Button_3.setIcon(POSupdate.getPicture(3));
+        Button_3.setIcon(POSupdate.getPictureChoice(3));
         Button_3.setHorizontalTextPosition(JButton.CENTER);
         Button_3.setVerticalTextPosition(JButton.CENTER);
-        Button_4.setIcon(POSupdate.getPicture(4));
+        Button_4.setIcon(POSupdate.getPictureChoice(4));
         Button_4.setHorizontalTextPosition(JButton.CENTER);
         Button_4.setVerticalTextPosition(JButton.CENTER);
-        Button_5.setIcon(POSupdate.getPicture(5));
+        Button_5.setIcon(POSupdate.getPictureChoice(5));
         Button_5.setHorizontalTextPosition(JButton.CENTER);
         Button_5.setVerticalTextPosition(JButton.CENTER);
-        Button_6.setIcon(POSupdate.getPicture(6));
+        Button_6.setIcon(POSupdate.getPictureChoice(6));
         Button_6.setHorizontalTextPosition(JButton.CENTER);
         Button_6.setVerticalTextPosition(JButton.CENTER);
-        Button_7.setIcon(POSupdate.getPicture(7));
+        Button_7.setIcon(POSupdate.getPictureChoice(7));
         Button_7.setHorizontalTextPosition(JButton.CENTER);
         Button_7.setVerticalTextPosition(JButton.CENTER);
-        Button_8.setIcon(POSupdate.getPicture(8));
+        Button_8.setIcon(POSupdate.getPictureChoice(8));
         Button_8.setHorizontalTextPosition(JButton.CENTER);
         Button_8.setVerticalTextPosition(JButton.CENTER);
-        Button_9.setIcon(POSupdate.getPicture(9));
+        Button_9.setIcon(POSupdate.getPictureChoice(9));
         Button_9.setHorizontalTextPosition(JButton.CENTER);
         Button_9.setVerticalTextPosition(JButton.CENTER);
-        Button_10.setIcon(POSupdate.getPicture(10));
+        Button_10.setIcon(POSupdate.getPictureChoice(10));
         Button_10.setHorizontalTextPosition(JButton.CENTER);
         Button_10.setVerticalTextPosition(JButton.CENTER);
         

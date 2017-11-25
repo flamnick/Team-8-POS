@@ -36,7 +36,7 @@ public class Button extends Observable {
     /**
      * This variable holds the int for selecting the button's picture
      */
-    private ImageIcon picture = null;
+    private ImageIcon pictureChoice = null;
     
     /**
      * Standard Constructor
@@ -46,7 +46,7 @@ public class Button extends Observable {
     public Button() {
         this.setName(" ");
         this.setPrice(0);
-        this.setPicture(0);
+        this.setPictureChoice(0);
     }
 
     /**
@@ -58,7 +58,7 @@ public class Button extends Observable {
     public Button(double priceInput, String nameInput, int pictureInput) {
         this.setName(nameInput);
         this.setPrice(priceInput);
-        this.setPicture(pictureInput);
+        this.setPictureChoice(pictureInput);
     }
 
     /**
@@ -100,7 +100,7 @@ public class Button extends Observable {
         return name;
     }
 
-    public void setPicture(int picture_input) 
+    public void setPictureChoice(int picture_input) 
     {
       
        try {
@@ -140,47 +140,47 @@ public class Button extends Observable {
           
           case 0: 
           {
-              picture=null;
+              pictureChoice=null;
               break;
           }
           case 1: 
           {
-              picture=coffee_icon;
+              pictureChoice=coffee_icon;
               break;
           }
           case 2: 
           {
-              picture=beer_icon;
+              pictureChoice=beer_icon;
               break;
           }
           case 3: 
           {
-              picture=bread_icon;
+              pictureChoice=bread_icon;
               break;
           }
           case 4: 
           {
-              picture=strawberry_icon;
+              pictureChoice=strawberry_icon;
               break;
           }
           case 5: 
           {
-              picture=cookie_icon;
+              pictureChoice=cookie_icon;
               break;
           }
           default:
           {
-              picture=null;
+              pictureChoice=null;
               break;
           }
           
       }
           
     }
-    public ImageIcon getPicture() 
+    public ImageIcon getPictureChoice() 
     {
         
-        return picture;
+        return pictureChoice;
     }
     
 }

@@ -23,23 +23,25 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
 
 
     // Property identifiers//GEN-FIRST:Properties
-    private static final int PROPERTY_colorChoice = 0;
-    private static final int PROPERTY_fontChoice = 1;
-    private static final int PROPERTY_name = 2;
-    private static final int PROPERTY_pictureChoice = 3;
-    private static final int PROPERTY_price = 4;
-    private static final int PROPERTY_taxRate = 5;
+    private static final int PROPERTY_button = 0;
+    private static final int PROPERTY_colorChoice = 1;
+    private static final int PROPERTY_fontChoice = 2;
+    private static final int PROPERTY_name = 3;
+    private static final int PROPERTY_pictureChoice = 4;
+    private static final int PROPERTY_price = 5;
+    private static final int PROPERTY_taxRate = 6;
 
     // Property array 
     /*lazy PropertyDescriptor*/
     private static PropertyDescriptor[] getPdescriptor(){
-        PropertyDescriptor[] properties = new PropertyDescriptor[6];
+        PropertyDescriptor[] properties = new PropertyDescriptor[7];
     
         try {
+            properties[PROPERTY_button] = new PropertyDescriptor ( "button", Editor_Model.Template.class, "getButton", "setButton" ); // NOI18N
             properties[PROPERTY_colorChoice] = new PropertyDescriptor ( "colorChoice", Editor_Model.Template.class, "getColorChoice", "setColorChoice" ); // NOI18N
             properties[PROPERTY_fontChoice] = new PropertyDescriptor ( "fontChoice", Editor_Model.Template.class, "getFontChoice", "setFontChoice" ); // NOI18N
             properties[PROPERTY_name] = new IndexedPropertyDescriptor ( "name", Editor_Model.Template.class, null, null, "getName", "setName" ); // NOI18N
-            properties[PROPERTY_pictureChoice] = new IndexedPropertyDescriptor ( "pictureChoice", Editor_Model.Template.class, null, null, "getPictureChoice", "setPictureChoice" ); // NOI18N
+            properties[PROPERTY_pictureChoice] = new IndexedPropertyDescriptor ( "pictureChoice", Editor_Model.Template.class, null, null, "getPictureChoice", null ); // NOI18N
             properties[PROPERTY_price] = new IndexedPropertyDescriptor ( "price", Editor_Model.Template.class, null, null, "getPrice", "setPrice" ); // NOI18N
             properties[PROPERTY_taxRate] = new PropertyDescriptor ( "taxRate", Editor_Model.Template.class, "getTaxRate", "setTaxRate" ); // NOI18N
         }
@@ -69,13 +71,14 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
     private static final int METHOD_hasChanged5 = 5;
     private static final int METHOD_notifyObservers6 = 6;
     private static final int METHOD_notifyObservers7 = 7;
-    private static final int METHOD_updateButton8 = 8;
-    private static final int METHOD_updateTemplateAppearance9 = 9;
+    private static final int METHOD_setPictureChoice8 = 8;
+    private static final int METHOD_updateButton9 = 9;
+    private static final int METHOD_updateTemplateAppearance10 = 10;
 
     // Method array 
     /*lazy MethodDescriptor*/
     private static MethodDescriptor[] getMdescriptor(){
-        MethodDescriptor[] methods = new MethodDescriptor[10];
+        MethodDescriptor[] methods = new MethodDescriptor[11];
     
         try {
             methods[METHOD_addObserver0] = new MethodDescriptor(java.util.Observable.class.getMethod("addObserver", new Class[] {java.util.Observer.class})); // NOI18N
@@ -94,10 +97,12 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
             methods[METHOD_notifyObservers6].setDisplayName ( "" );
             methods[METHOD_notifyObservers7] = new MethodDescriptor(java.util.Observable.class.getMethod("notifyObservers", new Class[] {java.lang.Object.class})); // NOI18N
             methods[METHOD_notifyObservers7].setDisplayName ( "" );
-            methods[METHOD_updateButton8] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateButton", new Class[] {int.class, Editor_Gui.UserInfoBus.class})); // NOI18N
-            methods[METHOD_updateButton8].setDisplayName ( "" );
-            methods[METHOD_updateTemplateAppearance9] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateTemplateAppearance", new Class[] {java.awt.Color.class, java.awt.Font.class})); // NOI18N
-            methods[METHOD_updateTemplateAppearance9].setDisplayName ( "" );
+            methods[METHOD_setPictureChoice8] = new MethodDescriptor(Editor_Model.Template.class.getMethod("setPictureChoice", new Class[] {int.class, int.class})); // NOI18N
+            methods[METHOD_setPictureChoice8].setDisplayName ( "" );
+            methods[METHOD_updateButton9] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateButton", new Class[] {int.class, Editor_Gui.UserInfoBus.class})); // NOI18N
+            methods[METHOD_updateButton9].setDisplayName ( "" );
+            methods[METHOD_updateTemplateAppearance10] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateTemplateAppearance", new Class[] {java.awt.Color.class, java.awt.Font.class})); // NOI18N
+            methods[METHOD_updateTemplateAppearance10].setDisplayName ( "" );
         }
         catch( Exception e) {}//GEN-HEADEREND:Methods
         // Here you can add code for customizing the methods array.

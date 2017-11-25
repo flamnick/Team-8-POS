@@ -61,7 +61,7 @@ public class Template extends Observable {
 
         buttonArray[buttonNumber].setPrice(inputPrice);
         
-        buttonArray[buttonNumber].setPicture(inputPicture);
+        buttonArray[buttonNumber].setPictureChoice(inputPicture);
     }
     
     /**
@@ -78,7 +78,7 @@ public class Template extends Observable {
         setChanged();
         this.notifyObservers();
         
-        buttonArray[buttonNumber].setPicture(dataHolder.getPicture());
+        buttonArray[buttonNumber].setPictureChoice(dataHolder.getPicture());
         setChanged();
         this.notifyObservers();
     }
@@ -148,11 +148,11 @@ public class Template extends Observable {
     
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
-        buttonArray[buttonNumber].setPicture(inputPicture);
+        buttonArray[buttonNumber].setPictureChoice(inputPicture);
     }
     public ImageIcon getPictureChoice(int buttonNumber)
     {
-        return buttonArray[buttonNumber].getPicture();
+        return buttonArray[buttonNumber].getPictureChoice();
     }
     /**
      * Method for setting tax rate.
