@@ -10,6 +10,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.UIManager;
 
 
@@ -352,8 +353,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(Button_10, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                .addComponent(Button_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Button_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Button_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Button_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(Button_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -767,15 +768,35 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
         Button_1.setIcon(POSupdate.getPictureChoice(1));
+        Button_1.setHorizontalTextPosition(JButton.CENTER);
+        Button_1.setVerticalTextPosition(JButton.CENTER);
         Button_2.setIcon(POSupdate.getPictureChoice(2));
+        Button_2.setHorizontalTextPosition(JButton.CENTER);
+        Button_2.setVerticalTextPosition(JButton.CENTER);
         Button_3.setIcon(POSupdate.getPictureChoice(3));
+        Button_3.setHorizontalTextPosition(JButton.CENTER);
+        Button_3.setVerticalTextPosition(JButton.CENTER);
         Button_4.setIcon(POSupdate.getPictureChoice(4));
+        Button_4.setHorizontalTextPosition(JButton.CENTER);
+        Button_4.setVerticalTextPosition(JButton.CENTER);
         Button_5.setIcon(POSupdate.getPictureChoice(5));
+        Button_5.setHorizontalTextPosition(JButton.CENTER);
+        Button_5.setVerticalTextPosition(JButton.CENTER);
         Button_6.setIcon(POSupdate.getPictureChoice(6));
+        Button_6.setHorizontalTextPosition(JButton.CENTER);
+        Button_6.setVerticalTextPosition(JButton.CENTER);
         Button_7.setIcon(POSupdate.getPictureChoice(7));
+        Button_7.setHorizontalTextPosition(JButton.CENTER);
+        Button_7.setVerticalTextPosition(JButton.CENTER);
         Button_8.setIcon(POSupdate.getPictureChoice(8));
+        Button_8.setHorizontalTextPosition(JButton.CENTER);
+        Button_8.setVerticalTextPosition(JButton.CENTER);
         Button_9.setIcon(POSupdate.getPictureChoice(9));
+        Button_9.setHorizontalTextPosition(JButton.CENTER);
+        Button_9.setVerticalTextPosition(JButton.CENTER);
         Button_10.setIcon(POSupdate.getPictureChoice(10));
+        Button_10.setHorizontalTextPosition(JButton.CENTER);
+        Button_10.setVerticalTextPosition(JButton.CENTER);
         
         Button_1.setFont(POSupdate.getFontChoice());
         Button_2.setFont(POSupdate.getFontChoice());
@@ -791,7 +812,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_12.setFont(POSupdate.getFontChoice());
         
         
-        
+
         
         repaint();
         
