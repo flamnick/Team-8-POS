@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.io.Serializable;
 
 import java.util.Observable;
+import javax.swing.ImageIcon;
 
 
 
@@ -27,8 +28,8 @@ public class Template extends Observable implements Serializable
      */
     private Button[] buttonArray;
     private double taxRate;
-    private Color colorChoice;
-    private Font fontChoice;
+    private Color colorSetting;
+    private Font fontSetting;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
@@ -36,6 +37,7 @@ public class Template extends Observable implements Serializable
      */
     public Template() {
         buttonArray = new Button[21];
+        colorSetting = Color.MAGENTA;
 
         for (int i = 0; i < 20; i++) 
         {
@@ -86,8 +88,8 @@ public class Template extends Observable implements Serializable
      */
     public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
-        this.setColorChoice(colorChoice);
-        this.setFontChoice(fontChoice);
+        this.colorSetting = colorChoice;
+        this.fontSetting = fontChoice;
     }
     /**
      * This changes the name field of a particular button and fires a
@@ -135,13 +137,17 @@ public class Template extends Observable implements Serializable
     public double getPrice(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPrice();
+        
     }
     
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
         buttonArray[buttonNumber].setPicture(inputPicture);
+        setChanged();
+        this.notifyObservers();
+        
     }
-    public int getPictureChoice(int buttonNumber)
+    public ImageIcon getPictureChoice(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPicture();
     }
@@ -152,6 +158,8 @@ public class Template extends Observable implements Serializable
      */
     public void setTaxRate(double taxRateInput) {
         taxRate = taxRateInput;
+        setChanged();
+        this.notifyObservers();
     }
 
     /**
@@ -163,20 +171,20 @@ public class Template extends Observable implements Serializable
         return taxRate;
     }
     public void setColorChoice(Color color_input) {
-      colorChoice = color_input;
+      colorSetting = color_input;
       setChanged();
       this.notifyObservers();
     }
     public Color getColorChoice() {
-        return colorChoice;
+        return colorSetting;
     }
     public void setFontChoice(Font font_input) {
-       fontChoice = font_input;
+       fontSetting = font_input;
        setChanged();
        this.notifyObservers();
     }
     public Font getFontChoice() {
-        return fontChoice;
+        return fontSetting;
     }
     public Button[] getButton()
     {

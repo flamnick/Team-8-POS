@@ -8,6 +8,8 @@ package Editor_Gui;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 
@@ -18,6 +20,8 @@ import javax.swing.UIManager;
 public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     Editor_Model.Template POSmodel = new Editor_Model.Template();
     XMLManager xml = new XMLManager();
+    
+   
 
     /**
      * Creates new form Emulator_Visual
@@ -25,6 +29,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     public Editor_Visual_2() {
         
         initComponents();
+        Button_1.setOpaque(true);
         POSmodel.addObserver(this);
     }
 
@@ -158,6 +163,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_1MouseExited(evt);
+            }
         });
         Button_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,11 +180,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_2MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_2MouseExited(evt);
+            }
         });
 
         Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_3MouseExited(evt);
             }
         });
 
@@ -181,11 +204,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_4MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_4MouseExited(evt);
+            }
         });
 
         Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_5MouseExited(evt);
             }
         });
 
@@ -193,11 +228,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_6MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_6MouseExited(evt);
+            }
         });
 
         Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_7MouseExited(evt);
             }
         });
 
@@ -205,11 +252,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_8MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_8MouseExited(evt);
+            }
         });
 
         Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_9MouseExited(evt);
             }
         });
 
@@ -217,10 +276,24 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_10MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_10MouseExited(evt);
+            }
         });
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() & ~java.awt.Font.BOLD));
         Button_11.setText("CLEAR");
+        Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_11MouseExited(evt);
+            }
+        });
         Button_11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_11ActionPerformed(evt);
@@ -230,6 +303,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_12.setText("TOTAL");
         Button_12.setBorder(null);
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_12MouseExited(evt);
+            }
+        });
         Button_12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_12ActionPerformed(evt);
@@ -476,174 +557,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_1ActionPerformed
 
-
-    private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_1.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_1MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_1.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_2.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_2MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_2.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_3.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_3MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_3.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_4.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_4MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_4.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_5.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_5MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_5.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_6.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_6MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_6.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_7.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_7MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_7.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_8.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_8MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_8.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Button_9.setBackground(POSmodel.getColorChoice());
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_9MouseExited(java.awt.event.MouseEvent evt) {                                     
-        Button_9.setBackground(UIManager.getColor("control"));
-    }                                    
-/**
- * 
- * @param evt 
- */
-    private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {                                       
-        Button_10.setBackground(POSmodel.getColorChoice());
-    }                                      
-/**
- * 
- * @param evt 
- */
-    private void Button_10MouseExited(java.awt.event.MouseEvent evt) {                                      
-        Button_10.setBackground(UIManager.getColor("control"));
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {                                       
-        Button_11.setBackground(POSmodel.getColorChoice());
-    }                                      
-/**
- * 
- * @param evt 
- */
-    private void Button_11MouseExited(java.awt.event.MouseEvent evt) {                                      
-        Button_11.setBackground(UIManager.getColor("control"));
-    }                                     
-/**
- * 
- * @param evt 
- */
-    private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {                                       
-        Button_12.setBackground(POSmodel.getColorChoice());
-    }                                      
-/**
- * 
- * @param evt 
- */
-    private void Button_12MouseExited(java.awt.event.MouseEvent evt) {                                      
-        Button_12.setBackground(UIManager.getColor("control"));
-    }                                     
-
-    
-
     private void Button_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_11ActionPerformed
@@ -651,6 +564,102 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Button_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_12ActionPerformed
+
+    private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseEntered
+    Button_1.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_1MouseEntered
+
+    private void Button_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseExited
+    Button_1.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_1MouseExited
+
+    private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseEntered
+     Button_2.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_2MouseEntered
+
+    private void Button_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseExited
+    Button_2.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_2MouseExited
+
+    private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseEntered
+     Button_3.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_3MouseEntered
+
+    private void Button_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseExited
+     Button_3.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_3MouseExited
+
+    private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseEntered
+    Button_4.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_4MouseEntered
+
+    private void Button_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseExited
+    Button_4.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_4MouseExited
+
+    private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseEntered
+    Button_5.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_5MouseEntered
+
+    private void Button_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseExited
+    Button_5.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_5MouseExited
+
+    private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseEntered
+    Button_6.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_6MouseEntered
+
+    private void Button_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseExited
+    Button_6.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_6MouseExited
+
+    private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseEntered
+    Button_7.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_7MouseEntered
+
+    private void Button_7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseExited
+     Button_7.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_7MouseExited
+
+    private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseEntered
+    Button_8.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_8MouseEntered
+
+    private void Button_8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseExited
+    Button_8.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_8MouseExited
+
+    private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseEntered
+    Button_9.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_9MouseEntered
+
+    private void Button_9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseExited
+    Button_9.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_9MouseExited
+
+    private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseEntered
+    Button_10.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_10MouseEntered
+
+    private void Button_10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseExited
+    Button_10.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_10MouseExited
+
+    private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseEntered
+    Button_11.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_11MouseEntered
+
+    private void Button_11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseExited
+    Button_11.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_11MouseExited
+
+    private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseEntered
+    Button_12.setBackground(POSmodel.getColorChoice());
+    }//GEN-LAST:event_Button_12MouseEntered
+
+    private void Button_12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseExited
+    Button_12.setBackground(UIManager.getColor("control"));
+    }//GEN-LAST:event_Button_12MouseExited
 
 
     /**
@@ -739,7 +748,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object o1) 
     {        
+
+        
+        
         POSupdate= (Editor_Model.Template) o;
+        
+
+
 
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
@@ -752,9 +767,19 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
-     
+        Button_1.setIcon(POSupdate.getPictureChoice(1));
+        Button_2.setIcon(POSupdate.getPictureChoice(2));
+        Button_3.setIcon(POSupdate.getPictureChoice(3));
+        Button_4.setIcon(POSupdate.getPictureChoice(4));
+        Button_5.setIcon(POSupdate.getPictureChoice(5));
+        Button_6.setIcon(POSupdate.getPictureChoice(6));
+        Button_7.setIcon(POSupdate.getPictureChoice(7));
+        Button_8.setIcon(POSupdate.getPictureChoice(8));
+        Button_9.setIcon(POSupdate.getPictureChoice(9));
+        Button_10.setIcon(POSupdate.getPictureChoice(10));
         
-
+        
+        
         
         repaint();
         

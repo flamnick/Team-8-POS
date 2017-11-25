@@ -5,7 +5,11 @@
  */
 package Editor_Model;
 
+import Editor_Model.ImagePanel;
 import java.util.Observable;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  * This class is the button class for the editor.
@@ -14,6 +18,13 @@ import java.util.Observable;
  */
 public class Button extends Observable {
 
+    
+    
+    private ImageIcon coffee_icon;
+    private ImageIcon beer_icon;
+    private ImageIcon bread_icon;
+    private ImageIcon cookie_icon;
+    private ImageIcon strawberry_icon;
     /**
      * This variable holds the price associated for the given button.
      */
@@ -25,7 +36,7 @@ public class Button extends Observable {
     /**
      * This variable holds the int for selecting the button's picture
      */
-    private int picture_select;
+    private ImageIcon picture_select = null;
     
     /**
      * Standard Constructor
@@ -91,10 +102,83 @@ public class Button extends Observable {
 
     public void setPicture(int picture_input) 
     {
-      picture_select = picture_input;
+      
+       try {
+            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        }
+        try {
+            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry.png")));
+                    
+        } catch (Exception e) {
+            assert false; // Resource load failure - did you mistype the path programmer?
+        } 
+        
+      switch (picture_input)
+      {
+          
+          case 0: 
+          {
+              picture_select=null;
+              break;
+          }
+          case 1: 
+          {
+              picture_select=coffee_icon;
+              break;
+          }
+          case 2: 
+          {
+              picture_select=beer_icon;
+              break;
+          }
+          case 3: 
+          {
+              picture_select=bread_icon;
+              break;
+          }
+          case 4: 
+          {
+              picture_select=cookie_icon;
+              break;
+          }
+          case 5: 
+          {
+              picture_select=strawberry_icon;
+              break;
+          }
+          default:
+          {
+              picture_select=null;
+              break;
+          }
+          
+      }
+          
     }
-    public int getPicture() 
+    public ImageIcon getPicture() 
     {
+        
         return picture_select;
     }
     
