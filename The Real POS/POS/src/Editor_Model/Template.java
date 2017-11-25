@@ -89,7 +89,12 @@ public class Template extends Observable implements Serializable
     public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
         this.colorSetting = colorChoice;
+        setChanged();
+        this.notifyObservers();
+        
         this.fontSetting = fontChoice;
+        setChanged();
+        this.notifyObservers();
     }
     /**
      * This changes the name field of a particular button and fires a
@@ -140,14 +145,24 @@ public class Template extends Observable implements Serializable
         
     }
     
-    public void setPictureChoice(int buttonNumber, int inputPicture)
+    /**
+     * Method for setting the picture choice.
+     * @param buttonNumber
+     * @param inputPicture 
+     */
+    public void setPicture(int buttonNumber, int inputPicture)
     {
         buttonArray[buttonNumber].setPicture(inputPicture);
         setChanged();
         this.notifyObservers();
         
     }
-    public ImageIcon getPictureChoice(int buttonNumber)
+    /**
+     * Method for getting picture Choice.
+     * @param buttonNumber Whichever button we are editing.
+     * @return 
+     */
+    public ImageIcon getPicture(int buttonNumber)
     {
         return buttonArray[buttonNumber].getPicture();
     }
@@ -178,14 +193,17 @@ public class Template extends Observable implements Serializable
     public Color getColorChoice() {
         return colorSetting;
     }
-    public void setFontChoice(Font font_input) {
+    public void setFontChoice(Font font_input) 
+    {
        fontSetting = font_input;
        setChanged();
        this.notifyObservers();
     }
-    public Font getFontChoice() {
+    public Font getFontChoice() 
+    {
         return fontSetting;
     }
+    
     public Button[] getButton()
     {
         return buttonArray;
@@ -194,4 +212,5 @@ public class Template extends Observable implements Serializable
     {
         buttonArray = arrayToCopy;
     }
+    
 }

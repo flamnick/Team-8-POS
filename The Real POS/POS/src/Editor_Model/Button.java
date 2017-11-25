@@ -36,7 +36,7 @@ public class Button extends Observable {
     /**
      * This variable holds the int for selecting the button's picture
      */
-    private ImageIcon picture_select = null;
+    private ImageIcon picture = null;
     
     /**
      * Standard Constructor
@@ -104,31 +104,32 @@ public class Button extends Observable {
     {
       
        try {
-            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee.png")));
+            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
+            
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer.png")));
+            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread.png")));
+            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie.png")));
+            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry.png")));
+            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Fruit_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
@@ -139,37 +140,37 @@ public class Button extends Observable {
           
           case 0: 
           {
-              picture_select=null;
+              picture=null;
               break;
           }
           case 1: 
           {
-              picture_select=coffee_icon;
+              picture=coffee_icon;
               break;
           }
           case 2: 
           {
-              picture_select=beer_icon;
+              picture=beer_icon;
               break;
           }
           case 3: 
           {
-              picture_select=bread_icon;
+              picture=bread_icon;
               break;
           }
           case 4: 
           {
-              picture_select=cookie_icon;
+              picture=strawberry_icon;
               break;
           }
           case 5: 
           {
-              picture_select=strawberry_icon;
+              picture=cookie_icon;
               break;
           }
           default:
           {
-              picture_select=null;
+              picture=null;
               break;
           }
           
@@ -179,7 +180,7 @@ public class Button extends Observable {
     public ImageIcon getPicture() 
     {
         
-        return picture_select;
+        return picture;
     }
     
 }

@@ -83,6 +83,11 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Load_Button.setText("Load");
+        Load_Button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Load_ButtonMouseClicked(evt);
+            }
+        });
 
         Menu_Title_Label.setText("Template Emulator");
 
@@ -341,7 +346,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
  * @param evt 
  */
     private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_Button_1ActionPerformed
 /**
  * 
@@ -519,6 +524,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         
     }//GEN-LAST:event_Button_1MouseClicked
+
+    private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Load_ButtonMouseClicked
 
     /**
      * @param args the command line arguments

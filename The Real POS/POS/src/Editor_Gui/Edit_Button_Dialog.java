@@ -46,31 +46,31 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         No_Image_Button.setSelected(true);
         setVisible(true);
         try {
-            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee.png")));
+            coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer.png")));
+            beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread.png")));
+            bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie.png")));
+            cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
-            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Strawberry.png")));
+            strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Fruit_new.png")));
                     
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?

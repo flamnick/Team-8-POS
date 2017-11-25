@@ -191,8 +191,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="Button_10" pref="100" max="32767" attributes="0"/>
-                                  <Component id="Button_1" max="32767" attributes="0"/>
                                   <Component id="Button_4" max="32767" attributes="0"/>
+                                  <Component id="Button_1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="Button_7" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
@@ -312,9 +312,6 @@
         <Component class="javax.swing.JButton" name="Button_1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>

@@ -1,20 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_141" class="java.beans.XMLDecoder">
- <object class="Editor_Model.Template">
-  <void property="colorChoice">
-   <object class="java.awt.Color">
-    <int>255</int>
-    <int>0</int>
-    <int>255</int>
-    <int>255</int>
-   </object>
-  </void>
-  <void property="fontChoice">
-   <object class="java.awt.Font">
-    <string>Tahoma</string>
-    <int>1</int>
-    <int>14</int>
-   </object>
-  </void>
- </object>
 </java>
