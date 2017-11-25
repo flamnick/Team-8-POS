@@ -99,6 +99,10 @@ public class Button extends Observable {
     public String getName() {
         return name;
     }
+    public void setPictureChoice(ImageIcon filler)
+    {
+        pictureChoice = filler;
+    }
 
     public void setPictureChoice(int picture_input) 
     {

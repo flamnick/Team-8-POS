@@ -146,6 +146,10 @@ public class Template extends Observable implements Serializable
         
     }
     
+    public void setPictureChoice(int buttonNumber, ImageIcon filler)
+    {
+        buttonArray[buttonNumber].setPictureChoice(filler);
+    }
     /**
      * Method for setting the picture choice.
      * @param buttonNumber

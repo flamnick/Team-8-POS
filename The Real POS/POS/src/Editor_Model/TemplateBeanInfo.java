@@ -72,13 +72,14 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
     private static final int METHOD_notifyObservers6 = 6;
     private static final int METHOD_notifyObservers7 = 7;
     private static final int METHOD_setPictureChoice8 = 8;
-    private static final int METHOD_updateButton9 = 9;
-    private static final int METHOD_updateTemplateAppearance10 = 10;
+    private static final int METHOD_setPictureChoice9 = 9;
+    private static final int METHOD_updateButton10 = 10;
+    private static final int METHOD_updateTemplateAppearance11 = 11;
 
     // Method array 
     /*lazy MethodDescriptor*/
     private static MethodDescriptor[] getMdescriptor(){
-        MethodDescriptor[] methods = new MethodDescriptor[11];
+        MethodDescriptor[] methods = new MethodDescriptor[12];
     
         try {
             methods[METHOD_addObserver0] = new MethodDescriptor(java.util.Observable.class.getMethod("addObserver", new Class[] {java.util.Observer.class})); // NOI18N
@@ -97,12 +98,14 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
             methods[METHOD_notifyObservers6].setDisplayName ( "" );
             methods[METHOD_notifyObservers7] = new MethodDescriptor(java.util.Observable.class.getMethod("notifyObservers", new Class[] {java.lang.Object.class})); // NOI18N
             methods[METHOD_notifyObservers7].setDisplayName ( "" );
-            methods[METHOD_setPictureChoice8] = new MethodDescriptor(Editor_Model.Template.class.getMethod("setPictureChoice", new Class[] {int.class, int.class})); // NOI18N
+            methods[METHOD_setPictureChoice8] = new MethodDescriptor(Editor_Model.Template.class.getMethod("setPictureChoice", new Class[] {int.class, javax.swing.ImageIcon.class})); // NOI18N
             methods[METHOD_setPictureChoice8].setDisplayName ( "" );
-            methods[METHOD_updateButton9] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateButton", new Class[] {int.class, Editor_Gui.UserInfoBus.class})); // NOI18N
-            methods[METHOD_updateButton9].setDisplayName ( "" );
-            methods[METHOD_updateTemplateAppearance10] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateTemplateAppearance", new Class[] {java.awt.Color.class, java.awt.Font.class})); // NOI18N
-            methods[METHOD_updateTemplateAppearance10].setDisplayName ( "" );
+            methods[METHOD_setPictureChoice9] = new MethodDescriptor(Editor_Model.Template.class.getMethod("setPictureChoice", new Class[] {int.class, int.class})); // NOI18N
+            methods[METHOD_setPictureChoice9].setDisplayName ( "" );
+            methods[METHOD_updateButton10] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateButton", new Class[] {int.class, Editor_Gui.UserInfoBus.class})); // NOI18N
+            methods[METHOD_updateButton10].setDisplayName ( "" );
+            methods[METHOD_updateTemplateAppearance11] = new MethodDescriptor(Editor_Model.Template.class.getMethod("updateTemplateAppearance", new Class[] {java.awt.Color.class, java.awt.Font.class})); // NOI18N
+            methods[METHOD_updateTemplateAppearance11].setDisplayName ( "" );
         }
         catch( Exception e) {}//GEN-HEADEREND:Methods
         // Here you can add code for customizing the methods array.
