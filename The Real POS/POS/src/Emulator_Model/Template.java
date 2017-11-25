@@ -20,16 +20,25 @@ public class Template extends Observable {
      * This is simply an array which holds our button data.
      */
     private Editor_Model.Button[] buttonArray;
+    /**
+     * This is a double which holds our tax rate.
+     */
     private double taxRate;
-    private Color colorChoice;
-    private Font fontChoice;
+    /**
+     * This is a Color object which holds the current choice for the view to display.
+     */
+    private Color colorSetting;
+    /**
+     * This is a Font object which holds the current choice for the view to display;
+     */
+    private Font fontSetting;
 
     /**
      * Sets aside space in memory for 10 button objects, and makes those
      * objects.
      */
     public Template() {
-        colorChoice = Color.CYAN;
+        colorSetting = Color.CYAN;
         buttonArray = new Editor_Model.Button[21];
 
         for (int i = 0; i < 20; i++) 
@@ -81,8 +90,13 @@ public class Template extends Observable {
      */
     public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
-        this.setColorChoice(colorChoice);
-        this.setFontChoice(fontChoice);
+        this.colorSetting = colorChoice;
+        setChanged();
+        this.notifyObservers();
+        
+        this.fontSetting = fontChoice;
+        setChanged();
+        this.notifyObservers();
     }
     /**
      * This changes the name field of a particular button and fires a
@@ -158,20 +172,20 @@ public class Template extends Observable {
         return taxRate;
     }
     public void setColorChoice(Color color_input) {
-      colorChoice = color_input;
+      colorSetting = color_input;
       setChanged();
       this.notifyObservers();
     }
     public Color getColorChoice() {
-        return colorChoice;
+        return colorSetting;
     }
     public void setFontChoice(Font font_input) {
-       fontChoice = font_input;
+       fontSetting = font_input;
        setChanged();
        this.notifyObservers();
     }
     public Font getFontChoice() {
-        return fontChoice;
+        return fontSetting;
     }
     public Editor_Model.Button[] getButton()
     {
