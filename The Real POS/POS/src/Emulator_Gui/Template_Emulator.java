@@ -6,7 +6,7 @@
 package Emulator_Gui;
 
 /**
- * I feel like there should be stuff here -Austin
+ * Just a main
  *
  */
 public class Template_Emulator {
