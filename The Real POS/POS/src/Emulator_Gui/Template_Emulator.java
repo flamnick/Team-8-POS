@@ -6,8 +6,8 @@
 package Emulator_Gui;
 
 /**
+ * Just a main
  *
- * @author Flamnick
  */
 public class Template_Emulator {
 

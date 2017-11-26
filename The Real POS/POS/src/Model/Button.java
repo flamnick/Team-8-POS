@@ -32,7 +32,7 @@ public class Button extends Observable {
      */
     private String name;
     /**
-     * This variable holds the int for selecting the button's picture
+     * This variable holds the integer for selecting the button picture
      */
     private int picture;
 
@@ -96,6 +96,11 @@ public class Button extends Observable {
         return name;
     }
 
+    /**
+     * Takes integer and sets picture from integer.
+     *
+     * @param picture_input is the integer the switch statement uses.
+     */
     public void setPicture(int picture_input) {
 
         try {

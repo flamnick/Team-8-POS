@@ -22,17 +22,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * and open the template in the editor.
  */
 /**
+ * The visual for the emulator. Many events are similar to the editor, but are
+ * read in from a saved XML file.
  *
- * @author Flamnick
  */
 public class Emulator_Visual extends javax.swing.JFrame implements Observer {
-    
+
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
     Calculator totalCalculator = new Calculator();
     DefaultListModel<String> listModel = new DefaultListModel<>();
     setPic picsetter = new setPic();
-    
+
     /**
      * Creates new form Emulator_Visual
      */
@@ -40,9 +41,13 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
+<<<<<<< HEAD
         POSmodel.setColorChoice(Color.MAGENTA);
        
        
+=======
+
+>>>>>>> 2b3aecec4117f2aa36875a353787a51f923761da
     }
 
     /**
@@ -149,11 +154,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Button_1MouseExited(evt);
-            }
-        });
-        Button_1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_1ActionPerformed(evt);
             }
         });
 
@@ -395,14 +395,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-/**
-     *
-     * @param evt
-     */
-    private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
 
-    }//GEN-LAST:event_Button_1ActionPerformed
     /**
+     * These are mouse entered events that change the color of the button when
+     * the mouse is hovered over it. They are the same for all buttons
      *
      * @param evt
      */
@@ -410,163 +406,100 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_1.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_1MouseEntered
     /**
+     * These are mouse exited events that change the color of the button back to
+     * the original after the mouse is no longer hovering over the button. They
+     * are all the same.
      *
      * @param evt
      */
     private void Button_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseExited
         Button_1.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_1MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseEntered
         Button_2.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_2MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseExited
         Button_2.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_2MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseEntered
         Button_3.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_3MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseExited
         Button_3.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_3MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseEntered
         Button_4.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_4MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseExited
         Button_4.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_4MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseEntered
         Button_5.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_5MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseExited
         Button_5.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_5MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseEntered
         Button_6.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_6MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseExited
         Button_6.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_6MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseEntered
         Button_7.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_7MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseExited
         Button_7.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_7MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseEntered
         Button_8.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_8MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseExited
         Button_8.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_8MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseEntered
         Button_9.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_9MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseExited
         Button_9.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_9MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseEntered
         Button_10.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_10MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseExited
         Button_10.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_10MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseEntered
         Button_11.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_11MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseExited
         Button_11.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_11MouseExited
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseEntered
         Button_12.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_12MouseEntered
-    /**
-     *
-     * @param evt
-     */
+
     private void Button_12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseExited
         Button_12.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_12MouseExited
@@ -580,17 +513,30 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         listModel.addElement("Thank you for shopping with us.");
         totalCalculator.clearTotal();
     }//GEN-LAST:event_Button_12MouseClicked
-/**
- * Populates the list on the button's press.
- * @param evt 
- */
+    /**
+     * Populates the list on button press. Same for all buttons
+     *
+     * @param evt mouse clicked
+     */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
+
+        listModel.addElement(POSmodel.getName(1) + " " + POSmodel.getPrice(1));
+
         addListItem(1);
+<<<<<<< HEAD
         addToRunningTotal(1);
+=======
+
+>>>>>>> 2b3aecec4117f2aa36875a353787a51f923761da
     }//GEN-LAST:event_Button_1MouseClicked
 
+    /**
+     * Loads chosen XML file to Emulator.
+     *
+     * @param evt mouse clicked
+     */
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-           
+
         String userhome = System.getProperty("user.dir");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
@@ -598,19 +544,17 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         fchooser.setFileFilter(filter);
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            
+
             System.out.println(fchooser.getSelectedFile().getName());
-            try{
-                
+            try {
+
                 Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
                 POSmodel.setTemplate(softCopy);
-            } catch(Exception e)
-            {
-                
+            } catch (Exception e) {
+
                 System.out.println("File not found");
             }
-            
-            
+
         }
 
     }//GEN-LAST:event_Load_ButtonMouseClicked
@@ -731,6 +675,13 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     // End of variables declaration//GEN-END:variables
     private Model.Template POSupdate;
 
+    /**
+     * This is the update method for the view; it updates all our buttons on
+     * click.
+     *
+     * @param o Our observable object.
+     * @param o1 whats being observed.
+     */
     @Override
     public void update(Observable o, Object o1) {
         POSupdate = (Model.Template) o;
@@ -746,7 +697,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
 
-        
         Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
@@ -790,15 +740,14 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_10.setFont(POSupdate.getFontChoice());
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
-
-
     }
+
     /**
      * Contains the code for adding a entry to the list.
+     *
      * @param buttonNumber The button it's adding to the list.
      */
-    public void addListItem(int buttonNumber)
-    {
+    public void addListItem(int buttonNumber) {
         String temp;
         temp = POSmodel.getName(buttonNumber) + " " + POSmodel.getPrice(buttonNumber);
         listModel.addElement(temp);
@@ -813,4 +762,3 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     }
 
 }
-    

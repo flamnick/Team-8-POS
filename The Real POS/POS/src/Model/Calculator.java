@@ -8,6 +8,7 @@ package Model;
 import java.util.ArrayList;
 
 /**
+ * Class to calculate prices of all selected items and return total.
  *
  * @author Team 8
  */

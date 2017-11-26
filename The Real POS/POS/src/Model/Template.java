@@ -50,6 +50,7 @@ public class Template extends Observable implements Serializable {
     }
 
     /**
+     * Edit the button
      *
      * @param buttonNumber The button it's working on
      * @param inputName sets Name of button
@@ -265,14 +266,17 @@ public class Template extends Observable implements Serializable {
         setChanged();
         this.notifyObservers();
     }
-    
-        public void setTemplate(Template temp)
-    {
-        for (int i = 0; i < 20; i++) 
-        {
-        this.buttonArray[i].setName(temp.getName(i));
-        this.buttonArray[i].setPrice(temp.getPrice(i));
-        this.buttonArray[i].setPicture(temp.getPictureChoice(i));
+
+    /**
+     * Sets all data in a template
+     *
+     * @param temp hold data temporarily
+     */
+    public void setTemplate(Template temp) {
+        for (int i = 0; i < 20; i++) {
+            this.buttonArray[i].setName(temp.getName(i));
+            this.buttonArray[i].setPrice(temp.getPrice(i));
+            this.buttonArray[i].setPicture(temp.getPictureChoice(i));
         }
         this.fontSetting = temp.getFontChoice();
         this.colorSetting = temp.getColorChoice();

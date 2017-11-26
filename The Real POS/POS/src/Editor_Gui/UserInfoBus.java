@@ -37,7 +37,7 @@ public class UserInfoBus {
     /**
      * Gets name field in object.
      *
-     * @return name
+     * @return string name
      */
     public String getName() {
         return name;
@@ -53,29 +53,34 @@ public class UserInfoBus {
     }
 
     /**
-     * Gets the double within the object.
+     * Gets the price within the object.
      *
-     * @return userDouble
+     * @return double price
      */
     public double getPrice() {
         return price;
     }
 
+    /**
+     * Sets color within the object.
+     *
+     * @param userColor is the color object from the user selection
+     */
     public void setColor(Color userColor) {
         color = userColor;
     }
 
     /**
-     * Gets the double within the object.
+     * Gets the color of the object
      *
-     * @return userDouble
+     * @return color
      */
     public Color getColor() {
         return color;
     }
 
     /**
-     * Sets name in object
+     * Sets picture in object
      *
      * @param inputPicture takes user picture choice
      */
@@ -88,30 +93,29 @@ public class UserInfoBus {
     /**
      * Gets name field in object.
      *
-     * @return name
+     * @return integer picture choice from switch statement.
      */
     public int getPicture() {
         return picture;
     }
 
+    /**
+     * Sets object font
+     *
+     * @param inputFont is the Font object from the switch statement in Color
+     * Dialogue Box.
+     */
     public void setFont(Font inputFont) {
         font = inputFont;
     }
 
     /**
-     * Gets name field in object.
+     * Gets font in object
      *
-     * @return name
+     * @return font
      */
     public Font getFont() {
         return font;
     }
 
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        mPcs.addPropertyChangeListener(listener);
-    }
-
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        mPcs.removePropertyChangeListener(listener);
-    }
 }

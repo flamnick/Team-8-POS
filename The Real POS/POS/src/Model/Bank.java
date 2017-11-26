@@ -6,7 +6,7 @@
 package Model;
 
 /**
- *
+ * Count of the money in the register.
  * @author Group 8
  */
 public class Bank {
