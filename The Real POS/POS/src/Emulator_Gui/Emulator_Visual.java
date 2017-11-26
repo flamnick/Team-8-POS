@@ -82,6 +82,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Menu_Panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
         Load_Button.setText("Load");
         Load_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -89,6 +91,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Menu_Title_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Menu_Title_Label.setText("Template Emulator");
 
         Menu_Instructions_Label.setText("Select a template to emulate:");
@@ -99,35 +102,36 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
         Menu_Panel.setLayout(Menu_PanelLayout);
         Menu_PanelLayout.setHorizontalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(Menu_Title_Label)
-                .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Load_Button)
                 .addGap(85, 85, 85))
             .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Menu_Instructions_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Menu_Title_Label)
+                .addGap(53, 53, 53))
         );
         Menu_PanelLayout.setVerticalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(Menu_Title_Label)
-                .addGap(40, 40, 40)
+                .addGap(20, 20, 20)
+                .addComponent(Menu_Title_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(Menu_Instructions_Label)
                 .addGap(41, 41, 41)
                 .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(Load_Button)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
+        Button_1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_1MouseClicked(evt);
@@ -145,6 +149,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_2MouseEntered(evt);
@@ -154,6 +159,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_3MouseEntered(evt);
@@ -163,6 +169,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_4MouseEntered(evt);
@@ -172,6 +179,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_5MouseEntered(evt);
@@ -181,6 +189,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_6MouseEntered(evt);
@@ -190,6 +199,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_7MouseEntered(evt);
@@ -199,6 +209,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_8MouseEntered(evt);
@@ -208,6 +219,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_9MouseEntered(evt);
@@ -217,6 +229,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_10MouseEntered(evt);
@@ -226,6 +239,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_11.setText("CLEAR");
         Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -236,6 +250,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
             }
         });
 
+        Button_12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_12.setText("TOTAL");
         Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -275,20 +290,19 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
                                     .addComponent(Button_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Button_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Button_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Button_2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Button_5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Button_11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Button_8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(130, 130, 130)
+                                    .addComponent(Button_8, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Button_5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Button_2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(169, 169, 169)
                                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Button_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Button_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Button_12, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(Button_9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(118, 118, 118))))
+                        .addGap(42, 42, 42))))
         );
         Register_PanelLayout.setVerticalGroup(
             Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,8 +334,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
                 .addGap(10, 10, 10)
                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

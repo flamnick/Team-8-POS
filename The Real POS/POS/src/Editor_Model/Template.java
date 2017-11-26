@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 import java.util.Observable;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 
 
@@ -38,7 +39,7 @@ public class Template extends Observable implements Serializable
      */
     public Template() {
         buttonArray = new Button[21];
-        colorSetting = Color.MAGENTA;
+        
 
         for (int i = 0; i < 20; i++) 
         {
@@ -54,7 +55,8 @@ public class Template extends Observable implements Serializable
      * @param inputPrice
      * @param inputPicture
      */
-    public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
+    
+    public void editButton(int buttonNumber, String inputName, double inputPrice, ImageIcon inputPicture) 
     {
         buttonArray[buttonNumber].setName(inputName);
 
