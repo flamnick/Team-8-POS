@@ -9,8 +9,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
+ * This class receives an integer, interprets it, and sends out a picture.
  *
- * @author Flamnick
  */
 public class setPic {
 
@@ -20,6 +20,10 @@ public class setPic {
     private ImageIcon cookie_icon;
     private ImageIcon strawberry_icon;
 
+    /**
+     * Initializes all the images
+     *
+     */
     public setPic() {
         try {
             coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
@@ -53,6 +57,11 @@ public class setPic {
         }
     }
 
+    /**
+     * The integer is received here and the picture is set.
+     *
+     * @param value is the integer received
+     */
     public ImageIcon getPic(int value) {
         switch (value) {
             case 0: {

@@ -6,8 +6,7 @@
 package Editor_Gui;
 
 /**
- *
- * @author Flamnick
+ * Similar to Image Panel, I don't know why this is here -Austin
  */
 public class Template_Editor {
 
