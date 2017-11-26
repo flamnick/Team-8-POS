@@ -1,11 +1,19 @@
 package Emulator_Gui;
 
 import Editor_Gui.XMLManager;
+import Editor_Gui.setPic;
 import java.awt.Color;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,15 +29,18 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
-
+    Model.DataHolder holder = new Model.DataHolder();
     DefaultListModel<String> listModel = new DefaultListModel<>();
+    setPic picsetter = new setPic();
 
     /**
      * Creates new form Emulator_Visual
      */
     public Emulator_Visual() {
+        POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
+
     }
 
     /**
@@ -51,8 +62,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Load_Button = new javax.swing.JButton();
         Menu_Title_Label = new javax.swing.JLabel();
         Menu_Instructions_Label = new javax.swing.JLabel();
-        scrollPane1 = new java.awt.ScrollPane();
-        File_List = new java.awt.List();
         Register_Panel = new javax.swing.JPanel();
         Button_1 = new javax.swing.JButton();
         Button_2 = new javax.swing.JButton();
@@ -88,7 +97,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Menu_Panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        Load_Button.setText("Load");
+        Load_Button.setText("Load Template");
         Load_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Load_ButtonMouseClicked(evt);
@@ -100,26 +109,21 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Menu_Instructions_Label.setText("Select a template to emulate:");
 
-        scrollPane1.add(File_List);
-
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
         Menu_Panel.setLayout(Menu_PanelLayout);
         Menu_PanelLayout.setHorizontalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Load_Button)
-                .addGap(85, 85, 85))
             .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Menu_Instructions_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Menu_Title_Label)
-                .addGap(53, 53, 53))
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
+                        .addComponent(Menu_Title_Label)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
+                        .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Load_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Menu_Instructions_Label))
+                        .addGap(37, 37, 37))))
         );
         Menu_PanelLayout.setVerticalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,11 +132,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                 .addComponent(Menu_Title_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(Menu_Instructions_Label)
-                .addGap(41, 41, 41)
-                .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Load_Button)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Button_1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -150,6 +152,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_2MouseEntered(evt);
             }
@@ -160,6 +165,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_3MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_3MouseEntered(evt);
             }
@@ -170,6 +178,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_4MouseEntered(evt);
             }
@@ -180,6 +191,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_5MouseEntered(evt);
             }
@@ -190,6 +204,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_6MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_6MouseEntered(evt);
             }
@@ -200,6 +217,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_7MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_7MouseEntered(evt);
             }
@@ -210,6 +230,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_8MouseEntered(evt);
             }
@@ -220,6 +243,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_9MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_9MouseEntered(evt);
             }
@@ -230,6 +256,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_10MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_10MouseEntered(evt);
             }
@@ -467,19 +496,82 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     }//GEN-LAST:event_Button_12MouseClicked
     /**
-     * Populates the list on the button's press.
+     * Populates the list on button press. Same for all buttons
      *
-     * @param evt
+     * @param evt mouse clicked
      */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
 
         listModel.addElement(POSmodel.getName(1) + " " + POSmodel.getPrice(1));
 
+        addListItem(1);
+
     }//GEN-LAST:event_Button_1MouseClicked
 
+    /**
+     * Loads chosen XML file to Emulator.
+     *
+     * @param evt mouse clicked
+     */
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-        // TODO add your handling code here:
+
+        String userhome = System.getProperty("user.dir");
+        JFileChooser fchooser = new JFileChooser(userhome);
+        fchooser.setVisible(true);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("xml", "xml");
+        fchooser.setFileFilter(filter);
+        int returnVal = fchooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+
+            System.out.println(fchooser.getSelectedFile().getName());
+            try {
+
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                POSmodel.setTemplate(softCopy);
+            } catch (Exception e) {
+
+                System.out.println("File not found");
+            }
+
+        }
+
     }//GEN-LAST:event_Load_ButtonMouseClicked
+
+    private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
+        addListItem(2);
+    }//GEN-LAST:event_Button_2MouseClicked
+
+    private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
+        addListItem(3);
+    }//GEN-LAST:event_Button_3MouseClicked
+
+    private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
+        addListItem(4);
+    }//GEN-LAST:event_Button_4MouseClicked
+
+    private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
+        addListItem(5);
+    }//GEN-LAST:event_Button_5MouseClicked
+
+    private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
+        addListItem(6);
+    }//GEN-LAST:event_Button_6MouseClicked
+
+    private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
+        addListItem(7);
+    }//GEN-LAST:event_Button_7MouseClicked
+
+    private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
+        addListItem(8);
+    }//GEN-LAST:event_Button_8MouseClicked
+
+    private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
+        addListItem(9);
+    }//GEN-LAST:event_Button_9MouseClicked
+
+    private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
+        addListItem(10);
+    }//GEN-LAST:event_Button_10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -530,7 +622,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton Button_8;
     private javax.swing.JButton Button_9;
     private javax.swing.JList<String> DataHolder_List;
-    private java.awt.List File_List;
     private javax.swing.JButton Load_Button;
     private javax.swing.JLabel Menu_Instructions_Label;
     private javax.swing.JPanel Menu_Panel;
@@ -545,10 +636,16 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
-    private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
     private Model.Template POSupdate;
 
+    /**
+     * This is the update method for the view; it updates all our buttons on
+     * click.
+     *
+     * @param o Our observable object.
+     * @param
+     */
     @Override
     public void update(Observable o, Object o1) {
         POSupdate = (Model.Template) o;
@@ -563,5 +660,61 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
+
+        Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
+        Button_1.setHorizontalTextPosition(JButton.CENTER);
+        Button_1.setVerticalTextPosition(JButton.CENTER);
+        Button_2.setIcon(picsetter.getPic(POSupdate.getPictureChoice(2)));
+        Button_2.setHorizontalTextPosition(JButton.CENTER);
+        Button_2.setVerticalTextPosition(JButton.CENTER);
+        Button_3.setIcon(picsetter.getPic(POSupdate.getPictureChoice(3)));
+        Button_3.setHorizontalTextPosition(JButton.CENTER);
+        Button_3.setVerticalTextPosition(JButton.CENTER);
+        Button_4.setIcon(picsetter.getPic(POSupdate.getPictureChoice(4)));
+        Button_4.setHorizontalTextPosition(JButton.CENTER);
+        Button_4.setVerticalTextPosition(JButton.CENTER);
+        Button_5.setIcon(picsetter.getPic(POSupdate.getPictureChoice(5)));
+        Button_5.setHorizontalTextPosition(JButton.CENTER);
+        Button_5.setVerticalTextPosition(JButton.CENTER);
+        Button_6.setIcon(picsetter.getPic(POSupdate.getPictureChoice(6)));
+        Button_6.setHorizontalTextPosition(JButton.CENTER);
+        Button_6.setVerticalTextPosition(JButton.CENTER);
+        Button_7.setIcon(picsetter.getPic(POSupdate.getPictureChoice(7)));
+        Button_7.setHorizontalTextPosition(JButton.CENTER);
+        Button_7.setVerticalTextPosition(JButton.CENTER);
+        Button_8.setIcon(picsetter.getPic(POSupdate.getPictureChoice(8)));
+        Button_8.setHorizontalTextPosition(JButton.CENTER);
+        Button_8.setVerticalTextPosition(JButton.CENTER);
+        Button_9.setIcon(picsetter.getPic(POSupdate.getPictureChoice(9)));
+        Button_9.setHorizontalTextPosition(JButton.CENTER);
+        Button_9.setVerticalTextPosition(JButton.CENTER);
+        Button_10.setIcon(picsetter.getPic(POSupdate.getPictureChoice(10)));
+        Button_10.setHorizontalTextPosition(JButton.CENTER);
+        Button_10.setVerticalTextPosition(JButton.CENTER);
+
+        Button_1.setFont(POSupdate.getFontChoice());
+        Button_2.setFont(POSupdate.getFontChoice());
+        Button_3.setFont(POSupdate.getFontChoice());
+        Button_4.setFont(POSupdate.getFontChoice());
+        Button_5.setFont(POSupdate.getFontChoice());
+        Button_6.setFont(POSupdate.getFontChoice());
+        Button_7.setFont(POSupdate.getFontChoice());
+        Button_8.setFont(POSupdate.getFontChoice());
+        Button_9.setFont(POSupdate.getFontChoice());
+        Button_10.setFont(POSupdate.getFontChoice());
+        Button_11.setFont(POSupdate.getFontChoice());
+        Button_12.setFont(POSupdate.getFontChoice());
     }
+
+    /**
+     * Contains the code for adding a entry to the list.
+     *
+     * @param buttonNumber The button it's adding to the list.
+     */
+    public void addListItem(int buttonNumber) {
+        String temp;
+        temp = POSmodel.getName(buttonNumber) + " " + POSmodel.getPrice(buttonNumber);
+        listModel.addElement(temp);
+    }
+
 }
