@@ -276,6 +276,7 @@ public class Template extends Observable implements Serializable {
         }
         this.fontSetting = temp.getFontChoice();
         this.colorSetting = temp.getColorChoice();
+        this.taxRate = temp.getTaxRate();
         setChanged();
         this.notifyObservers();
     }

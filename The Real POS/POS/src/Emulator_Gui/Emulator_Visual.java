@@ -2,6 +2,7 @@ package Emulator_Gui;
 
 import Editor_Gui.XMLManager;
 import Editor_Gui.setPic;
+import Model.Calculator;
 import java.awt.Color;
 import java.io.File;
 import java.util.Observable;
@@ -28,7 +29,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
-    Model.DataHolder holder = new Model.DataHolder();
+    Calculator totalCalculator = new Calculator();
     DefaultListModel<String> listModel = new DefaultListModel<>();
     setPic picsetter = new setPic();
     
@@ -39,6 +40,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
+        POSmodel.setColorChoice(Color.MAGENTA);
        
        
     }
@@ -78,7 +80,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         jScrollPane2 = new javax.swing.JScrollPane();
         DataHolder_List = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        totalField = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -275,6 +277,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_11.setText("CLEAR");
         Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_11MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_11MouseEntered(evt);
             }
@@ -297,6 +302,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
             }
         });
 
+        DataHolder_List.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        DataHolder_List.setModel(listModel);
         jScrollPane2.setViewportView(DataHolder_List);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -312,7 +319,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                     .addGroup(Register_PanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(totalField, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Register_PanelLayout.createSequentialGroup()
                         .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,7 +374,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                 .addGap(10, 10, 10)
                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -565,7 +572,13 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_Button_12MouseExited
 
     private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
-
+        totalCalculator.calculatePostTaxTotal(POSmodel.getTaxRate());
+        String price;
+        price = Double.toString(totalCalculator.getTotal());
+        totalField.setText(price);
+        listModel.clear();
+        listModel.addElement("Thank you for shopping with us.");
+        totalCalculator.clearTotal();
     }//GEN-LAST:event_Button_12MouseClicked
 /**
  * Populates the list on the button's press.
@@ -573,6 +586,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
  */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         addListItem(1);
+        addToRunningTotal(1);
     }//GEN-LAST:event_Button_1MouseClicked
 
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
@@ -603,39 +617,53 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
         addListItem(2);
+        addToRunningTotal(2);
     }//GEN-LAST:event_Button_2MouseClicked
 
     private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
         addListItem(3);
+        addToRunningTotal(3);
     }//GEN-LAST:event_Button_3MouseClicked
 
     private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
         addListItem(4);
+        addToRunningTotal(4);
     }//GEN-LAST:event_Button_4MouseClicked
 
     private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
         addListItem(5);
+        addToRunningTotal(5);
     }//GEN-LAST:event_Button_5MouseClicked
 
     private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
         addListItem(6);
+        addToRunningTotal(6);
     }//GEN-LAST:event_Button_6MouseClicked
 
     private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
         addListItem(7);
+        addToRunningTotal(7);
     }//GEN-LAST:event_Button_7MouseClicked
 
     private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
         addListItem(8);
+        addToRunningTotal(8);
     }//GEN-LAST:event_Button_8MouseClicked
 
     private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
         addListItem(9);
+        addToRunningTotal(9);
     }//GEN-LAST:event_Button_9MouseClicked
 
     private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
         addListItem(10);
+        addToRunningTotal(10);
     }//GEN-LAST:event_Button_10MouseClicked
+
+    private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
+        listModel.clear();
+        totalCalculator.clearTotal();
+    }//GEN-LAST:event_Button_11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -696,10 +724,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
+    private javax.swing.JTextField totalField;
     // End of variables declaration//GEN-END:variables
     private Model.Template POSupdate;
 
@@ -774,6 +802,14 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         String temp;
         temp = POSmodel.getName(buttonNumber) + " " + POSmodel.getPrice(buttonNumber);
         listModel.addElement(temp);
+        revalidate();
+    }
+    public void addToRunningTotal(int buttonNumber)
+    {
+        totalCalculator.addToTotal(POSmodel.getPrice(buttonNumber));
+        String price;
+        price = Double.toString(totalCalculator.getTotal());
+        totalField.setText(price);
     }
 
 }

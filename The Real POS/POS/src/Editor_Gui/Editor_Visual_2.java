@@ -593,6 +593,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             }
 
         }
+       String temp = Double.toString(POSmodel.getTaxRate());
+       Taxrate_Textfield.setText(temp);
+       repaint();
 
 
     }//GEN-LAST:event_LoadMouseClicked
@@ -721,6 +724,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Taxrate_TextfieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyReleased
         double number = Double.parseDouble(Taxrate_Textfield.getText());
         POSmodel.setTaxRate(number);
+        System.out.println(POSmodel.getTaxRate());
     }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
 
     /**
@@ -867,7 +871,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_10.setFont(POSupdate.getFontChoice());
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
-
+        
         repaint();
 
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

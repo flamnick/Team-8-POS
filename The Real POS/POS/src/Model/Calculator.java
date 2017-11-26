@@ -5,42 +5,36 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Team 8
  */
 public class Calculator {
-
     /**
-     * calculate_sum will get the sum of a passed array of doubles
-     *
-     * @param total takes in the array of values passed from DataHolder
-     * @return the sum of the contents of the total array
+     * the total.
      */
-    double calculate_sum(double total[]) {
-
-        double sum = 0;
-
-        for (int i = 0; i < total.length; i++) {
-            sum += total[i];
-        }
-
-        return sum;
+    double total;
+    
+    public void addToTotal(double inputDouble)
+    {
+        total = (total + inputDouble);
     }
-
-    /**
-     * calculate_taxed_total calculates the data holder total and and adds tax
-     *
-     * @param sum takes in sum calculated in calculate_sum()
-     * @param tax_rate takes in tax rate from current template
-     * @return the total with applied tax rate
-     */
-    double calculate_taxed_total(double sum, double tax_rate) {
-
-        double taxed_total = 0;
-
-        taxed_total = (sum * tax_rate) + sum;
-
-        return taxed_total;
+    
+    public double getTotal()
+    {
+        return total;
+    }
+    
+    public void clearTotal()
+    {
+        total = 0;
+    }
+    
+    public void calculatePostTaxTotal(double taxRate)
+    {
+        taxRate= (taxRate/100);
+        total = (total * taxRate) + total;
     }
 }
