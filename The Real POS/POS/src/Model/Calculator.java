@@ -6,6 +6,7 @@
 package Model;
 
 /**
+ * Class to calculate prices of all selected items and return total.
  *
  * @author Team 8
  */

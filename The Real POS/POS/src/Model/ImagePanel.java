@@ -8,6 +8,7 @@ package Model;
 import Editor_Gui.*;
 
 /**
+ * Even more weird magic code.
  *
  * @author Flamnick
  */
