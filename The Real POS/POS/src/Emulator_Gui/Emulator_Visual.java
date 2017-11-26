@@ -542,12 +542,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
  * @param evt 
  */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
-
-        String priceString;
-        priceString = Double.toString(POSmodel.getPrice(1));
-        listModel.addElement(POSmodel.getName(1) + " " + priceString);
-
-
+    
+        listModel.addElement(POSmodel.getName(1) + " " + POSmodel.getPrice(1));
 
     }//GEN-LAST:event_Button_1MouseClicked
 
