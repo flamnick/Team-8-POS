@@ -33,6 +33,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         POSmodel.initTemplate();
         initComponents();
         POSmodel.addObserver(this);
+        //This is there to get the observer to wake up.
+        POSmodel.setColorChoice(Color.MAGENTA);
     }
 
     /**
@@ -565,12 +567,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_SaveMouseClicked
 
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
-        
-       //needs to clear out all buttons
-       
-        Taxrate_Textfield.setText("");
-        Register_List.setText("");
-        templateName.setText("");
+        POSmodel.resetTemplate();
         this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
 

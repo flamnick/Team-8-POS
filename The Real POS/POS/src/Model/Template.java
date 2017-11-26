@@ -52,7 +52,10 @@ public class Template extends Observable implements Serializable
         {
             buttonArray[i] = new Button();
         }
-
+        //This code sets up the text to start bold.
+        this.fontSetting = new Font("Tahoma", Font.BOLD, 14);
+        setChanged();
+        this.notifyObservers();
     }
 
     /**
@@ -225,4 +228,20 @@ public class Template extends Observable implements Serializable
         buttonArray = arrayToCopy;
     }
     
+    /**
+     * This method clears the template back to defaults.
+     */
+    public void resetTemplate()
+    {
+        for (int i = 0; i < 20; i++) 
+        {
+        this.buttonArray[i].setName(" ");
+        this.buttonArray[i].setPrice(0.0);
+        this.buttonArray[i].setPicture(0);
+        }
+        this.fontSetting = new Font("Tahoma", Font.BOLD, 14);
+        this.colorSetting = Color.MAGENTA;
+        setChanged();
+        this.notifyObservers();
+    }
 }
