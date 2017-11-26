@@ -15,11 +15,11 @@ public class Editor_Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        Editor_Model.Template test = new Editor_Model.Template();
-        Editor_Model.XMLManager tester = new Editor_Model.XMLManager();
+        Model.Template test = new Model.Template();
+        Model.XMLManager tester = new Model.XMLManager();
         test.setName(1,"Namae");
         tester.write(test, "poopybutthole.xml");
-        Editor_Model.Template pbh2 = tester.read("poopybutthole.xml");
+        Model.Template pbh2 = tester.read("poopybutthole.xml");
         System.out.println(pbh2.getName(1));
     }
 }

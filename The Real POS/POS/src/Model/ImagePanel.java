@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Emulator_Controller;
+package Model;
+
+import Editor_Gui.*;
 
 /**
  *
- * @author j_haw
+ * @author Flamnick
  */
-public class Controller {
+class ImagePanel {
     
 }

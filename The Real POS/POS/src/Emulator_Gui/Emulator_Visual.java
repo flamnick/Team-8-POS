@@ -18,7 +18,7 @@ import javax.swing.UIManager;
  * @author Flamnick
  */
 public class Emulator_Visual extends javax.swing.JFrame implements Observer{
-    Emulator_Model.Template POSmodel = new Emulator_Model.Template();
+    Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
     /**
      * Creates new form Emulator_Visual
@@ -609,12 +609,12 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer{
     private java.awt.MenuBar menuBar1;
     private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
-    private Emulator_Model.Template POSupdate;
+    private Model.Template POSupdate;
     
     @Override
     public void update(Observable o, Object o1) 
     {
-        POSupdate = (Emulator_Model.Template) o;
+        POSupdate = (Model.Template) o;
                 
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");

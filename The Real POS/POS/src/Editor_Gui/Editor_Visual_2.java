@@ -20,16 +20,17 @@ import javax.swing.UIManager;
  * @author Team 8
  */
 public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
-    Editor_Model.Template POSmodel = new Editor_Model.Template();
+    Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
     DefaultListModel<String> listModel = new DefaultListModel<>();
+    setPic picsetter = new setPic();
    
 
     /**
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
-        
+        POSmodel.initTemplate();
         initComponents();
         POSmodel.addObserver(this);
     }
@@ -766,7 +767,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     {
         System.out.println(POSmodel.getName(1));
     }*/
-    private Editor_Model.Template POSupdate;
+    private Model.Template POSupdate;
     /**
      * This is the update method for the view; it updates all our buttons on click.
      * @param o Our observable object.
@@ -778,7 +779,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
         
         
-        POSupdate= (Editor_Model.Template) o;
+        POSupdate= (Model.Template) o;
         
 
 
@@ -794,34 +795,34 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
         
-        Button_1.setIcon(POSupdate.getPictureChoice(1));
+        Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
-        Button_2.setIcon(POSupdate.getPictureChoice(2));
+        Button_2.setIcon(picsetter.getPic(POSupdate.getPictureChoice(2)));
         Button_2.setHorizontalTextPosition(JButton.CENTER);
         Button_2.setVerticalTextPosition(JButton.CENTER);
-        Button_3.setIcon(POSupdate.getPictureChoice(3));
+        Button_3.setIcon(picsetter.getPic(POSupdate.getPictureChoice(3)));
         Button_3.setHorizontalTextPosition(JButton.CENTER);
         Button_3.setVerticalTextPosition(JButton.CENTER);
-        Button_4.setIcon(POSupdate.getPictureChoice(4));
+        Button_4.setIcon(picsetter.getPic(POSupdate.getPictureChoice(4)));
         Button_4.setHorizontalTextPosition(JButton.CENTER);
         Button_4.setVerticalTextPosition(JButton.CENTER);
-        Button_5.setIcon(POSupdate.getPictureChoice(5));
+        Button_5.setIcon(picsetter.getPic(POSupdate.getPictureChoice(5)));
         Button_5.setHorizontalTextPosition(JButton.CENTER);
         Button_5.setVerticalTextPosition(JButton.CENTER);
-        Button_6.setIcon(POSupdate.getPictureChoice(6));
+        Button_6.setIcon(picsetter.getPic(POSupdate.getPictureChoice(6)));
         Button_6.setHorizontalTextPosition(JButton.CENTER);
         Button_6.setVerticalTextPosition(JButton.CENTER);
-        Button_7.setIcon(POSupdate.getPictureChoice(7));
+        Button_7.setIcon(picsetter.getPic(POSupdate.getPictureChoice(7)));
         Button_7.setHorizontalTextPosition(JButton.CENTER);
         Button_7.setVerticalTextPosition(JButton.CENTER);
-        Button_8.setIcon(POSupdate.getPictureChoice(8));
+        Button_8.setIcon(picsetter.getPic(POSupdate.getPictureChoice(8)));
         Button_8.setHorizontalTextPosition(JButton.CENTER);
         Button_8.setVerticalTextPosition(JButton.CENTER);
-        Button_9.setIcon(POSupdate.getPictureChoice(9));
+        Button_9.setIcon(picsetter.getPic(POSupdate.getPictureChoice(9)));
         Button_9.setHorizontalTextPosition(JButton.CENTER);
         Button_9.setVerticalTextPosition(JButton.CENTER);
-        Button_10.setIcon(POSupdate.getPictureChoice(10));
+        Button_10.setIcon(picsetter.getPic(POSupdate.getPictureChoice(10)));
         Button_10.setHorizontalTextPosition(JButton.CENTER);
         Button_10.setVerticalTextPosition(JButton.CENTER);
         

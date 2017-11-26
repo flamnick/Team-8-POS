@@ -9,7 +9,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import Editor_Model.Template;
+import Model.Template;
 
 /**
  *
@@ -25,7 +25,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private ImageIcon cookie_icon;
     private ImageIcon strawberry_icon;
     private UserInfoBus dialougeInfoBus = new UserInfoBus();
-    private Editor_Model.Template modelReference;
+    private Model.Template modelReference;
     private int buttonUnderEdit;
     
 
@@ -36,7 +36,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
      * @param model A reference to our data model.
      * @param buttonNumber A reference to which button it is changing.
      */
-    public Edit_Button_Dialog(Editor_Model.Template model, int buttonNumber) {
+    public Edit_Button_Dialog(Model.Template model, int buttonNumber) {
         initComponents();
         modelReference = model;
         buttonUnderEdit = buttonNumber;
