@@ -99,7 +99,7 @@ public class Button extends Observable {
     /**
      * Takes integer and sets picture from integer.
      *
-     * @param picture_input
+     * @param picture_input is the integer the switch statement uses.
      */
     public void setPicture(int picture_input) {
 

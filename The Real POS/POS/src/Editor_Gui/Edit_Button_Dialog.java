@@ -75,7 +75,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     }
 
     /**
-     * @param
+     * Checks if both text fields have been filled, returns true when both not empty.
      */
     public void update() {
         Finish.setEnabled(Name_Field.getText().length() > 0 && Value_Field.getText().length() > 0);

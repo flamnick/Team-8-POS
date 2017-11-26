@@ -61,6 +61,7 @@ public class setPic {
      * The integer is received here and the picture is set.
      *
      * @param value is the integer received
+     * @return null
      */
     public ImageIcon getPic(int value) {
         switch (value) {

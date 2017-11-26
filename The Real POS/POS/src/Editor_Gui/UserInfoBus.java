@@ -118,17 +118,4 @@ public class UserInfoBus {
         return font;
     }
 
-    /**
-     * @param
-     */
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        mPcs.addPropertyChangeListener(listener);
-    }
-
-    /**
-     * @param
-     */
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        mPcs.removePropertyChangeListener(listener);
-    }
 }

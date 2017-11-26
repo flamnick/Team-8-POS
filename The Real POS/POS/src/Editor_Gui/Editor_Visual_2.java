@@ -806,7 +806,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * click.
      *
      * @param o Our observable object.
-     * @param 
+     * @param o1 whats being observed.
      */
     @Override
     public void update(Observable o, Object o1) {
