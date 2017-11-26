@@ -137,6 +137,12 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Method updates template appearance after selecting options in the
+     * Dialogue Box
+     *
+     * @param evt Mouse clicked event
+     */
     private void Finish_Dialogue_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Finish_Dialogue_ButtonMouseClicked
 
         modelReference.updateTemplateAppearance(color_choice, font_choice);
@@ -145,6 +151,12 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
 
+    /**
+     * Method sets color choice variable based on selection by using a switch
+     * statement.
+     *
+     * @param evt select list value
+     */
     private void Color_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Color_ListValueChanged
         switch (Color_List.getSelectedValue()) {
             case "Default": {
@@ -174,6 +186,12 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         System.out.println(color_choice);
     }//GEN-LAST:event_Color_ListValueChanged
 
+    /**
+     * Method sets font choice variable based on selection by using a switch
+     * statement.
+     *
+     * @param evt select list value
+     */
     private void Font_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Font_ListValueChanged
         switch (Font_List.getSelectedValue()) {
             case "Default": {

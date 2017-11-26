@@ -157,6 +157,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_2MouseEntered(evt);
             }
@@ -167,6 +170,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_3MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_3MouseEntered(evt);
             }
@@ -177,6 +183,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_4MouseEntered(evt);
             }
@@ -187,6 +196,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_5MouseEntered(evt);
             }
@@ -197,6 +209,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_6MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_6MouseEntered(evt);
             }
@@ -207,6 +222,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_7MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_7MouseEntered(evt);
             }
@@ -217,6 +235,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_8MouseEntered(evt);
             }
@@ -227,6 +248,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_9MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_9MouseEntered(evt);
             }
@@ -237,6 +261,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Button_10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_10MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_10MouseEntered(evt);
             }
@@ -545,13 +572,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
  * @param evt 
  */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
-
-        String priceString;
-        priceString = Double.toString(POSmodel.getPrice(1));
-        listModel.addElement(POSmodel.getName(1) + " " + priceString);
-
-
-
+        addListItem(1);
     }//GEN-LAST:event_Button_1MouseClicked
 
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
@@ -579,6 +600,42 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         }
 
     }//GEN-LAST:event_Load_ButtonMouseClicked
+
+    private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
+        addListItem(2);
+    }//GEN-LAST:event_Button_2MouseClicked
+
+    private void Button_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_3MouseClicked
+        addListItem(3);
+    }//GEN-LAST:event_Button_3MouseClicked
+
+    private void Button_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_4MouseClicked
+        addListItem(4);
+    }//GEN-LAST:event_Button_4MouseClicked
+
+    private void Button_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_5MouseClicked
+        addListItem(5);
+    }//GEN-LAST:event_Button_5MouseClicked
+
+    private void Button_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_6MouseClicked
+        addListItem(6);
+    }//GEN-LAST:event_Button_6MouseClicked
+
+    private void Button_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_7MouseClicked
+        addListItem(7);
+    }//GEN-LAST:event_Button_7MouseClicked
+
+    private void Button_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_8MouseClicked
+        addListItem(8);
+    }//GEN-LAST:event_Button_8MouseClicked
+
+    private void Button_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_9MouseClicked
+        addListItem(9);
+    }//GEN-LAST:event_Button_9MouseClicked
+
+    private void Button_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_10MouseClicked
+        addListItem(10);
+    }//GEN-LAST:event_Button_10MouseClicked
 
     /**
      * @param args the command line arguments
@@ -660,8 +717,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
+
         
-         Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
+        Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
         Button_2.setIcon(picsetter.getPic(POSupdate.getPictureChoice(2)));
@@ -705,5 +763,18 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
 
-}
+
     }
+    /**
+     * Contains the code for adding a entry to the list.
+     * @param buttonNumber The button it's adding to the list.
+     */
+    public void addListItem(int buttonNumber)
+    {
+        String temp;
+        temp = POSmodel.getName(buttonNumber) + " " + POSmodel.getPrice(buttonNumber);
+        listModel.addElement(temp);
+    }
+
+}
+    
