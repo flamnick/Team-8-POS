@@ -18,8 +18,6 @@ import javax.swing.ImageIcon;
  */
 public class Button extends Observable {
 
-    
-    
     private ImageIcon coffee_icon;
     private ImageIcon beer_icon;
     private ImageIcon bread_icon;
@@ -37,12 +35,10 @@ public class Button extends Observable {
      * This variable holds the int for selecting the button's picture
      */
     private int picture;
-    
+
     /**
      * Standard Constructor
      */
-    
-            
     public Button() {
         this.setName(" ");
         this.setPrice(0);
@@ -54,6 +50,7 @@ public class Button extends Observable {
      *
      * @param priceInput The price we're setting it to.
      * @param nameInput The name we're setting it to.
+     * @param pictureInput Picture chosen by user.
      */
     public Button(double priceInput, String nameInput, int pictureInput) {
         this.setName(nameInput);
@@ -84,8 +81,7 @@ public class Button extends Observable {
      *
      * @param inputName String which the name is changing to.
      */
-    public void setName(String inputName) 
-    {
+    public void setName(String inputName) {
         name = inputName;
         setChanged();
         this.notifyObservers();
@@ -99,89 +95,78 @@ public class Button extends Observable {
     public String getName() {
         return name;
     }
-   
 
-    public void setPicture(int picture_input) 
-    {
-      
-       try {
+    public void setPicture(int picture_input) {
+
+        try {
             coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
-            
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Fruit_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
-        } 
-        
-      switch (picture_input)
-      {
-          
-          case 0: 
-          {
-              picture=0;
-              break;
-          }
-          case 1: 
-          {
-              picture=1;
-              break;
-          }
-          case 2: 
-          {
-              picture=2;
-              break;
-          }
-          case 3: 
-          {
-              picture=3;
-              break;
-          }
-          case 4: 
-          {
-              picture=4;
-              break;
-          }
-          case 5: 
-          {
-              picture=5;
-              break;
-          }
-          default:
-          {
-              picture=0;
-              break;
-          }
-          
-      }
-          
+        }
+
+        switch (picture_input) {
+
+            case 0: {
+                picture = 0;
+                break;
+            }
+            case 1: {
+                picture = 1;
+                break;
+            }
+            case 2: {
+                picture = 2;
+                break;
+            }
+            case 3: {
+                picture = 3;
+                break;
+            }
+            case 4: {
+                picture = 4;
+                break;
+            }
+            case 5: {
+                picture = 5;
+                break;
+            }
+            default: {
+                picture = 0;
+                break;
+            }
+
+        }
+
     }
-    public int getPicture() 
-    {
-        
+
+    public int getPicture() {
+
         return picture;
     }
-    
+
 }
