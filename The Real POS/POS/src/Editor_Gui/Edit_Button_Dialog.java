@@ -13,12 +13,12 @@ import Model.Template;
 
 /**
  * Code for Dialogue Box that allows user to set button name, price and picture.
- * 
+ *
  */
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     private int pictureChoice;
-    
+
     private ImageIcon coffee_icon;
     private ImageIcon beer_icon;
     private ImageIcon bread_icon;
@@ -27,12 +27,11 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private UserInfoBus dialougeInfoBus = new UserInfoBus();
     private Model.Template modelReference;
     private int buttonUnderEdit;
-    
-
-    
 
     /**
-     * Initializes our button dialogue box. Takes a reference to our model as well as the button it is editing.
+     * Initializes our button dialogue box. Takes a reference to our model as
+     * well as the button it is editing.
+     *
      * @param model A reference to our data model.
      * @param buttonNumber A reference to which button it is changing.
      */
@@ -40,47 +39,45 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         initComponents();
         modelReference = model;
         buttonUnderEdit = buttonNumber;
-        
-        
+
         No_Image_Button.setSelected(true);
         setVisible(true);
         try {
             coffee_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Coffee_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             beer_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Beer_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             bread_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Bread_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             cookie_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Cookie_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
         try {
             strawberry_icon = new ImageIcon(ImageIO.read(ImagePanel.class.getResource("/Food_Sprites/Fruit_new.png")));
-                    
+
         } catch (Exception e) {
             assert false; // Resource load failure - did you mistype the path programmer?
         }
     }
 
-    
-    public void update()
-    {
-        Finish.setEnabled(Name_Field.getText().length()>0 && Value_Field.getText().length()>0);
+    public void update() {
+        Finish.setEnabled(Name_Field.getText().length() > 0 && Value_Field.getText().length() > 0);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -287,10 +284,8 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         dialougeInfoBus.setPicture(pictureChoice);
         modelReference.updateButton(buttonUnderEdit, dialougeInfoBus);
 
-        
-        
         System.out.println(dialougeInfoBus.getName());
-        
+
         setVisible(false);
         dispose();
 
@@ -299,7 +294,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
 
         Image_Display.setIcon(null);
-        pictureChoice =0;
+        pictureChoice = 0;
         update();
         revalidate();
 
@@ -307,35 +302,35 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     private void Image_1_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_1_ButtonMouseClicked
         Image_Display.setIcon(coffee_icon);
-        pictureChoice =1;
+        pictureChoice = 1;
         update();
         revalidate();
     }//GEN-LAST:event_Image_1_ButtonMouseClicked
 
     private void Image_2_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_2_ButtonMouseClicked
         Image_Display.setIcon(beer_icon);
-        pictureChoice =2;
+        pictureChoice = 2;
         update();
         revalidate();
     }//GEN-LAST:event_Image_2_ButtonMouseClicked
 
     private void Image_3_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_3_ButtonMouseClicked
         Image_Display.setIcon(bread_icon);
-        pictureChoice =3;
+        pictureChoice = 3;
         update();
         revalidate();
     }//GEN-LAST:event_Image_3_ButtonMouseClicked
 
     private void Image_4_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_4_ButtonMouseClicked
         Image_Display.setIcon(strawberry_icon);
-        pictureChoice =4;
+        pictureChoice = 4;
         update();
         revalidate();
     }//GEN-LAST:event_Image_4_ButtonMouseClicked
 
     private void Image_5_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Image_5_ButtonMouseClicked
         Image_Display.setIcon(cookie_icon);
-        pictureChoice =5;
+        pictureChoice = 5;
         update();
         revalidate();
     }//GEN-LAST:event_Image_5_ButtonMouseClicked

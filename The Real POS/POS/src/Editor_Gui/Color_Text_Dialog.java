@@ -15,20 +15,19 @@ import javax.swing.UIManager;
  */
 public class Color_Text_Dialog extends javax.swing.JDialog {
 
-    
-    
     private Color color_choice;
     private Font font_choice;
     private Model.Template modelReference;
     private UserInfoBus infobus;
+
     /**
      * Creates new form Color_Text_Dialogue
+     *
      * @param model Takes a reference to the data model.
      * @param parent stays within editor visual 2
      * @param modal boolean
      */
-    public Color_Text_Dialog(java.awt.Frame parent, boolean modal, Model.Template model) 
-    {
+    public Color_Text_Dialog(java.awt.Frame parent, boolean modal, Model.Template model) {
         super(parent, modal);
         modelReference = model;
         initComponents();
@@ -147,71 +146,59 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     }//GEN-LAST:event_Finish_Dialogue_ButtonMouseClicked
 
     private void Color_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Color_ListValueChanged
-        switch(Color_List.getSelectedValue())
-        {
-            case "Default": 
-            {
+        switch (Color_List.getSelectedValue()) {
+            case "Default": {
                 color_choice = UIManager.getColor("control");
                 break;
             }
-            case "Magenta": 
-            {
+            case "Magenta": {
                 color_choice = Color.MAGENTA;
                 break;
             }
-            case "Cyan": 
-            {
+            case "Cyan": {
                 color_choice = Color.CYAN;
                 break;
             }
-            case "Green": 
-            {
+            case "Green": {
                 color_choice = Color.GREEN;
                 System.out.println("Green was selected.");
                 break;
             }
-            default:
-            {
+            default: {
                 color_choice = UIManager.getColor("control");
                 break;
             }
-            
+
         }
-        
+
         System.out.println(color_choice);
     }//GEN-LAST:event_Color_ListValueChanged
 
     private void Font_ListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_Font_ListValueChanged
-        switch(Font_List.getSelectedValue())
-        {
-            case "Default": 
-            {
+        switch (Font_List.getSelectedValue()) {
+            case "Default": {
                 font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
-            case "Arial": 
-            {
+            case "Arial": {
                 font_choice = new Font("Arial", Font.BOLD, 14);
                 break;
             }
-            case "Comic Sans": 
-            {
+            case "Comic Sans": {
                 font_choice = new Font("Comic Sans MS", Font.BOLD, 14);
                 break;
             }
-            case "Papyrus": 
-            {
+            case "Papyrus": {
                 font_choice = new Font("Papyrus", Font.BOLD, 14);
                 break;
             }
-            default:
-            {
+            default: {
                 font_choice = new Font("Tahoma", Font.BOLD, 14);
                 break;
             }
-            
+
         }
-        
+
         System.out.println(font_choice);
     }//GEN-LAST:event_Font_ListValueChanged
 
