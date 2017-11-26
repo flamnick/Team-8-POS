@@ -1,11 +1,19 @@
 package Emulator_Gui;
 
 import Editor_Gui.XMLManager;
+import Editor_Gui.setPic;
 import java.awt.Color;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,18 +25,22 @@ import javax.swing.UIManager;
  * @author Flamnick
  */
 public class Emulator_Visual extends javax.swing.JFrame implements Observer {
-
+    
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
-
+    Model.DataHolder holder = new Model.DataHolder();
     DefaultListModel<String> listModel = new DefaultListModel<>();
-
+    setPic picsetter = new setPic();
+    
     /**
      * Creates new form Emulator_Visual
      */
     public Emulator_Visual() {
+        POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
+       
+       
     }
 
     /**
@@ -50,8 +62,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Load_Button = new javax.swing.JButton();
         Menu_Title_Label = new javax.swing.JLabel();
         Menu_Instructions_Label = new javax.swing.JLabel();
-        scrollPane1 = new java.awt.ScrollPane();
-        File_List = new java.awt.List();
         Register_Panel = new javax.swing.JPanel();
         Button_1 = new javax.swing.JButton();
         Button_2 = new javax.swing.JButton();
@@ -87,7 +97,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Menu_Panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        Load_Button.setText("Load");
+        Load_Button.setText("Load Template");
         Load_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Load_ButtonMouseClicked(evt);
@@ -99,26 +109,21 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
         Menu_Instructions_Label.setText("Select a template to emulate:");
 
-        scrollPane1.add(File_List);
-
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
         Menu_Panel.setLayout(Menu_PanelLayout);
         Menu_PanelLayout.setHorizontalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Load_Button)
-                .addGap(85, 85, 85))
             .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Menu_Instructions_Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Menu_Title_Label)
-                .addGap(53, 53, 53))
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
+                        .addComponent(Menu_Title_Label)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
+                        .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Load_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Menu_Instructions_Label))
+                        .addGap(37, 37, 37))))
         );
         Menu_PanelLayout.setVerticalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,11 +132,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                 .addComponent(Menu_Title_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(Menu_Instructions_Label)
-                .addGap(41, 41, 41)
-                .addComponent(scrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Load_Button)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Button_1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -552,7 +555,29 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_Button_1MouseClicked
 
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-        // TODO add your handling code here:
+           
+        String userhome = System.getProperty("user.dir");
+        JFileChooser fchooser = new JFileChooser(userhome);
+        fchooser.setVisible(true);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("xml", "xml");
+        fchooser.setFileFilter(filter);
+        int returnVal = fchooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            
+            System.out.println(fchooser.getSelectedFile().getName());
+            try{
+                
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                POSmodel.setTemplate(softCopy);
+            } catch(Exception e)
+            {
+                
+                System.out.println("File not found");
+            }
+            
+            
+        }
+
     }//GEN-LAST:event_Load_ButtonMouseClicked
 
     /**
@@ -604,7 +629,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton Button_8;
     private javax.swing.JButton Button_9;
     private javax.swing.JList<String> DataHolder_List;
-    private java.awt.List File_List;
     private javax.swing.JButton Load_Button;
     private javax.swing.JLabel Menu_Instructions_Label;
     private javax.swing.JPanel Menu_Panel;
@@ -619,7 +643,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
-    private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
     private Model.Template POSupdate;
 
@@ -637,5 +660,50 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_8.setText("<html>" + POSupdate.getName(8) + "<br>$" + POSupdate.getPrice(8) + "</html>");
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
-    }
+        
+         Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
+        Button_1.setHorizontalTextPosition(JButton.CENTER);
+        Button_1.setVerticalTextPosition(JButton.CENTER);
+        Button_2.setIcon(picsetter.getPic(POSupdate.getPictureChoice(2)));
+        Button_2.setHorizontalTextPosition(JButton.CENTER);
+        Button_2.setVerticalTextPosition(JButton.CENTER);
+        Button_3.setIcon(picsetter.getPic(POSupdate.getPictureChoice(3)));
+        Button_3.setHorizontalTextPosition(JButton.CENTER);
+        Button_3.setVerticalTextPosition(JButton.CENTER);
+        Button_4.setIcon(picsetter.getPic(POSupdate.getPictureChoice(4)));
+        Button_4.setHorizontalTextPosition(JButton.CENTER);
+        Button_4.setVerticalTextPosition(JButton.CENTER);
+        Button_5.setIcon(picsetter.getPic(POSupdate.getPictureChoice(5)));
+        Button_5.setHorizontalTextPosition(JButton.CENTER);
+        Button_5.setVerticalTextPosition(JButton.CENTER);
+        Button_6.setIcon(picsetter.getPic(POSupdate.getPictureChoice(6)));
+        Button_6.setHorizontalTextPosition(JButton.CENTER);
+        Button_6.setVerticalTextPosition(JButton.CENTER);
+        Button_7.setIcon(picsetter.getPic(POSupdate.getPictureChoice(7)));
+        Button_7.setHorizontalTextPosition(JButton.CENTER);
+        Button_7.setVerticalTextPosition(JButton.CENTER);
+        Button_8.setIcon(picsetter.getPic(POSupdate.getPictureChoice(8)));
+        Button_8.setHorizontalTextPosition(JButton.CENTER);
+        Button_8.setVerticalTextPosition(JButton.CENTER);
+        Button_9.setIcon(picsetter.getPic(POSupdate.getPictureChoice(9)));
+        Button_9.setHorizontalTextPosition(JButton.CENTER);
+        Button_9.setVerticalTextPosition(JButton.CENTER);
+        Button_10.setIcon(picsetter.getPic(POSupdate.getPictureChoice(10)));
+        Button_10.setHorizontalTextPosition(JButton.CENTER);
+        Button_10.setVerticalTextPosition(JButton.CENTER);
+
+        Button_1.setFont(POSupdate.getFontChoice());
+        Button_2.setFont(POSupdate.getFontChoice());
+        Button_3.setFont(POSupdate.getFontChoice());
+        Button_4.setFont(POSupdate.getFontChoice());
+        Button_5.setFont(POSupdate.getFontChoice());
+        Button_6.setFont(POSupdate.getFontChoice());
+        Button_7.setFont(POSupdate.getFontChoice());
+        Button_8.setFont(POSupdate.getFontChoice());
+        Button_9.setFont(POSupdate.getFontChoice());
+        Button_10.setFont(POSupdate.getFontChoice());
+        Button_11.setFont(POSupdate.getFontChoice());
+        Button_12.setFont(POSupdate.getFontChoice());
+
 }
+    }
