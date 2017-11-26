@@ -244,4 +244,18 @@ public class Template extends Observable implements Serializable
         setChanged();
         this.notifyObservers();
     }
+    
+        public void setTemplate(Template temp)
+    {
+        for (int i = 0; i < 20; i++) 
+        {
+        this.buttonArray[i].setName(temp.getName(i));
+        this.buttonArray[i].setPrice(temp.getPrice(i));
+        this.buttonArray[i].setPicture(temp.getPictureChoice(i));
+        }
+        this.fontSetting = temp.getFontChoice();
+        this.colorSetting = temp.getColorChoice();
+        setChanged();
+        this.notifyObservers();
+    }
 }
