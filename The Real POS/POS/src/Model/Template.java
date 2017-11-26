@@ -195,7 +195,7 @@ public class Template extends Observable implements Serializable
     /**
      * Method for getting tax rate.
      *
-     * @return
+     * @return taxRate;
      */
     public double getTaxRate() {
         return taxRate;

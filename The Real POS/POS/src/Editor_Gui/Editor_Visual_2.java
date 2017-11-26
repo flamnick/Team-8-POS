@@ -343,6 +343,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             }
         });
         Taxrate_Textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Taxrate_TextfieldKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Taxrate_TextfieldKeyTyped(evt);
             }
@@ -694,14 +697,22 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Register_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_ListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Register_ListActionPerformed
-
+/**
+ * Sets the tax when the user enters a value.
+ * @param evt User enters stuff.
+ */
     private void Taxrate_TextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_Taxrate_TextfieldActionPerformed
 
     private void Taxrate_TextfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyTyped
-                    
+
     }//GEN-LAST:event_Taxrate_TextfieldKeyTyped
+
+    private void Taxrate_TextfieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyReleased
+        double number = Double.parseDouble(Taxrate_Textfield.getText());
+        POSmodel.setTaxRate(number);
+    }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
 
 
     /**
