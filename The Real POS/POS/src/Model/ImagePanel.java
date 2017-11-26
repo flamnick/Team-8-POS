@@ -12,5 +12,5 @@ import Editor_Gui.*;
  * @author Flamnick
  */
 class ImagePanel {
-    
+
 }

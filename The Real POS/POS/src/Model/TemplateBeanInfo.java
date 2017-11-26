@@ -272,5 +272,5 @@ public class TemplateBeanInfo extends SimpleBeanInfo {
                 return null;
         }
     }
-    
+
 }

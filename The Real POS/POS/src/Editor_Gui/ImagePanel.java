@@ -6,9 +6,9 @@
 package Editor_Gui;
 
 /**
- *
- * @author Flamnick
+ * Spooky magic code that is required for some mysterious reason. monkaSHAKE
+ * gachiBASS Clap
  */
 class ImagePanel {
-    
+
 }
