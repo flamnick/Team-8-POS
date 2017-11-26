@@ -41,13 +41,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
-<<<<<<< HEAD
         POSmodel.setColorChoice(Color.MAGENTA);
-       
-       
-=======
-
->>>>>>> 2b3aecec4117f2aa36875a353787a51f923761da
     }
 
     /**
@@ -519,15 +513,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
-
-        listModel.addElement(POSmodel.getName(1) + " " + POSmodel.getPrice(1));
-
         addListItem(1);
-<<<<<<< HEAD
         addToRunningTotal(1);
-=======
-
->>>>>>> 2b3aecec4117f2aa36875a353787a51f923761da
     }//GEN-LAST:event_Button_1MouseClicked
 
     /**
