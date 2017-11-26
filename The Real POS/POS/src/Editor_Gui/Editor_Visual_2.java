@@ -18,7 +18,6 @@ import javax.swing.UIManager;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
 /**
  * This is our GUI class. Each class can also receives a reference to our model.
  *
@@ -108,11 +107,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 LoadMouseClicked(evt);
             }
         });
-        Load.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoadActionPerformed(evt);
-            }
-        });
 
         Menu_Title.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Menu_Title.setText("Template Editor");
@@ -163,11 +157,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Button_1MouseExited(evt);
-            }
-        });
-        Button_1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_1ActionPerformed(evt);
             }
         });
 
@@ -298,11 +287,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 Button_11MouseExited(evt);
             }
         });
-        Button_11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_11ActionPerformed(evt);
-            }
-        });
 
         Button_12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_12.setText("TOTAL");
@@ -316,30 +300,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 Button_12MouseExited(evt);
             }
         });
-        Button_12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_12ActionPerformed(evt);
-            }
-        });
 
-        Register_List.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Register_ListActionPerformed(evt);
-            }
-        });
         Scroll_Pane_2.setViewportView(Register_List);
 
-        Taxrate_Textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Taxrate_TextfieldActionPerformed(evt);
-            }
-        });
         Taxrate_Textfield.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Taxrate_TextfieldKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Taxrate_TextfieldKeyTyped(evt);
             }
         });
 
@@ -481,6 +447,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Mouse clicked events for all buttons. Clicking opens the edit button
+     * dialogue box. They are all the same.
+     *
+     * @param evt mouse clicked
+     */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
         Editor_Gui.Edit_Button_Dialog dialog = new Editor_Gui.Edit_Button_Dialog(POSmodel, 1);
         repaint();
@@ -542,15 +514,22 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         repaint();
     }//GEN-LAST:event_Button_12MouseClicked
 
-
+    /**
+     * Opens the color text dialogue box when the More button settings button is
+     * clicked.
+     *
+     * @param evt mouse clicked
+     */
     private void Button_Settings_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Settings_ButtonMouseClicked
         Editor_Gui.Color_Text_Dialog dialog = new Editor_Gui.Color_Text_Dialog(this, true, POSmodel);
         revalidate();
     }//GEN-LAST:event_Button_Settings_ButtonMouseClicked
-/**
- * 
- * @param evt 
- */
+
+    /**
+     * When the save button is clicked, writes the users choices to an XML file
+     *
+     * @param evt mouse clicked
+     */
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
         try {
             xml.write(POSmodel, templateName.getText() + ".xml");
@@ -559,18 +538,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         }
 
         repaint();
-
-    }                                 
-
-    {    
-
     }//GEN-LAST:event_SaveMouseClicked
-/**
- * 
- * @param evt 
- */
+    /**
+     * When the create new template button is clicked, the old template is
+     * reinitialized to a new one.
+     *
+     * @param evt mouse clicked
+     */
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
-
 
         //needs to clear out all buttons
         Taxrate_Textfield.setText("");
@@ -581,16 +556,15 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
         this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
-/**
- * 
- * @param evt 
- */
+
+    /**
+     * When the load button is clicked, the user selects which template to read
+     * from the selected XML file.
+     *
+     * @param evt mouse clicked
+     */
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
 
-
-        
-        
-        
         String userhome = System.getProperty("user.dir");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
@@ -598,41 +572,37 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         fchooser.setFileFilter(filter);
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            
+
             System.out.println(fchooser.getSelectedFile().getName());
-            try{
-                
+            try {
+
                 Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
                 POSmodel.setTemplate(softCopy);
-            } catch(Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("File not found");
             }
-            
-            
-        }
 
-       
+        }
 
 
     }//GEN-LAST:event_LoadMouseClicked
 
-    private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_1ActionPerformed
-
-    private void Button_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_11ActionPerformed
-
-    private void Button_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_12ActionPerformed
-
+    /**
+     * These events change the color of the button when the mouse is hovered
+     * over the button. All the buttons have the same events.
+     *
+     * @param evt mouse entered
+     */
     private void Button_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseEntered
         Button_1.setBackground(POSmodel.getColorChoice());
     }//GEN-LAST:event_Button_1MouseEntered
-
+    /**
+     * Mouse exited events that set the color of the button back to the original
+     * color when the mouse is no longer over the button. Same for all the
+     * buttons.
+     *
+     * @param evt mouse exited
+     */
     private void Button_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseExited
         Button_1.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_1MouseExited
@@ -725,14 +695,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_12.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_12MouseExited
 
-    private void Register_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_ListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Register_ListActionPerformed
-    /**
-     * Sets the tax when the user enters a value.
-     *
-     * @param evt User enters stuff.
-     */
     private void Taxrate_TextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldActionPerformed
 
     }//GEN-LAST:event_Taxrate_TextfieldActionPerformed
@@ -741,16 +703,15 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
     }//GEN-LAST:event_Taxrate_TextfieldKeyTyped
 
-
-    private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoadActionPerformed
-
+    /**
+     * Sets tax rate from the text field
+     *
+     * @param evt key released
+     */
     private void Taxrate_TextfieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyReleased
         double number = Double.parseDouble(Taxrate_Textfield.getText());
         POSmodel.setTaxRate(number);
     }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
-
 
     /**
      * @param args the command line arguments

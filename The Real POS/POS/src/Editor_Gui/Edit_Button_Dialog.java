@@ -74,6 +74,9 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * @param
+     */
     public void update() {
         Finish.setEnabled(Name_Field.getText().length() > 0 && Value_Field.getText().length() > 0);
     }
@@ -272,9 +275,9 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
-     * WHen the button is clicked it puts something in a filler object.
+     * When the button is clicked it puts something in a filler object.
      *
-     * @param evt
+     * @param evt mouse clicked
      */
     private void FinishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinishMouseClicked
 
@@ -291,6 +294,12 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FinishMouseClicked
 
+    /**
+     * These methods update the button based on the integer selection from Color
+     * choice. They are all pretty much the same.
+     *
+     * @param evt mouse clicked
+     */
     private void No_Image_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_No_Image_ButtonMouseClicked
 
         Image_Display.setIcon(null);
@@ -335,11 +344,17 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         revalidate();
     }//GEN-LAST:event_Image_5_ButtonMouseClicked
 
+    /**
+     * @param
+     */
     private void Name_FieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Name_FieldKeyReleased
 
         update();
     }//GEN-LAST:event_Name_FieldKeyReleased
 
+    /**
+     * @param
+     */
     private void Value_FieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Value_FieldKeyReleased
         update();
     }//GEN-LAST:event_Value_FieldKeyReleased
