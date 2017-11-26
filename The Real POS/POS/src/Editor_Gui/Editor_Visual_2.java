@@ -15,7 +15,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 /**
  * This is our GUI class. Each class can also receives a reference to our model.
@@ -37,6 +39,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         POSmodel.initTemplate();
         initComponents();
         POSmodel.addObserver(this);
+        //This is there to get the observer to wake up.
+        POSmodel.setColorChoice(Color.MAGENTA);
     }
 
     /**
@@ -331,6 +335,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             }
         });
         Taxrate_Textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Taxrate_TextfieldKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Taxrate_TextfieldKeyTyped(evt);
             }
@@ -553,6 +560,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
         repaint();
 
+    }                                 
+
+    {    
+
     }//GEN-LAST:event_SaveMouseClicked
 /**
  * 
@@ -560,10 +571,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
  */
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
 
+
         //needs to clear out all buttons
         Taxrate_Textfield.setText("");
         Register_List.setText("");
         templateName.setText("");
+
+        POSmodel.resetTemplate();
+
         this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
 /**
@@ -571,6 +586,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
  * @param evt 
  */
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
+
 
         
         
@@ -595,6 +611,10 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             
             
         }
+
+       
+
+
     }//GEN-LAST:event_LoadMouseClicked
 
     private void Button_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_1ActionPerformed
@@ -708,18 +728,29 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Register_ListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_ListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Register_ListActionPerformed
-
+    /**
+     * Sets the tax when the user enters a value.
+     *
+     * @param evt User enters stuff.
+     */
     private void Taxrate_TextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_Taxrate_TextfieldActionPerformed
 
     private void Taxrate_TextfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyTyped
 
     }//GEN-LAST:event_Taxrate_TextfieldKeyTyped
 
+
     private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoadActionPerformed
+
+    private void Taxrate_TextfieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyReleased
+        double number = Double.parseDouble(Taxrate_Textfield.getText());
+        POSmodel.setTaxRate(number);
+    }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
+
 
     /**
      * @param args the command line arguments
