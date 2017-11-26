@@ -4,6 +4,7 @@ import Editor_Gui.XMLManager;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.DefaultListModel;
 import javax.swing.UIManager;
 
 /*
@@ -19,6 +20,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
+
+    DefaultListModel<String> listModel = new DefaultListModel<>();
 
     /**
      * Creates new form Emulator_Visual
@@ -534,8 +537,13 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
 
     }//GEN-LAST:event_Button_12MouseClicked
-
+/**
+ * Populates the list on the button's press.
+ * @param evt 
+ */
     private void Button_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_1MouseClicked
+    
+        listModel.addElement(POSmodel.getName(1) + " " + POSmodel.getPrice(1));
 
     }//GEN-LAST:event_Button_1MouseClicked
 

@@ -6,13 +6,17 @@
 package Editor_Gui;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * This is our GUI class. Each class can also receives a reference to our model.
@@ -23,13 +27,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
     Model.Template POSmodel = new Model.Template();
     XMLManager xml = new XMLManager();
-    DefaultListModel<String> listModel = new DefaultListModel<>();
+
     setPic picsetter = new setPic();
 
     /**
      * Creates new form Emulator_Visual
      */
     public Editor_Visual_2() {
+
         POSmodel.initTemplate();
         initComponents();
         POSmodel.addObserver(this);
@@ -56,10 +61,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         jPanel1 = new javax.swing.JPanel();
         Load = new javax.swing.JButton();
         Menu_Title = new javax.swing.JLabel();
-        Load_Instructions = new javax.swing.JLabel();
         New_Template = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Load_List = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
         Button_1 = new javax.swing.JButton();
         Button_2 = new javax.swing.JButton();
@@ -99,7 +101,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        Load.setText("Load");
+        Load.setText("Load Existing Template");
         Load.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoadMouseClicked(evt);
@@ -109,8 +111,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Menu_Title.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Menu_Title.setText("Template Editor");
 
-        Load_Instructions.setText("Select a template:");
-
         New_Template.setText("Create New Template");
         New_Template.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,29 +118,19 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
             }
         });
 
-        Load_List.setModel(listModel);
-        jScrollPane3.setViewportView(Load_List);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Load)
-                .addGap(77, 77, 77))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Menu_Title)
                 .addGap(46, 46, 46))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(New_Template)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Load_Instructions)
-                        .addGap(23, 23, 23)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(New_Template, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Load, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -150,13 +140,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 .addComponent(Menu_Title)
                 .addGap(109, 109, 109)
                 .addComponent(New_Template)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(Load_Instructions)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Load)
-                .addGap(225, 225, 225))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -550,11 +536,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         } catch (Exception e) {
 
         }
-        listModel.addElement(templateName.getText());
+
         repaint();
-
     }//GEN-LAST:event_SaveMouseClicked
-
     /**
      * When the create new template button is clicked, the old template is
      * reinitialized to a new one.
@@ -562,7 +546,14 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void New_TemplateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_New_TemplateMouseClicked
+
+        //needs to clear out all buttons
+        Taxrate_Textfield.setText("");
+        Register_List.setText("");
+        templateName.setText("");
+
         POSmodel.resetTemplate();
+
         this.repaint();
     }//GEN-LAST:event_New_TemplateMouseClicked
 
@@ -573,13 +564,26 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
-        try {
-            String file_name = "/" + Load_List.getSelectedValue();
 
-            POSmodel = xml.read(Load_List.getSelectedValue());
-        } catch (Exception e) {
+        String userhome = System.getProperty("user.dir");
+        JFileChooser fchooser = new JFileChooser(userhome);
+        fchooser.setVisible(true);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("xml files only", "xml");
+        fchooser.setFileFilter(filter);
+        int returnVal = fchooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+
+            System.out.println(fchooser.getSelectedFile().getName());
+            try {
+
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                POSmodel.setTemplate(softCopy);
+            } catch (Exception e) {
+                System.out.println("File not found");
+            }
 
         }
+
 
     }//GEN-LAST:event_LoadMouseClicked
 
@@ -690,6 +694,15 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private void Button_12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseExited
         Button_12.setBackground(UIManager.getColor("control"));
     }//GEN-LAST:event_Button_12MouseExited
+
+    private void Taxrate_TextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldActionPerformed
+
+    }//GEN-LAST:event_Taxrate_TextfieldActionPerformed
+
+    private void Taxrate_TextfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyTyped
+
+    }//GEN-LAST:event_Taxrate_TextfieldKeyTyped
+
     /**
      * Sets tax rate from the text field
      *
@@ -751,8 +764,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton Button_9;
     private javax.swing.JButton Button_Settings_Button;
     private javax.swing.JButton Load;
-    private javax.swing.JLabel Load_Instructions;
-    private javax.swing.JList<String> Load_List;
     private javax.swing.JLabel Menu_Title;
     private javax.swing.JButton New_Template;
     private javax.swing.JTextField Register_List;
@@ -767,7 +778,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
