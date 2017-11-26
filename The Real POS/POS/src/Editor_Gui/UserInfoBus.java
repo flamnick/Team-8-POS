@@ -9,7 +9,7 @@ import java.awt.Font;
 import java.beans.*;
 
 /**
- * THe class which contains our user info.
+ * The class which contains our user info.
  * @author Team 8
  */
 public class UserInfoBus 
@@ -72,7 +72,7 @@ public class UserInfoBus
    
    /**
     * Sets name in object
-    * @param userString takes user string 
+    * @param inputPicture takes user picture choice 
     */
    public void setPicture(int inputPicture)
    {

@@ -54,6 +54,7 @@ public class Button extends Observable {
      *
      * @param priceInput The price we're setting it to.
      * @param nameInput The name we're setting it to.
+     * @param pictureInput Picture chosen by user.
      */
     public Button(double priceInput, String nameInput, int pictureInput) {
         this.setName(nameInput);

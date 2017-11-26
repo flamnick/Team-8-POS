@@ -58,9 +58,9 @@ public class Template extends Observable implements Serializable
     /**
      *
      * @param buttonNumber The button it's working on
-     * @param inputName
-     * @param inputPrice
-     * @param inputPicture
+     * @param inputName sets Name of button
+     * @param inputPrice sets Price of Button
+     * @param inputPicture sets Picture for button
      */
     
     public void editButton(int buttonNumber, String inputName, double inputPrice, int inputPicture) 
@@ -74,8 +74,8 @@ public class Template extends Observable implements Serializable
     
     /**
      * This updates our entire button with the contents of our data holder.
-     * @param buttonNumber
-     * @param dataHolder 
+     * @param buttonNumber what button is being populated
+     * @param dataHolder holds the data the button is being populated with
      */
     public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder)
     {
@@ -93,8 +93,8 @@ public class Template extends Observable implements Serializable
     
     /**
      * This updates our data model with the users chosen font and color.
-     * @param colorChoice
-     * @param fontChoice 
+     * @param colorChoice updates color choice 
+     * @param fontChoice updates font choice 
      */
     public void updateTemplateAppearance(Color colorChoice, Font fontChoice)
     {
@@ -124,7 +124,7 @@ public class Template extends Observable implements Serializable
      * This gets the name from a particular button. Useful if we eventually intend to edit
      * the thing individually.
      * @param buttonNumber the button whose name we are getting.
-     * @return 
+     * @return string
      */
     public String getName(int buttonNumber)
     {
@@ -134,8 +134,8 @@ public class Template extends Observable implements Serializable
     /**
      * This sets the price within a particular button and informs
      * the controller of our change.
-     * @param buttonNumber
-     * @param inputPrice 
+     * @param buttonNumber the button being updated
+     * @param inputPrice price button is taking
      */
     public void setPrice(int buttonNumber, double inputPrice)
     {
@@ -146,8 +146,8 @@ public class Template extends Observable implements Serializable
     
     /**
      * This gets the price field within a particular button.
-     * @param buttonNumber the button whose price we are getting.
-     * @return 
+     * @param buttonNumber the button whose price we are getting
+     * @return double
      */
     public double getPrice(int buttonNumber)
     {
@@ -158,8 +158,8 @@ public class Template extends Observable implements Serializable
     
     /**
      * Method for setting the picture choice.
-     * @param buttonNumber
-     * @param inputPicture 
+     * @param buttonNumber the button the picture is being set for
+     * @param inputPicture the picture that was chosen
      */
     public void setPictureChoice(int buttonNumber, int inputPicture)
     {
@@ -172,7 +172,7 @@ public class Template extends Observable implements Serializable
     /**
      * Method for getting picture Choice.
      * @param buttonNumber Whichever button we are editing.
-     * @return 
+     * @return integer
      */
     public int getPictureChoice(int buttonNumber)
     {
@@ -181,7 +181,7 @@ public class Template extends Observable implements Serializable
     /**
      * Method for setting tax rate.
      *
-     * @param taxRateInput
+     * @param taxRateInput sets tax rate 
      */
     public void setTaxRate(double taxRateInput) {
         taxRate = taxRateInput;
@@ -192,34 +192,66 @@ public class Template extends Observable implements Serializable
     /**
      * Method for getting tax rate.
      *
-     * @return
+     * @return double
      */
     public double getTaxRate() {
         return taxRate;
     }
+    /**
+     * Method sets color choice
+     *
+     * @param color_input used for setting color
+     */
     public void setColorChoice(Color color_input) {
       colorSetting = color_input;
       setChanged();
       this.notifyObservers();
     }
+    /**
+     * Method gets color choice
+     *
+     * @return Color
+     */
     public Color getColorChoice() {
         return colorSetting;
     }
+    /**
+     * Method sets font choice
+     *
+     * @param font_input used for setting font
+     */
     public void setFontChoice(Font font_input) 
     {
        fontSetting = font_input;
        setChanged();
        this.notifyObservers();
     }
+    /**
+     * Method gets font choice
+     *
+     * @return Font
+     */
     public Font getFontChoice() 
     {
         return fontSetting;
     }
     
+    /**
+     * Method retrieves button array
+     *
+     * @return Button[]
+     */
     public Button[] getButton()
     {
         return buttonArray;
     }
+    
+    /**
+     * Method sets array of buttons to data in parameter
+
+     *
+     * @param arrayToCopy holds data to be copied
+     */
     public void setButton(Button[] arrayToCopy)
     {
         buttonArray = arrayToCopy;

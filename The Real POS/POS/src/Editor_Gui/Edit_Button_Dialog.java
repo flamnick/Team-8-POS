@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 import Model.Template;
 
 /**
- *
- * @author Flamnick
+ * Code for Dialogue Box that allows user to set button name, price and picture.
+ * 
  */
 public class Edit_Button_Dialog extends javax.swing.JFrame {
 
@@ -349,9 +349,6 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         update();
     }//GEN-LAST:event_Value_FieldKeyReleased
 
-    /**
-     * @param args the command line arguments
-     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Finish;

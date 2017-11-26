@@ -10,8 +10,8 @@ import java.awt.Font;
 import javax.swing.UIManager;
 
 /**
+ * Code for Dialogue box that allows the user to select button color and font.
  *
- * @author Flamnick
  */
 public class Color_Text_Dialog extends javax.swing.JDialog {
 
@@ -24,6 +24,8 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
     /**
      * Creates new form Color_Text_Dialogue
      * @param model Takes a reference to the data model.
+     * @param parent stays within editor visual 2
+     * @param modal boolean
      */
     public Color_Text_Dialog(java.awt.Frame parent, boolean modal, Model.Template model) 
     {
@@ -212,10 +214,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
         
         System.out.println(font_choice);
     }//GEN-LAST:event_Font_ListValueChanged
-
-    /**
-     * @param args the command line arguments
-     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> Color_List;
