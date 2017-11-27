@@ -29,9 +29,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     /**
-     * The data model reflected in the view.
+     * This becomes our reference to our data model in the controller.
      */
-    Model.Template POSmodel = new Model.Template();
+    Model.Template POSmodel;
     /**
      * The XML manager used to load templates.
      */
@@ -52,7 +52,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     /**
      * Creates new form Emulator_Visual
      */
-    public Emulator_Visual() {
+    public Emulator_Visual(Model.Template model) {
+        POSmodel = model;
         POSmodel.initTemplate();
         POSmodel.addObserver(this);
         initComponents();
@@ -522,12 +523,27 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_Button_12MouseExited
 
     private void Button_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_12MouseClicked
+        
+        //Below would get the subTotal to display, then display it on the list.
+        String subTotal = Double.toString(totalCalculator.getTotal());
+        listModel.addElement("Sub-Total was $" + subTotal);
+        
+        totalCalculator.calculateTaxOwed(POSmodel.getTaxRate());
+        /**
+         * Total tax is just a temp string for the purpose of updating the listModel.
+         */
+        String totalTax = Double.toString(totalCalculator.getTaxOwed());
+        listModel.addElement("Total tax was $" + totalTax);
+        
         totalCalculator.calculatePostTaxTotal(POSmodel.getTaxRate());
+        
+    //Another temp string for print purposes.
         String price;
         price = Double.toString(totalCalculator.getTotal());
         totalField.setText(price);
-        listModel.clear();
+        //Thanks the user for shopping.
         listModel.addElement("Thank you for shopping with us.");
+        //Clears the total out of the calculator.
         totalCalculator.clearTotal();
     }//GEN-LAST:event_Button_12MouseClicked
     /**
@@ -624,41 +640,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         totalCalculator.clearTotal();
         totalField.setText(" ");
     }//GEN-LAST:event_Button_11MouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Emulator_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Emulator_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Emulator_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Emulator_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Emulator_Visual().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_1;

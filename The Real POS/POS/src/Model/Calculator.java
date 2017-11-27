@@ -19,6 +19,11 @@ public class Calculator {
     double total;
     
     /**
+     * This will hold the amount the user pays in tax.
+     */
+    double taxOwed;
+    
+    /**
      * Adds to the total by the number passed in each time this method is called.
      * @param inputDouble the amount to add to our total.
      */
@@ -52,5 +57,23 @@ public class Calculator {
     {
         taxRate= (taxRate/100);
         total = (total * taxRate) + total;
+    }
+    
+    /**
+     * Calculates the tax owed for a particular transaction when called.
+     * @param taxRate 
+     */
+    public void calculateTaxOwed(double taxRate)
+    {
+        taxRate = (taxRate/100);
+       taxOwed = (total*taxRate);
+    }
+    /**
+     * Gets the taxOwed for a particular transaction when run.
+     * @return taxOwed.
+     */
+    public double getTaxOwed()
+    {
+        return taxOwed;
     }
 }

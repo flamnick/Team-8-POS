@@ -26,9 +26,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Editor_Visual extends javax.swing.JFrame implements Observer {
 
     /**
-     * The model associated with this view.
+     * Preparation for referencing this model.
      */
-    Model.Template POSmodel = new Model.Template();
+    Model.Template POSmodel;
     /**
      * The xml manager responsible for saving and loading our program.
      */
@@ -43,17 +43,24 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
      * This is the model for the Register list text box.
      */
     DefaultListModel<String> listModel = new DefaultListModel<>();
-
+    
+     /**
+     * creates a POS update object for use in our update protocol for this view.
+     */
+    private Model.Template POSupdate;
     /**
      * Creates new form Emulator_Visual
      */
-    public Editor_Visual() {
+    public Editor_Visual(Model.Template model) {
+       //This sets up the reference.
+        POSmodel = model;
 
         POSmodel.initTemplate();
         initComponents();
         POSmodel.addObserver(this);
         //This is there to get the observer to wake up.
         POSmodel.setColorChoice(Color.MAGENTA);
+        this.setVisible(true);
     }
 
     /**
@@ -739,44 +746,6 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         POSmodel.setTaxRate(number);
     }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Editor_Visual().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_1;
     private javax.swing.JButton Button_10;
@@ -812,8 +781,6 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
     private java.awt.MenuBar menuBar1;
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
-
-    private Model.Template POSupdate;
 
     /**
      * This is the update method for the view; it updates all our buttons on
