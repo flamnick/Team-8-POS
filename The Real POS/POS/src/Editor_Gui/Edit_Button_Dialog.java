@@ -16,16 +16,43 @@ import Model.Template;
  *
  */
 public class Edit_Button_Dialog extends javax.swing.JFrame {
-
+    
+    /**
+     * The chooser integer for our picture choice.
+     */
     private int pictureChoice;
 
+    /**
+     * Our coffee icon.
+     */
     private ImageIcon coffee_icon;
+    /**
+     * Our beer icon
+     */
     private ImageIcon beer_icon;
+    /**
+     * Our bread icon.
+     */
     private ImageIcon bread_icon;
+    /**
+     * Our cookie icon.
+     */
     private ImageIcon cookie_icon;
+    /**
+     * Our strawberry icon
+     */
     private ImageIcon strawberry_icon;
+    /**
+     * The user infoBus which helps to shuttle data to our model.
+     */
     private UserInfoBus dialougeInfoBus = new UserInfoBus();
+    /**
+     * This prepares the reference to our data model so the compiler knows what to look for.
+     */
     private Model.Template modelReference;
+    /**
+     * An integer flag which determines which button is under edit, this is populated by whatever is passed into our dialog box when it is created.
+     */
     private int buttonUnderEdit;
 
     /**
@@ -275,7 +302,7 @@ public class Edit_Button_Dialog extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
-     * When the button is clicked it puts something in a filler object.
+     * When the finish button is pressed, it takes the users values, and parses them into the original Template data model. Dialog info bus gives us a way to package what we're sending.
      *
      * @param evt mouse clicked
      */

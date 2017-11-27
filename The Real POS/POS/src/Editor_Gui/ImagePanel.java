@@ -6,7 +6,7 @@
 package Editor_Gui;
 
 /**
- * Spooky magic code that is required for some mysterious reason. monkaSHAKE
+ * Required to display images in dialog box. DO NOT DELETE.
  * gachiBASS Clap
  */
 class ImagePanel {

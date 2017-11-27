@@ -13,11 +13,25 @@ import javax.swing.ImageIcon;
  *
  */
 public class setPic {
-
+    /**
+     * Our coffee icon.
+     */
     private ImageIcon coffee_icon;
+    /**
+     * Our beer icon.
+     */
     private ImageIcon beer_icon;
+    /**
+     * Our bread icon.
+     */
     private ImageIcon bread_icon;
+    /**
+     * Our cookie icon.
+     */
     private ImageIcon cookie_icon;
+    /**
+     * Our strawberry icon.
+     */
     private ImageIcon strawberry_icon;
 
     /**

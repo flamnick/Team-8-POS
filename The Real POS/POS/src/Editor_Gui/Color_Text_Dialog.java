@@ -14,10 +14,21 @@ import javax.swing.UIManager;
  *
  */
 public class Color_Text_Dialog extends javax.swing.JDialog {
-
+    /**
+     * contains our desired color
+     */
     private Color color_choice;
+    /**
+     * contains our desired font.
+     */
     private Font font_choice;
+    /**
+     * Contains a reference to our original Template, similar to our Edit_Button_Dialog.
+     */
     private Model.Template modelReference;
+    /**
+     * a instantiation of userInfoBus. It might not be needed.
+     */
     private UserInfoBus infobus;
 
     /**
