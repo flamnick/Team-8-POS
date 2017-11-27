@@ -28,10 +28,25 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
+    /**
+     * The data model reflected in the view.
+     */
     Model.Template POSmodel = new Model.Template();
+    /**
+     * The XML manager used to load templates.
+     */
     XMLManager xml = new XMLManager();
+    /**
+     * The calculator used to calculate pre and post tax totals.
+     */
     Calculator totalCalculator = new Calculator();
+    /**
+     * The list model used by our Jlist to display clicked items to the user.
+     */
     DefaultListModel<String> listModel = new DefaultListModel<>();
+    /**
+     * Interprets integer selections and determines which to display.
+     */
     setPic picsetter = new setPic();
 
     /**
@@ -80,6 +95,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         DataHolder_List = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         totalField = new javax.swing.JTextField();
+        TaxRateLabel = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -303,6 +319,8 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Total:");
 
+        TaxRateLabel.setText("Tax Rate:");
+
         javax.swing.GroupLayout Register_PanelLayout = new javax.swing.GroupLayout(Register_Panel);
         Register_Panel.setLayout(Register_PanelLayout);
         Register_PanelLayout.setHorizontalGroup(
@@ -310,11 +328,6 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
             .addGroup(Register_PanelLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Register_PanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totalField, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Register_PanelLayout.createSequentialGroup()
                         .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2)
@@ -336,7 +349,15 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                                     .addComponent(Button_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Button_12, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(Button_9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(42, 42, 42))))
+                        .addGap(42, 42, 42))
+                    .addGroup(Register_PanelLayout.createSequentialGroup()
+                        .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(TaxRateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(Register_PanelLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(totalField, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         Register_PanelLayout.setVerticalGroup(
             Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,7 +390,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
                 .addGroup(Register_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(totalField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TaxRateLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -518,12 +541,11 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_Button_1MouseClicked
 
     /**
-     * Loads chosen XML file to Emulator.
+     * Loads chosen XML file to Emulator. Uses the file chooser to find the file and give it's name to our XML parser.
      *
      * @param evt mouse clicked
      */
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-
         String userhome = System.getProperty("user.dir");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
@@ -545,7 +567,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         }
 
     }//GEN-LAST:event_Load_ButtonMouseClicked
-
+/**
+ * All buttons have similar functionality: They add an item to our Jlist and they add to the running total.
+ * @param evt 
+ */    
     private void Button_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_2MouseClicked
         addListItem(2);
         addToRunningTotal(2);
@@ -594,6 +619,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
         listModel.clear();
         totalCalculator.clearTotal();
+        totalField.setText(" ");
     }//GEN-LAST:event_Button_11MouseClicked
 
     /**
@@ -650,6 +676,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel Menu_Panel;
     private javax.swing.JLabel Menu_Title_Label;
     private javax.swing.JPanel Register_Panel;
+    private javax.swing.JLabel TaxRateLabel;
     private java.awt.Choice choice1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
@@ -673,6 +700,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
     public void update(Observable o, Object o1) {
         POSupdate = (Model.Template) o;
 
+        //This sets the text of each button to the name field of the corresponding button in the model.
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
         Button_3.setText("<html>" + POSupdate.getName(3) + "<br>$" + POSupdate.getPrice(3) + "</html>");
@@ -684,6 +712,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
 
+        //This sets up our image files.
         Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
@@ -715,6 +744,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_10.setHorizontalTextPosition(JButton.CENTER);
         Button_10.setVerticalTextPosition(JButton.CENTER);
 
+        //This sets all of our button fonts.
         Button_1.setFont(POSupdate.getFontChoice());
         Button_2.setFont(POSupdate.getFontChoice());
         Button_3.setFont(POSupdate.getFontChoice());
@@ -727,6 +757,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         Button_10.setFont(POSupdate.getFontChoice());
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
+        
+        String temp = Double.toString(POSmodel.getTaxRate());
+        
+        TaxRateLabel.setText("Current tax rate is " + temp + "%");
     }
 
     /**

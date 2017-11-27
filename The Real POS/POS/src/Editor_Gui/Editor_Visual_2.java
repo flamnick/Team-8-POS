@@ -83,7 +83,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_Settings_Button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         templateName = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        TaxRateLabel = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -336,8 +336,8 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Template Name:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("Tax Rate:");
+        TaxRateLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TaxRateLabel.setText("Tax Rate:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -383,11 +383,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                                 .addGap(80, 80, 80)
                                 .addComponent(Button_Settings_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(jLabel2)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                    .addComponent(TaxRateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +425,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 16, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TaxRateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Taxrate_Textfield)
@@ -783,11 +781,11 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField Register_List;
     private javax.swing.JButton Save;
     private javax.swing.JScrollPane Scroll_Pane_2;
+    private javax.swing.JLabel TaxRateLabel;
     private javax.swing.JTextField Taxrate_Textfield;
     private java.awt.Choice choice1;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
@@ -872,6 +870,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
         
+        String temp = Double.toString(POSmodel.getTaxRate());
+        
+        TaxRateLabel.setText("Current tax rate is " + temp + "%");
         repaint();
 
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
