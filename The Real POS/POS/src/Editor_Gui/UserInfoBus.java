@@ -10,18 +10,32 @@ import java.awt.Font;
 import java.beans.*;
 
 /**
- * The class which contains our user info.
+ * The information bus which provides a convenient method of shuttling changes to the model.
  *
  * @author Team 8
  */
 public class UserInfoBus {
 
+    /**
+     * This contains the name for our info bus.
+     */
     private String name;
+    /**
+     * Contains the price value for our info bus.
+     */
     private double price;
+    /**
+     * Contains the color value for our info bus. Might not use
+     */
     private Color color;
+    /**
+     * Contains the picture selector integer flag for our info bus
+     */
     private int picture;
+    /**
+     * Contains the font for this individual button. Might not use.
+     */
     private Font font;
-    private PropertyChangeSupport mPcs = new PropertyChangeSupport(this);
 
     /**
      * Sets name in object
@@ -29,9 +43,7 @@ public class UserInfoBus {
      * @param userString takes user string
      */
     public void setName(String userString) {
-        String oldName = name;
         name = userString;
-        mPcs.firePropertyChange("", oldName, userString);
     }
 
     /**

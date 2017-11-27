@@ -615,7 +615,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         addListItem(10);
         addToRunningTotal(10);
     }//GEN-LAST:event_Button_10MouseClicked
-
+/**
+ * This clears our Jlist, then clears the calculator to a set text.
+ * @param evt 
+ */
     private void Button_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_11MouseClicked
         listModel.clear();
         totalCalculator.clearTotal();

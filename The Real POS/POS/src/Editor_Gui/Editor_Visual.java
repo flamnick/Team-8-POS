@@ -23,17 +23,26 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author Team 8
  */
-public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
+public class Editor_Visual extends javax.swing.JFrame implements Observer {
 
+    /**
+     * The model associated with this view.
+     */
     Model.Template POSmodel = new Model.Template();
+    /**
+     * The xml manager responsible for saving and loading our program.
+     */
     XMLManager xml = new XMLManager();
 
+    /**
+     * The object responsible for setting which image we want to display in a given button.
+     */
     setPic picsetter = new setPic();
 
     /**
      * Creates new form Emulator_Visual
      */
-    public Editor_Visual_2() {
+    public Editor_Visual() {
 
         POSmodel.initTemplate();
         initComponents();
@@ -457,7 +466,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
 
     /**
      * Mouse clicked events for all buttons. Clicking opens the edit button
-     * dialogue box. They are all the same.
+     * dialogue box, passing in which button was pressed. They are all the same, save which button they pass in to edit.
      *
      * @param evt mouse clicked
      */
@@ -580,14 +589,13 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         fchooser.setFileFilter(filter);
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-            System.out.println(fchooser.getSelectedFile().getName());
             try {
-
+                /**
+                 * softCopy just holds the XML read Template object until we can pass it to the one being observed for changes.
+                 */
                 Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {
-                System.out.println("File not found");
             }
 
         }
@@ -742,21 +750,23 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editor_Visual_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Editor_Visual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Editor_Visual_2().setVisible(true);
+                new Editor_Visual().setVisible(true);
             }
         });
     }
@@ -797,10 +807,6 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField templateName;
     // End of variables declaration//GEN-END:variables
 
-    /*   public void printDataModel()
-    {
-        System.out.println(POSmodel.getName(1));
-    }*/
     private Model.Template POSupdate;
 
     /**
@@ -813,8 +819,12 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object o1) {
 
+        /**
+         * This just takes whatever observable was passed in and makes sure it can be worked on.
+         */
         POSupdate = (Model.Template) o;
 
+        //Code below changes button text.
         Button_1.setText("<html>" + POSupdate.getName(1) + "<br>$" + POSupdate.getPrice(1) + "</html>");
         Button_2.setText("<html>" + POSupdate.getName(2) + "<br>$" + POSupdate.getPrice(2) + "</html>");
         Button_3.setText("<html>" + POSupdate.getName(3) + "<br>$" + POSupdate.getPrice(3) + "</html>");
@@ -826,6 +836,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_9.setText("<html>" + POSupdate.getName(9) + "<br>$" + POSupdate.getPrice(9) + "</html>");
         Button_10.setText("<html>" + POSupdate.getName(10) + "<br>$" + POSupdate.getPrice(10) + "</html>");
 
+        //Code below updates pictures.
         Button_1.setIcon(picsetter.getPic(POSupdate.getPictureChoice(1)));
         Button_1.setHorizontalTextPosition(JButton.CENTER);
         Button_1.setVerticalTextPosition(JButton.CENTER);
@@ -857,6 +868,7 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_10.setHorizontalTextPosition(JButton.CENTER);
         Button_10.setVerticalTextPosition(JButton.CENTER);
 
+        //Code below updates fonts.
         Button_1.setFont(POSupdate.getFontChoice());
         Button_2.setFont(POSupdate.getFontChoice());
         Button_3.setFont(POSupdate.getFontChoice());
@@ -870,6 +882,9 @@ public class Editor_Visual_2 extends javax.swing.JFrame implements Observer {
         Button_11.setFont(POSupdate.getFontChoice());
         Button_12.setFont(POSupdate.getFontChoice());
         
+        /**
+         * THis is just a temporary string so that the tax rate label can be properly set.
+         */
         String temp = Double.toString(POSmodel.getTaxRate());
         
         TaxRateLabel.setText("Current tax rate is " + temp + "%");
