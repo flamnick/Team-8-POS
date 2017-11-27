@@ -51,6 +51,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form Emulator_Visual
+     * @param model template as parameter
      */
     public Emulator_Visual(Model.Template model) {
         POSmodel = model;
