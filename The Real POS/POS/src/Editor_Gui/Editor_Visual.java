@@ -33,7 +33,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
     /**
      * The xml manager responsible for saving and loading our program.
      */
-    XMLManager xml = new XMLManager();
+    Model.XMLManager xml = new Model.XMLManager();
 
     /**
      * The object responsible for setting which image we want to display in a given button.
@@ -148,19 +148,19 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(Menu_Title)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Load)
-                    .addComponent(New_Template, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(New_Template, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Load, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(Menu_Title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -180,6 +180,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Button_1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_1MouseClicked(evt);
@@ -193,6 +194,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_2MouseClicked(evt);
@@ -206,6 +208,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_3MouseClicked(evt);
@@ -219,6 +222,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_4MouseClicked(evt);
@@ -232,6 +236,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_5MouseClicked(evt);
@@ -245,6 +250,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_6MouseClicked(evt);
@@ -258,6 +264,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_7MouseClicked(evt);
@@ -271,6 +278,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_8MouseClicked(evt);
@@ -284,6 +292,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_9MouseClicked(evt);
@@ -297,6 +306,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         });
 
         Button_10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Button_10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_10MouseClicked(evt);
@@ -311,6 +321,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
 
         Button_11.setFont(Button_11.getFont().deriveFont(Button_11.getFont().getStyle() | java.awt.Font.BOLD));
         Button_11.setText("CLEAR");
+        Button_11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_11MouseEntered(evt);
@@ -322,7 +333,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
 
         Button_12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_12.setText("TOTAL");
-        Button_12.setBorder(null);
+        Button_12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Button_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -403,16 +414,16 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(Button_Settings_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Taxrate_Textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                                     .addComponent(TaxRateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(templateName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(Button_Settings_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(

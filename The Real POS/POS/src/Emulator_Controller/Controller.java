@@ -15,6 +15,6 @@ public class Controller
    {
     Model.Template POSmodel = new Model.Template();
     Emulator_Gui.Emulator_Visual view = new Emulator_Gui.Emulator_Visual(POSmodel);
-    view.setVisible(true);  
+    view.setVisible(true);
    }
 }
