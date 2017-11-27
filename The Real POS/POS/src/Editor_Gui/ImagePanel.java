@@ -7,7 +7,7 @@ package Editor_Gui;
 
 /**
  * Required to display images in dialog box. DO NOT DELETE.
- * gachiBASS Clap
+ * @author Team 8
  */
 class ImagePanel {
 

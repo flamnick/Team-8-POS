@@ -6,8 +6,8 @@
 package Emulator_Controller;
 
 /**
- *
- * @author Computer
+ * Main for Emulator.
+ * @author Team 8
  */
 public class Main {
         public static void main(String args[]) 
