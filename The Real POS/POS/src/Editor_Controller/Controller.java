@@ -9,8 +9,8 @@ import Model.Template;
        
 
 /**
- * This is simply the controller for our class. It's only job is to instantiate our model and our view and set it to visible.
- * @author Computer
+ * This is simply the controller for our Editor class. It's only job is to instantiate our model and our view and set it to visible.
+ * @author Team 8
  */
 public class Controller 
 {

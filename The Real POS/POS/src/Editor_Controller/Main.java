@@ -6,8 +6,8 @@
 package Editor_Controller;
 
 /**
- *
- * @author Computer
+ * Main for Editor.
+ * @author Team 8
  */
 public class Main {
         public static void main(String args[]) 
