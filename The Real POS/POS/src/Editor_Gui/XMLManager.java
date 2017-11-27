@@ -17,6 +17,9 @@ import java.io.*;
  */
 public class XMLManager {
 
+    /**
+     *
+     */
     public XMLManager() {
         //Nothing here, just making a constructor.
     }

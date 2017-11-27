@@ -38,6 +38,11 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
      * The object responsible for setting which image we want to display in a given button.
      */
     setPic picsetter = new setPic();
+    
+    /**
+     * This is the model for the Register list text box.
+     */
+    DefaultListModel<String> listModel = new DefaultListModel<>();
 
     /**
      * Creates new form Emulator_Visual
@@ -86,7 +91,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         Button_11 = new javax.swing.JButton();
         Button_12 = new javax.swing.JButton();
         Scroll_Pane_2 = new javax.swing.JScrollPane();
-        Register_List = new javax.swing.JTextField();
+        RegisterList = new javax.swing.JList<>();
         Taxrate_Textfield = new javax.swing.JTextField();
         Save = new javax.swing.JButton();
         Button_Settings_Button = new javax.swing.JButton();
@@ -320,7 +325,8 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
             }
         });
 
-        Scroll_Pane_2.setViewportView(Register_List);
+        RegisterList.setModel(listModel);
+        Scroll_Pane_2.setViewportView(RegisterList);
 
         Taxrate_Textfield.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -553,6 +559,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
         } catch (Exception e) {
 
         }
+        listModel.addElement("Template saved as " + templateName.getText() + ".xml");
 
         repaint();
     }//GEN-LAST:event_SaveMouseClicked
@@ -566,7 +573,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
 
         //needs to clear out all buttons
         Taxrate_Textfield.setText("");
-        Register_List.setText("");
+        listModel.clear();
         templateName.setText("");
 
         POSmodel.resetTemplate();
@@ -730,7 +737,6 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
     private void Taxrate_TextfieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Taxrate_TextfieldKeyReleased
         double number = Double.parseDouble(Taxrate_Textfield.getText());
         POSmodel.setTaxRate(number);
-        System.out.println(POSmodel.getTaxRate());
     }//GEN-LAST:event_Taxrate_TextfieldKeyReleased
 
     /**
@@ -788,7 +794,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton Load;
     private javax.swing.JLabel Menu_Title;
     private javax.swing.JButton New_Template;
-    private javax.swing.JTextField Register_List;
+    private javax.swing.JList<String> RegisterList;
     private javax.swing.JButton Save;
     private javax.swing.JScrollPane Scroll_Pane_2;
     private javax.swing.JLabel TaxRateLabel;
