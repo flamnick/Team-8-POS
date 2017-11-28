@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Editor_Gui.*;
+import Emulator_Gui.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.Serializable;
@@ -71,7 +71,7 @@ public class Template extends Observable implements Serializable {
      * @param buttonNumber what button is being populated
      * @param dataHolder holds the data the button is being populated with
      */
-    public void updateButton(int buttonNumber, Editor_Gui.UserInfoBus dataHolder) {
+    public void updateButton(int buttonNumber, Emulator_Gui.UserInfoBus dataHolder) {
         buttonArray[buttonNumber].setName(dataHolder.getName());
         setChanged();
         this.notifyObservers();

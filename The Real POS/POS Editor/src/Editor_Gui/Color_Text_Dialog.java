@@ -185,7 +185,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
             }
             case "Green": {
                 color_choice = Color.GREEN;
-                System.out.println("Green was selected.");
                 break;
             }
             default: {
@@ -194,8 +193,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
             }
 
         }
-
-        System.out.println(color_choice);
     }//GEN-LAST:event_Color_ListValueChanged
 
     /**
@@ -228,8 +225,6 @@ public class Color_Text_Dialog extends javax.swing.JDialog {
             }
 
         }
-
-        System.out.println(font_choice);
     }//GEN-LAST:event_Font_ListValueChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

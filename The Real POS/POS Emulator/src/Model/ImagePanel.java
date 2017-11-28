@@ -5,7 +5,7 @@
  */
 package Model;
 
-import Editor_Gui.*;
+import Emulator_Gui.*;
 
 /**
  * Even more weird magic code.
