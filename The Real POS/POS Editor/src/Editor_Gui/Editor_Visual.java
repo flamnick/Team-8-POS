@@ -633,7 +633,6 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
                 /**
                  * softCopy just holds the XML read Template object until we can pass it to the one being observed for changes.
                  */
-                File fileObject = fchooser.getSelectedFile();
                 Model.Template softCopy = xml.read(fchooser.getSelectedFile());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {

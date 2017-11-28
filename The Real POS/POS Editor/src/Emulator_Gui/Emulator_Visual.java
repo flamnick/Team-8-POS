@@ -582,11 +582,9 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         fchooser.setFileFilter(filter);
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-            System.out.println(fchooser.getSelectedFile().getName());
             try {
 
-                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {
 
