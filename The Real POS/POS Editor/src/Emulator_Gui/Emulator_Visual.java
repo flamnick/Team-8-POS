@@ -1,7 +1,7 @@
 package Emulator_Gui;
 
 
-import Emulator_Gui.setPic;
+import Editor_Gui.setPic;
 import Model.Calculator;
 import java.awt.Color;
 import java.io.File;
@@ -51,7 +51,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form Emulator_Visual
-     * @param model template as parameter
+     * @param model template as a parameter
      */
     public Emulator_Visual(Model.Template model) {
         POSmodel = model;
@@ -575,7 +575,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-        String userhome = System.getProperty("user.home");
+        String userhome = System.getProperty("user.dir");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("xml", "xml");
@@ -583,10 +583,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
 
+            System.out.println(fchooser.getSelectedFile().getName());
             try {
 
-                File fileObject = fchooser.getSelectedFile();
-                Model.Template softCopy = xml.read(fchooser.getSelectedFile());
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {
 

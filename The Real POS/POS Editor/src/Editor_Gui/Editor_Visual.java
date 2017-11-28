@@ -51,6 +51,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
     private Model.Template POSupdate;
     /**
      * Creates new form Emulator_Visual
+     * @param model template as parameter
      */
     public Editor_Visual(Model.Template model) {
        //This sets up the reference.

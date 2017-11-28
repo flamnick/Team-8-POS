@@ -61,7 +61,7 @@ public class Calculator {
     
     /**
      * Calculates the tax owed for a particular transaction when called.
-     * @param taxRate 
+     * @param taxRate takes a double to set the tax rate as a percentage
      */
     public void calculateTaxOwed(double taxRate)
     {
