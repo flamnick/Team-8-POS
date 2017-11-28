@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Editor_Gui;
+package Emulator_Gui;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;

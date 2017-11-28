@@ -1,7 +1,7 @@
 package Emulator_Gui;
 
 
-import Editor_Gui.setPic;
+import Emulator_Gui.setPic;
 import Model.Calculator;
 import java.awt.Color;
 import java.io.File;
@@ -575,7 +575,7 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void Load_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Load_ButtonMouseClicked
-        String userhome = System.getProperty("user.dir");
+        String userhome = System.getProperty("user.home");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("xml", "xml");
@@ -583,10 +583,10 @@ public class Emulator_Visual extends javax.swing.JFrame implements Observer {
         int returnVal = fchooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
 
-            System.out.println(fchooser.getSelectedFile().getName());
             try {
 
-                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                File fileObject = fchooser.getSelectedFile();
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {
 

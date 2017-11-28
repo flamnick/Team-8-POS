@@ -574,14 +574,27 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
      * @param evt mouse clicked
      */
     private void SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveMouseClicked
-        try {
-            xml.write(POSmodel, templateName.getText() + ".xml");
+        String userhome = System.getProperty("user.home");
+        JFileChooser fchooser = new JFileChooser(userhome);
+        fchooser.setVisible(true);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("xml files only", "xml");
+        fchooser.setFileFilter(filter);
+        int returnVal = fchooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            try {
+                /**
+                 * This object is just what is passed to the xml coder. It gets the object from our file chooser.
+                 */
+                File fileObject = fchooser.getSelectedFile();
+                xml.write(POSmodel, fileObject);
         } catch (Exception e) {
 
         }
-        listModel.addElement("Template saved as " + templateName.getText() + ".xml");
+        //Tells the user the file was saved.
+        listModel.addElement("Template saved as " + fchooser.getSelectedFile().getName());
 
         repaint();
+        }
     }//GEN-LAST:event_SaveMouseClicked
     /**
      * When the create new template button is clicked, the old template is
@@ -609,7 +622,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
      */
     private void LoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoadMouseClicked
 
-        String userhome = System.getProperty("user.dir");
+        String userhome = System.getProperty("user.home");
         JFileChooser fchooser = new JFileChooser(userhome);
         fchooser.setVisible(true);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("xml files only", "xml");
@@ -620,7 +633,7 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
                 /**
                  * softCopy just holds the XML read Template object until we can pass it to the one being observed for changes.
                  */
-                Model.Template softCopy = xml.read(fchooser.getSelectedFile().getName());
+                Model.Template softCopy = xml.read(fchooser.getSelectedFile());
                 POSmodel.setTemplate(softCopy);
             } catch (Exception e) {
             }
@@ -629,8 +642,6 @@ public class Editor_Visual extends javax.swing.JFrame implements Observer {
        String temp = Double.toString(POSmodel.getTaxRate());
        Taxrate_Textfield.setText(temp);
        repaint();
-
-
     }//GEN-LAST:event_LoadMouseClicked
 
     /**
