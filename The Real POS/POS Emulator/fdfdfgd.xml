@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_141" class="java.beans.XMLDecoder">
+ <object class="Model.Template">
+  <void property="button">
+   <array class="Model.Button" length="21">
+    <void index="0">
+     <object class="Model.Button"/>
+    </void>
+    <void index="1">
+     <object class="Model.Button"/>
+    </void>
+    <void index="2">
+     <object class="Model.Button"/>
+    </void>
+    <void index="3">
+     <object class="Model.Button"/>
+    </void>
+    <void index="4">
+     <object class="Model.Button"/>
+    </void>
+    <void index="5">
+     <object class="Model.Button"/>
+    </void>
+    <void index="6">
+     <object class="Model.Button"/>
+    </void>
+    <void index="7">
+     <object class="Model.Button"/>
+    </void>
+    <void index="8">
+     <object class="Model.Button"/>
+    </void>
+    <void index="9">
+     <object class="Model.Button"/>
+    </void>
+    <void index="10">
+     <object class="Model.Button"/>
+    </void>
+    <void index="11">
+     <object class="Model.Button"/>
+    </void>
+    <void index="12">
+     <object class="Model.Button"/>
+    </void>
+    <void index="13">
+     <object class="Model.Button"/>
+    </void>
+    <void index="14">
+     <object class="Model.Button"/>
+    </void>
+    <void index="15">
+     <object class="Model.Button"/>
+    </void>
+    <void index="16">
+     <object class="Model.Button"/>
+    </void>
+    <void index="17">
+     <object class="Model.Button"/>
+    </void>
+    <void index="18">
+     <object class="Model.Button"/>
+    </void>
+    <void index="19">
+     <object class="Model.Button"/>
+    </void>
+   </array>
+  </void>
+  <void property="colorChoice">
+   <object class="java.awt.Color">
+    <int>255</int>
+    <int>0</int>
+    <int>255</int>
+    <int>255</int>
+   </object>
+  </void>
+  <void property="fontChoice">
+   <object class="java.awt.Font">
+    <string>Tahoma</string>
+    <int>1</int>
+    <int>14</int>
+   </object>
+  </void>
+  <void property="taxRate">
+   <double>4.0</double>
+  </void>
+ </object>
+</java>
